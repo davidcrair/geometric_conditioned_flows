@@ -1,7 +1,7 @@
 # Conditioned Optimal Transport Flows in Geometrically Regularized Latent Space for Single Cell Perturbation Modeling
 
-Senior Thesis Project in Computer Science\\
-Author: David Crair\\
+Senior Thesis Project in Computer Science\
+Author: David Crair\
 Advisor: Smita Krishnaswamy
 
 ## setup
