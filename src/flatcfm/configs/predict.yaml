@@ -1,0 +1,44 @@
+defaults:
+  - _self_
+  - data: sciplex
+  - splitter: strict_k562
+  - space: log1p_deg
+  - evaluation_space: same_as_training
+  - condition: sciplex
+  - task: fm
+  - model: fm
+  - loss: fm
+  - ae_geometry: none
+  - ae_schedule: single_phase
+  - callbacks: default
+  - logger: default
+  - trainer: default
+  - paths: default
+  - evaluation: native
+  - experiment: null
+
+seed: 42
+predict:
+  run_dir: null
+  experiment_name: null
+  name: held_out
+  model_name: flatcfm
+  batch_size: ${task.batch_size}
+  split: held_out
+  target_subset: perturbed
+  target_filters:
+    obs_equals: {}
+    obs_in: {}
+  control_source:
+    split: all_controls
+    match_cell_types_from: test_cell_type
+  checkpoint_path: null
+  time: 1.0
+  ode_method: rk4
+  sample_decode: false
+
+hydra:
+  run:
+    dir: ${paths.run_dir}/predict/${now:%Y%m%d_%H%M%S}_${oc.env:SLURM_JOB_ID,local}
+  job:
+    chdir: false

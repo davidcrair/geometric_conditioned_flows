@@ -1,0 +1,55 @@
+PERTURBENCH_DIR=/home/dac227/scratch_pi_sk2433/dac227/perturbench
+TMPDIR=/home/dac227/scratch_pi_sk2433/dac227/perturbench/tmp
+== task 2 ==
+experiment=neurips2025/sciplex3/linear_best_params_sciplex3
+wrapper=/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/scripts/run_perturbench.py
+[[36m2026-04-11 22:22:03,126[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating datamodule <perturbench.data.modules.AnnDataLitModule>[0m
+Split summary: 
+           train  val  test
+('a549',)    132   30    29
+('mcf7',)    132   29    30
+('k562',)    132   29    30
+[[36m2026-04-11 22:22:06,002[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating model <perturbench.modelcore.models.LinearAdditive>[0m
+[[36m2026-04-11 22:22:06,006[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating callbacks...[0m
+[[36m2026-04-11 22:22:06,007[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:22:06,007[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:22:06,008[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:22:06,008[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:22:06,010[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:22:06,010[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating loggers...[0m
+[[36m2026-04-11 22:22:06,010[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:22:06,012[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:22:06,012[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating trainer <lightning.pytorch.trainer.Trainer>[0m
+[[36m2026-04-11 22:22:06,051[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Starting training![0m
+┏━━━┳━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃   ┃ Name    ┃ Type   ┃ Params ┃ Mode  ┃ FLOPs ┃
+┡━━━╇━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│ 0 │ fc_pert │ Linear │  1.7 M │ train │     0 │
+└───┴─────────┴────────┴────────┴───────┴───────┘
+Trainable params: 1.7 M                                                         
+Non-trainable params: 0                                                         
+Total params: 1.7 M                                                             
+Total estimated model params size (MB): 6                                       
+Modules in train mode: 1                                                        
+Modules in eval mode: 0                                                         
+Total FLOPs: 0                                                                  
+Epoch 499/499 ━━━━━━━━━━━━━━━━ 29/29 0:00:02 •       17.12it/s v_num: 0         
+                                     0:00:00                   train_loss: 0.026
+                                                               val_loss_step:   
+                                                               0.028            
+                                                               val_loss_epoch:  
+                                                               0.027            
+[[36m2026-04-11 22:44:53,771[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Starting testing![0m
+model                    LinearAdditive
+rmse_average                    0.03108
+rmse_rank_average               0.21530
+cosine_pca_average              0.91300
+cosine_rank_pca_average         0.22090
+cosine_logfc                    0.19890
+cosine_rank_logfc               0.18380
+r2_score_scores                -0.03572
+top_k_recall_scores             0.00000
+mmd_pca                         0.83630
+mmd_rank_pca                    0.23100
+Testing ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 0:00:53 • 0:00:00 0.00it/s 
+== task 2 done ==

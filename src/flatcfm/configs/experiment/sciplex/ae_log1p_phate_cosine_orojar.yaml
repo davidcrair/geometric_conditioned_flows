@@ -1,0 +1,32 @@
+# @package _global_
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: strict_k562
+  - override /space: log1p_deg
+  - override /condition: sciplex
+  - override /task: ae
+  - override /model: ae
+  - override /loss: ae
+  - override /ae_geometry: phate_potential
+  - override /ae_schedule: single_phase
+
+experiment_name: sciplex_ae_deg_log1p_phate_cosine_orojar
+
+task:
+  epochs: 100
+
+space:
+  ae_export_artifact_tag: sciplex_ae_deg_log1p_phate_cosine_orojar
+
+loss:
+  weights:
+    recon: 1.0
+    distance: 1.0
+    pullback: 0.0
+    ce_context: 0.1
+    ce_state: 0.01
+    orojar: 0.1
+  distance_loss_type: cosine
+  distance_zeta: 20.0
+  ce_state_label_smoothing: 0.1

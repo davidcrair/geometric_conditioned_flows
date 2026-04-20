@@ -1,0 +1,16 @@
+_target_: lightning.pytorch.Trainer
+accelerator: auto
+devices: 1
+max_epochs: ${task.epochs}
+log_every_n_steps: 1
+enable_checkpointing: true
+enable_progress_bar: false
+enable_model_summary: false
+num_sanity_val_steps: 0
+precision: bf16-mixed
+deterministic: false
+num_nodes: 1
+limit_train_batches: 1.0
+limit_val_batches: 1.0
+pin_memory: false
+num_workers: 0

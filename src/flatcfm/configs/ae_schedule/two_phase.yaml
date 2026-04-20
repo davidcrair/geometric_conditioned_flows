@@ -1,0 +1,15 @@
+name: two_phase
+phase1_epochs: 50
+phase2_epochs: 50
+freeze_encoder_phase1: false
+freeze_decoder_phase1: true
+freeze_encoder_phase2: true
+freeze_decoder_phase2: false
+phase1_loss_weights:
+  recon: 0.0
+  distance: 1.0
+  pullback: 0.0
+phase2_loss_weights:
+  recon: 1.0
+  distance: 0.0
+  pullback: 0.0

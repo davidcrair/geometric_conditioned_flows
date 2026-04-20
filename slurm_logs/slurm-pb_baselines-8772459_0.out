@@ -1,0 +1,62 @@
+PERTURBENCH_DIR=/home/dac227/scratch_pi_sk2433/dac227/perturbench
+TMPDIR=/home/dac227/scratch_pi_sk2433/dac227/perturbench/tmp
+== task 0 ==
+experiment=sciplex3/flatcfm_decoder_sciplex3
+wrapper=/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/scripts/run_perturbench.py
+extra_args=seed=247
+[[36m2026-04-18 11:47:52,656[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating datamodule <perturbench.data.modules.AnnDataLitModule>[0m
+Split summary: 
+           train  val  test
+('k562',)    132   29    30
+('mcf7',)    132   29    30
+('a549',)    132   30    29
+[[36m2026-04-18 11:47:55,495[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating model <flatcfm.perturbench.decoder.FlatCFMDecoder>[0m
+[[36m2026-04-18 11:47:55,509[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating callbacks...[0m
+[[36m2026-04-18 11:47:55,510[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 11:47:55,510[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 11:47:55,511[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 11:47:55,511[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 11:47:55,513[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 11:47:55,513[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating loggers...[0m
+[[36m2026-04-18 11:47:55,513[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 11:47:55,514[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 11:47:55,515[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating trainer <lightning.pytorch.trainer.Trainer>[0m
+[[36m2026-04-18 11:47:55,571[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Starting training![0m
+┏━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃   ┃ Name                     ┃ Type               ┃ Params ┃ Mode  ┃ FLOPs ┃
+┡━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│ 0 │ decoder_module           │ ConditionedDecoder │  4.5 M │ train │     0 │
+│ 1 │ decoder_module.decoder   │ Sequential         │  4.5 M │ train │     0 │
+│ 2 │ decoder_module.decoder.0 │ Linear             │  2.3 M │ train │     0 │
+│ 3 │ decoder_module.decoder.1 │ ReLU               │      0 │ train │     0 │
+│ 4 │ decoder_module.decoder.2 │ Linear             │ 65.8 K │ train │     0 │
+│ 5 │ decoder_module.decoder.3 │ ReLU               │      0 │ train │     0 │
+│ 6 │ decoder_module.decoder.4 │ Linear             │  2.2 M │ train │     0 │
+└───┴──────────────────────────┴────────────────────┴────────┴───────┴───────┘
+Trainable params: 4.5 M                                                         
+Non-trainable params: 0                                                         
+Total params: 4.5 M                                                             
+Total estimated model params size (MB): 18                                      
+Modules in train mode: 7                                                        
+Modules in eval mode: 0                                                         
+Total FLOPs: 0                                                                  
+Epoch 230/499 ━━━━━━━━━━━━━━━━ 29/29 0:00:02 •       16.61it/s v_num: 0         
+                                     0:00:00                   train_loss: 0.024
+                                                               val_loss_step:   
+                                                               0.026            
+                                                               val_loss_epoch:  
+                                                               0.024            
+[[36m2026-04-18 11:58:37,324[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Starting testing![0m
+model                    FlatCFMDecoder
+rmse_average                    0.02142
+rmse_rank_average               0.36690
+cosine_pca_average              0.94920
+cosine_rank_pca_average         0.35190
+cosine_logfc                    0.39050
+cosine_rank_logfc               0.44900
+r2_score_scores                -0.05195
+top_k_recall_scores             0.00000
+mmd_pca                         1.56700
+mmd_rank_pca                    0.39830
+Testing ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 0:00:47 • 0:00:00 0.00it/s 
+== task 0 done ==

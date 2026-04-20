@@ -1,0 +1,101 @@
+PERTURBENCH_DIR=/home/dac227/scratch_pi_sk2433/dac227/perturbench
+TMPDIR=/home/dac227/scratch_pi_sk2433/dac227/perturbench/tmp
+== task 0 ==
+experiment=sciplex3/flatcfm_fm_pca16_sciplex3
+wrapper=/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/scripts/run_perturbench.py
+extra_args=seed=247
+[[36m2026-04-18 13:45:10,079[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating datamodule <perturbench.data.modules.AnnDataLitModule>[0m
+Split summary: 
+           train  val  test
+('mcf7',)    132   29    30
+('k562',)    132   29    30
+('a549',)    132   30    29
+[[36m2026-04-18 13:45:13,560[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating model <flatcfm.perturbench.flow_matching.FlatCFMFlowMatching>[0m
+[[36m2026-04-18 13:45:19,997[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating callbacks...[0m
+[[36m2026-04-18 13:45:19,998[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 13:45:19,999[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 13:45:19,999[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 13:45:20,000[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 13:45:20,007[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 13:45:20,008[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating loggers...[0m
+[[36m2026-04-18 13:45:20,008[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 13:45:20,011[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 13:45:20,012[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating trainer <lightning.pytorch.trainer.Trainer>[0m
+[[36m2026-04-18 13:45:20,073[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Starting training![0m
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━━┓
+┃    ┃ Name                                           ┃ Ty… ┃ Pa… ┃ Mo… ┃ FLO… ┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━╇━━━━━╇━━━━━╇━━━━━━┩
+│ 0  │ model                                          │ Co… │ 374 │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 1  │ model.cond_encoder                             │ Co… │ 53… │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 2  │ model.cond_encoder.emb_pert                    │ Em… │ 12… │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 3  │ model.cond_encoder.emb_pert_cov                │ Mo… │   0 │ tr… │    0 │
+│ 4  │ model.cond_encoder.emb_sample_cov              │ Mo… │ 192 │ tr… │    0 │
+│ 5  │ model.cond_encoder.emb_sample_cov.cell_type    │ Em… │ 192 │ tr… │    0 │
+│ 6  │ model.cond_encoder.proj_perturbation           │ Se… │ 4.2 │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 7  │ model.cond_encoder.proj_perturbation.0         │ Li… │ 4.2 │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 8  │ model.cond_encoder.proj_perturbation.1         │ Re… │   0 │ tr… │    0 │
+│ 9  │ model.cond_encoder.proj_pert_cov               │ Mo… │   0 │ tr… │    0 │
+│ 10 │ model.cond_encoder.proj_sample_cov             │ Mo… │ 4.2 │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 11 │ model.cond_encoder.proj_sample_cov.cell_type   │ Se… │ 4.2 │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 12 │ model.cond_encoder.proj_sample_cov.cell_type.0 │ Li… │ 4.2 │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 13 │ model.cond_encoder.proj_sample_cov.cell_type.1 │ Re… │   0 │ tr… │    0 │
+│ 14 │ model.cond_encoder.output_mlp                  │ Se… │ 33… │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 15 │ model.cond_encoder.output_mlp.0                │ Li… │ 16… │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 16 │ model.cond_encoder.output_mlp.1                │ Re… │   0 │ tr… │    0 │
+│ 17 │ model.cond_encoder.output_mlp.2                │ Li… │ 16… │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 18 │ model.time_embed                               │ Ga… │  32 │ tr… │    0 │
+│ 19 │ model.input_layer                              │ Li… │ 53… │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 20 │ model.hidden_layers                            │ Mo… │ 263 │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 21 │ model.hidden_layers.0                          │ Li… │ 65… │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 22 │ model.hidden_layers.1                          │ Li… │ 65… │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 23 │ model.hidden_layers.2                          │ Li… │ 65… │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 24 │ model.hidden_layers.3                          │ Li… │ 65… │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 25 │ model.output_layer                             │ Li… │ 4.1 │ tr… │    0 │
+│    │                                                │     │   K │     │      │
+│ 26 │ model.activation                               │ ELU │   0 │ tr… │    0 │
+│ 27 │ model.dropout                                  │ Id… │   0 │ tr… │    0 │
+└────┴────────────────────────────────────────────────┴─────┴─────┴─────┴──────┘
+Trainable params: 374 K                                                         
+Non-trainable params: 32                                                        
+Total params: 374 K                                                             
+Total estimated model params size (MB): 1                                       
+Modules in train mode: 28                                                       
+Modules in eval mode: 0                                                         
+Total FLOPs: 0                                                                  
+Epoch 176/499 ━━━━━━━━━━━━━━━━ 29/29 0:00:02 •       12.10it/s v_num: 0         
+                                     0:00:00                   train_loss: 1.495
+                                                               val_loss_step:   
+                                                               1.526            
+                                                               val_loss_epoch:  
+                                                               1.669            
+[[36m2026-04-18 13:56:24,030[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Starting testing![0m
+model                    FlatCFMFlowMatchingPCA16
+rmse_average                              0.02259
+rmse_rank_average                         0.33990
+cosine_pca_average                        0.93720
+cosine_rank_pca_average                   0.34330
+cosine_logfc                              0.35760
+cosine_rank_logfc                         0.37080
+r2_score_scores                          -0.08392
+top_k_recall_scores                       0.00000
+mmd_pca                                   0.50940
+mmd_rank_pca                              0.34120
+Testing ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 0:01:26 • 0:00:00 0.00it/s 
+== task 0 done ==

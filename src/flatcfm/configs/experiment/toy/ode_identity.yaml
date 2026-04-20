@@ -1,0 +1,17 @@
+# @package _global_
+
+defaults:
+  - override /data: toy
+  - override /splitter: toy
+  - override /space: identity
+  - override /condition: toy
+  - override /task: ode
+  - override /model: ode
+  - override /loss: ode
+
+experiment_name: toy_ode_identity
+task:
+  batch_size: 128
+  steps_per_epoch: 50
+loss:
+  sinkhorn_reg: 1.0

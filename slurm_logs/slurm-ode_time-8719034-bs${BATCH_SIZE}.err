@@ -1,0 +1,26 @@
+[rank: 0] Seed set to 42
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/lightning/fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/src/fl ...
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+`Trainer(limit_train_batches=1.0)` was configured so 100% of the batches per epoch will be used..
+`Trainer(limit_val_batches=1.0)` was configured so 100% of the batches will be used..
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/src/flatcfm/modelcore/models/base.py:85: UserWarning: No optimizer specified in task_cfg; defaulting to AdamW (lr=0.0001, weight_decay=0.01).
+  rank_zero_warn(
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/lightning/pytorch/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+Training:   0%|          | 0/5 [00:00<?, ?epoch/s]
+     Val:[ATraining:   0%|          | 0/5 [00:04<?, ?epoch/s, loss=14.098, ot=0.4715, density=13.519, energy=10.685]Training:  20%|██        | 1/5 [00:04<00:18,  4.53s/epoch, loss=14.098, ot=0.4715, density=13.519, energy=10.685]
+     Val: loss=12.843, ot=0.4319, density=12.286, energy=12.606[A
+     Val: loss=12.843, ot=0.4319, density=12.286, energy=12.606[ATraining:  20%|██        | 1/5 [00:09<00:18,  4.53s/epoch, loss=13.128, ot=0.4576, density=12.478, energy=19.292]Training:  40%|████      | 2/5 [00:09<00:13,  4.59s/epoch, loss=13.128, ot=0.4576, density=12.478, energy=19.292]
+     Val: loss=12.391, ot=0.4291, density=11.735, energy=22.683[A
+     Val: loss=12.391, ot=0.4291, density=11.735, energy=22.683[ATraining:  40%|████      | 2/5 [00:13<00:13,  4.59s/epoch, loss=12.700, ot=0.4524, density=11.861, energy=38.703]Training:  60%|██████    | 3/5 [00:13<00:09,  4.52s/epoch, loss=12.700, ot=0.4524, density=11.861, energy=38.703]
+     Val: loss=12.169, ot=0.4358, density=11.315, energy=41.818[A
+     Val: loss=12.169, ot=0.4358, density=11.315, energy=41.818[ATraining:  60%|██████    | 3/5 [00:18<00:09,  4.52s/epoch, loss=12.567, ot=0.4706, density=11.627, energy=46.871]Training:  80%|████████  | 4/5 [00:18<00:04,  4.56s/epoch, loss=12.567, ot=0.4706, density=11.627, energy=46.871]
+     Val: loss=11.805, ot=0.4220, density=10.918, energy=46.491[A
+     Val: loss=11.805, ot=0.4220, density=10.918, energy=46.491[ATraining:  80%|████████  | 4/5 [00:22<00:04,  4.56s/epoch, loss=12.189, ot=0.4615, density=11.086, energy=64.132]Training: 100%|██████████| 5/5 [00:22<00:00,  4.59s/epoch, loss=12.189, ot=0.4615, density=11.086, energy=64.132]
+     Val: loss=11.748, ot=0.4325, density=10.702, energy=61.355[A
+     Val: loss=11.748, ot=0.4325, density=10.702, energy=61.355[A`Trainer.fit` stopped: `max_epochs=5` reached.
+     Val: loss=11.748, ot=0.4325, density=10.702, energy=61.355
+Training: 100%|██████████| 5/5 [00:22<00:00,  4.58s/epoch, loss=12.189, ot=0.4615, density=11.086, energy=64.132]

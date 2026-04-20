@@ -1,0 +1,26 @@
+# @package _global_
+# perturbench-style setup: 30% perturbation holdout, all cells, 4000 HVGs, highest dose only
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: perturbench_k562
+  - override /space: log1p_deg_4k
+  - override /condition: sciplex
+  - override /task: ae
+  - override /model: ae
+  - override /loss: ae
+  - override /ae_geometry: none
+  - override /ae_schedule: single_phase
+
+experiment_name: sciplex_pb_ae_mse_d512
+
+data:
+  source: file
+  data_path: artifacts/data/sciplex3_max_dose.h5ad
+
+model:
+  family: standard
+  latent_dim: 512
+
+space:
+  ae_export_artifact_tag: sciplex_pb_ae_mse_d512

@@ -1,0 +1,16 @@
+perturbation:
+  name: perturbation
+  source_column: product_name
+  encoding: categorical
+control_column: vehicle
+control_value: 1
+perturbation_covariates:
+  - name: dose
+    source_column: dose
+    encoding: categorical
+sample_covariates:
+  - name: cell_type
+    source_column: cell_type
+    encoding: categorical
+output_obs_map:
+  perturbation: condition

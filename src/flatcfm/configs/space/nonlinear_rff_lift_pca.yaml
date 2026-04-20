@@ -1,0 +1,14 @@
+base:
+  kind: raw_counts
+  feature_set: all_genes
+  n_hvgs: null
+  target_sum: 1.0
+projections:
+  - kind: nonlinear_rff_lift
+    ambient_dim: 16
+    seed: 0
+    feature_scale: 1.0
+  - kind: pca
+    n_components: 2
+fit_scope: train
+chunk_size: 2048

@@ -1,0 +1,10 @@
+# @package _global_
+
+defaults:
+  - base
+  - _self_
+
+hydra:
+  sweeper:
+    n_trials: 30
+    custom_search_space: flatcfm.modelcore.hpo.configure_baseline_linear_search_space

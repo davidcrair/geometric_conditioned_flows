@@ -1,0 +1,90 @@
+PERTURBENCH_DIR=/home/dac227/scratch_pi_sk2433/dac227/perturbench
+TMPDIR=/home/dac227/scratch_pi_sk2433/dac227/perturbench/tmp
+== task 3 ==
+experiment=neurips2025/sciplex3/latent_best_params_sciplex3
+wrapper=/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/scripts/run_perturbench.py
+[[36m2026-04-11 22:27:06,054[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating datamodule <perturbench.data.modules.AnnDataLitModule>[0m
+Split summary: 
+           train  val  test
+('mcf7',)    132   29    30
+('k562',)    132   29    30
+('a549',)    132   30    29
+[[36m2026-04-11 22:27:08,789[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating model <perturbench.modelcore.models.LatentAdditive>[0m
+[[36m2026-04-11 22:27:09,260[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating callbacks...[0m
+[[36m2026-04-11 22:27:09,261[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:27:09,262[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:27:09,262[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:27:09,262[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:27:09,264[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:27:09,265[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating loggers...[0m
+[[36m2026-04-11 22:27:09,265[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:27:09,266[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:27:09,267[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating trainer <lightning.pytorch.trainer.Trainer>[0m
+[[36m2026-04-11 22:27:09,327[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Starting training![0m
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃    ┃ Name                   ┃ Type       ┃ Params ┃ Mode  ┃ FLOPs ┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│ 0  │ gene_encoder           │ MLP        │  105 M │ train │     0 │
+│ 1  │ gene_encoder.network   │ Sequential │  105 M │ train │     0 │
+│ 2  │ gene_encoder.network.0 │ Linear     │ 46.4 M │ train │     0 │
+│ 3  │ gene_encoder.network.1 │ Linear     │ 28.9 M │ train │     0 │
+│ 4  │ gene_encoder.network.2 │ LayerNorm  │      0 │ train │     0 │
+│ 5  │ gene_encoder.network.3 │ ReLU       │      0 │ train │     0 │
+│ 6  │ gene_encoder.network.4 │ Dropout    │      0 │ train │     0 │
+│ 7  │ gene_encoder.network.5 │ Linear     │ 28.9 M │ train │     0 │
+│ 8  │ gene_encoder.network.6 │ LayerNorm  │      0 │ train │     0 │
+│ 9  │ gene_encoder.network.7 │ ReLU       │      0 │ train │     0 │
+│ 10 │ gene_encoder.network.8 │ Dropout    │      0 │ train │     0 │
+│ 11 │ gene_encoder.network.9 │ Linear     │  1.0 M │ train │     0 │
+│ 12 │ decoder                │ MLP        │  105 M │ train │     0 │
+│ 13 │ decoder.network        │ Sequential │  105 M │ train │     0 │
+│ 14 │ decoder.network.0      │ Linear     │  1.1 M │ train │     0 │
+│ 15 │ decoder.network.1      │ Linear     │ 28.9 M │ train │     0 │
+│ 16 │ decoder.network.2      │ LayerNorm  │      0 │ train │     0 │
+│ 17 │ decoder.network.3      │ ReLU       │      0 │ train │     0 │
+│ 18 │ decoder.network.4      │ Dropout    │      0 │ train │     0 │
+│ 19 │ decoder.network.5      │ Linear     │ 28.9 M │ train │     0 │
+│ 20 │ decoder.network.6      │ LayerNorm  │      0 │ train │     0 │
+│ 21 │ decoder.network.7      │ ReLU       │      0 │ train │     0 │
+│ 22 │ decoder.network.8      │ Dropout    │      0 │ train │     0 │
+│ 23 │ decoder.network.9      │ Linear     │ 46.4 M │ train │     0 │
+│ 24 │ pert_encoder           │ MLP        │ 59.9 M │ train │     0 │
+│ 25 │ pert_encoder.network   │ Sequential │ 59.9 M │ train │     0 │
+│ 26 │ pert_encoder.network.0 │ Linear     │  1.0 M │ train │     0 │
+│ 27 │ pert_encoder.network.1 │ Linear     │ 28.9 M │ train │     0 │
+│ 28 │ pert_encoder.network.2 │ LayerNorm  │      0 │ train │     0 │
+│ 29 │ pert_encoder.network.3 │ ReLU       │      0 │ train │     0 │
+│ 30 │ pert_encoder.network.4 │ Dropout    │      0 │ train │     0 │
+│ 31 │ pert_encoder.network.5 │ Linear     │ 28.9 M │ train │     0 │
+│ 32 │ pert_encoder.network.6 │ LayerNorm  │      0 │ train │     0 │
+│ 33 │ pert_encoder.network.7 │ ReLU       │      0 │ train │     0 │
+│ 34 │ pert_encoder.network.8 │ Dropout    │      0 │ train │     0 │
+│ 35 │ pert_encoder.network.9 │ Linear     │  1.0 M │ train │     0 │
+└────┴────────────────────────┴────────────┴────────┴───────┴───────┘
+Trainable params: 270 M                                                         
+Non-trainable params: 0                                                         
+Total params: 270 M                                                             
+Total estimated model params size (MB): 1.1 K                                   
+Modules in train mode: 36                                                       
+Modules in eval mode: 0                                                         
+Total FLOPs: 0                                                                  
+Epoch 193/499 ━━━━━━━━━━━━━━━━ 29/29 0:00:05 •        5.89it/s v_num: 0         
+                                     0:00:00                   train_loss: 0.024
+                                                               val_loss_step:   
+                                                               0.026            
+                                                               val_loss_epoch:  
+                                                               0.024            
+[[36m2026-04-11 22:49:07,322[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Starting testing![0m
+model                    LatentAdditive
+rmse_average                    0.01722
+rmse_rank_average               0.15590
+cosine_pca_average              0.97310
+cosine_rank_pca_average         0.15110
+cosine_logfc                    0.48490
+cosine_rank_logfc               0.14830
+r2_score_scores                -0.13920
+top_k_recall_scores             0.00000
+mmd_pca                         1.80600
+mmd_rank_pca                    0.16650
+Testing ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 0:00:48 • 0:00:00 0.00it/s 
+== task 3 done ==

@@ -1,0 +1,15 @@
+# @package _global_
+
+defaults:
+  - override /data: toy
+  - override /splitter: toy
+  - override /space: identity
+  - override /condition: toy
+  - override /task: fm
+  - override /model: fm
+  - override /loss: fm
+
+experiment_name: toy_fm_identity
+task:
+  batch_size: 128
+  steps_per_epoch: 50

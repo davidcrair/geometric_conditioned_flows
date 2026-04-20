@@ -1,0 +1,18 @@
+# @package _global_
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: strict_k562
+  - override /space: ae_latent
+  - override /condition: sciplex
+  - override /task: baseline_linear
+  - override /model: baseline_linear
+  - override /loss: baseline
+  - override /callbacks: default
+
+experiment_name: sciplex_baseline_linear_ae_latent_recon
+
+space:
+  projections:
+    - kind: ae_latent
+      artifact_tag: sciplex_ae_log1p_recon

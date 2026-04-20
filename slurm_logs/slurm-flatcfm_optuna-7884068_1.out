@@ -1,0 +1,24 @@
+worker 1 starting
+experiment=sciplex/fm_pca_deg
+hpo=fm
+study=test_sqlite_sbatch
+storage=sqlite:////nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sweeps/test_sqlite_sbatch.db
+trials_per_worker=3
+[2026-04-10 18:06:23,265][HYDRA] Study name: test_sqlite_sbatch
+[2026-04-10 18:06:23,265][HYDRA] Storage: sqlite:////nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sweeps/test_sqlite_sbatch.db
+[2026-04-10 18:06:23,265][HYDRA] Sampler: TPESampler
+[2026-04-10 18:06:23,265][HYDRA] Directions: ['minimize']
+[2026-04-10 18:06:23,796][HYDRA] Launching 1 jobs locally
+[2026-04-10 18:06:23,796][HYDRA] 	#0 : task.lr=0.00016834549246003488 task.weight_decay=0.01804941906677885 task.batch_size=512 task.steps_per_epoch=50 task.use_ot_coupling=True task.ot_reg=0.1595857358814127 task.flow_noise=0.00011527987128232407 model.hidden_dim=128 model.hidden_layers=2 model.dropout=0.055021352956030146 model.condition_dim=128 model.embedding_dim=64 model.projection_dim=128 experiment=sciplex/fm_pca_deg hpo=fm trainer.accelerator=gpu trainer.devices=1 trainer.precision=bf16-mixed trainer.num_workers=4 trainer.pin_memory=True space.projections.0.n_components=16
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sweeps/sciplex_fm_deg_pca/20260410_180622/0
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sweeps/sciplex_fm_deg_pca/20260410_180622/0/checkpoints/best.ckpt
+[2026-04-10 18:08:00,745][HYDRA] Launching 1 jobs locally
+[2026-04-10 18:08:00,745][HYDRA] 	#1 : task.lr=0.0011155092541719617 task.weight_decay=7.833642249746979e-06 task.batch_size=1024 task.steps_per_epoch=100 task.use_ot_coupling=False task.flow_noise=0.07886714129990492 model.hidden_dim=128 model.hidden_layers=5 model.dropout=0.13204574812188039 model.condition_dim=128 model.embedding_dim=32 model.projection_dim=128 experiment=sciplex/fm_pca_deg hpo=fm trainer.accelerator=gpu trainer.devices=1 trainer.precision=bf16-mixed trainer.num_workers=4 trainer.pin_memory=True space.projections.0.n_components=16
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sweeps/sciplex_fm_deg_pca/20260410_180622/1
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sweeps/sciplex_fm_deg_pca/20260410_180622/1/checkpoints/best.ckpt
+[2026-04-10 18:09:40,434][HYDRA] Launching 1 jobs locally
+[2026-04-10 18:09:40,434][HYDRA] 	#2 : task.lr=7.027974317461207e-05 task.weight_decay=0.02192542120243344 task.batch_size=1024 task.steps_per_epoch=200 task.use_ot_coupling=False task.flow_noise=0.0001366727291545623 model.hidden_dim=256 model.hidden_layers=6 model.dropout=0.10702599800807679 model.condition_dim=128 model.embedding_dim=128 model.projection_dim=32 experiment=sciplex/fm_pca_deg hpo=fm trainer.accelerator=gpu trainer.devices=1 trainer.precision=bf16-mixed trainer.num_workers=4 trainer.pin_memory=True space.projections.0.n_components=16
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sweeps/sciplex_fm_deg_pca/20260410_180622/2
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sweeps/sciplex_fm_deg_pca/20260410_180622/2/checkpoints/best.ckpt
+[2026-04-10 18:12:07,142][HYDRA] Best parameters: {'task.lr': 7.027974317461207e-05, 'task.weight_decay': 0.02192542120243344, 'task.batch_size': 1024, 'task.steps_per_epoch': 200, 'task.use_ot_coupling': False, 'task.flow_noise': 0.0001366727291545623, 'model.hidden_dim': 256, 'model.hidden_layers': 6, 'model.dropout': 0.10702599800807679, 'model.condition_dim': 128, 'model.embedding_dim': 128, 'model.projection_dim': 32}
+[2026-04-10 18:12:07,142][HYDRA] Best value: 10.136519432067873

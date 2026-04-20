@@ -1,0 +1,35 @@
+RUN_DIR=/home/dac227/scratch_pi_sk2433/dac227/perturbench/logs/train/runs/2026-04-18_11-08-53_8766046
+CKPT=/home/dac227/scratch_pi_sk2433/dac227/perturbench/logs/train/runs/2026-04-18_11-08-53_8766046/checkpoints/epoch=14-step=435.ckpt
+overrides: experiment=sciplex3/flatcfm_fm_sciplex3 trainer.precision=32 seed=245
+[[36m2026-04-18 20:01:20,225[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating datamodule <perturbench.data.modules.AnnDataLitModule>[0m
+Split summary: 
+           train  val  test
+('mcf7',)    132   29    30
+('a549',)    132   30    29
+('k562',)    132   29    30
+[[36m2026-04-18 20:01:24,033[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating model <flatcfm.perturbench.flow_matching.FlatCFMFlowMatching>[0m
+[[36m2026-04-18 20:01:24,055[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating callbacks...[0m
+[[36m2026-04-18 20:01:24,055[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 20:01:24,056[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 20:01:24,057[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 20:01:24,057[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 20:01:24,065[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 20:01:24,065[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating loggers...[0m
+[[36m2026-04-18 20:01:24,066[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 20:01:24,097[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 20:01:24,098[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating trainer <lightning.pytorch.trainer.Trainer>[0m
+[[36m2026-04-18 20:01:24,142[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Starting testing![0m
+model                     FlatCFMFlowMatching
+rmse_average                         0.024320
+rmse_rank_average                    0.463600
+cosine_pca_average                   0.935100
+cosine_rank_pca_average              0.395800
+cosine_logfc                         0.072840
+cosine_rank_logfc                    0.480100
+r2_score_scores                     -0.081900
+top_k_recall_scores                  0.008372
+sig_deg_recall_pvals_adj             0.008642
+mmd_pca                              0.264300
+mmd_rank_pca                         0.439100
+Testing ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 0:01:39 • 0:00:00 0.00it/s 
+== reeval done: /home/dac227/scratch_pi_sk2433/dac227/perturbench/logs/train/runs/2026-04-18_11-08-53_8766046 ==

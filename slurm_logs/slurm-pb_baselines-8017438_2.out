@@ -1,0 +1,34 @@
+PERTURBENCH_DIR=/home/dac227/scratch_pi_sk2433/dac227/perturbench
+== task 2 ==
+experiment=neurips2025/sciplex3/linear_best_params_sciplex3
+wrapper=/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/scripts/run_perturbench.py
+[[36m2026-04-11 22:17:00,788[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating datamodule <perturbench.data.modules.AnnDataLitModule>[0m
+Split summary: 
+           train  val  test
+('k562',)    132   29    30
+('a549',)    132   30    29
+('mcf7',)    132   29    30
+[[36m2026-04-11 22:17:03,634[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating model <perturbench.modelcore.models.LinearAdditive>[0m
+[[36m2026-04-11 22:17:03,638[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating callbacks...[0m
+[[36m2026-04-11 22:17:03,638[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:17:03,639[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:17:03,639[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:17:03,640[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:17:03,642[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:17:03,642[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating loggers...[0m
+[[36m2026-04-11 22:17:03,642[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:17:03,645[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-11 22:17:03,646[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating trainer <lightning.pytorch.trainer.Trainer>[0m
+[[36m2026-04-11 22:17:03,704[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Starting training![0m
+┏━━━┳━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃   ┃ Name    ┃ Type   ┃ Params ┃ Mode  ┃ FLOPs ┃
+┡━━━╇━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│ 0 │ fc_pert │ Linear │  1.7 M │ train │     0 │
+└───┴─────────┴────────┴────────┴───────┴───────┘
+Trainable params: 1.7 M                                                         
+Non-trainable params: 0                                                         
+Total params: 1.7 M                                                             
+Total estimated model params size (MB): 6                                       
+Modules in train mode: 1                                                        
+Modules in eval mode: 0                                                         
+Total FLOPs: 0                                                                  

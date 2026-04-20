@@ -1,0 +1,33 @@
+# @package _global_
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: strict_k562
+  - override /space: log1p_deg
+  - override /condition: sciplex
+  - override /task: ae
+  - override /model: ae
+  - override /loss: ae
+  - override /ae_geometry: phate_potential
+  - override /ae_schedule: single_phase
+
+experiment_name: sciplex_ae_deg_log1p_phate_k20_d50
+
+task:
+  epochs: 100
+
+space:
+  ae_export_artifact_tag: sciplex_ae_deg_log1p_phate_k20_d50
+
+ae_geometry:
+  phate:
+    n_components: 50
+    knn: 20
+
+loss:
+  weights:
+    recon: 1.0
+    distance: 0.01
+    pullback: 0.0
+  distance_zeta: 20.0
+  distance_alpha_min: 0.0

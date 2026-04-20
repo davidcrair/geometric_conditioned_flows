@@ -1,0 +1,36 @@
+# @package _global_
+# wider MSE autoencoder: same depth as narrow (n_layers=3) but hidden_dim >> 256
+# so the architectural bottleneck is the latent dim not the hidden stack
+# n_layers=5 was tried and does not train with default init on this data (loss
+# stuck near initialization); n_layers=3 with wider hidden trains normally and
+# is the cleanest single-variable test of the bottleneck hypothesis
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: strict_k562
+  - override /space: log1p_deg
+  - override /condition: sciplex
+  - override /task: ae
+  - override /model: ae
+  - override /loss: ae
+  - override /ae_geometry: none
+  - override /ae_schedule: single_phase
+
+experiment_name: sciplex_ae_deg_log1p_mse_wide
+
+model:
+  family: standard
+  latent_dim: 512
+  hidden_dim: 1024
+  n_layers: 3
+  output_activation: relu
+
+task:
+  # match narrow mse ae epochs (sciplex/ae_log1p_mse_d512 override is 100)
+  # so wide vs narrow differ only in hidden_dim not in training budget
+  # d=512 run at 200 epochs overfit: train dropped to 0.265 while val
+  # climbed to 0.285 (12x bigger train-val gap than narrow)
+  epochs: 100
+
+space:
+  ae_export_artifact_tag: sciplex_ae_deg_log1p_mse_wide

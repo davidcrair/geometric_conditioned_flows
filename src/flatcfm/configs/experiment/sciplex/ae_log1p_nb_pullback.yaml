@@ -1,0 +1,39 @@
+# @package _global_
+# FlatVI-inspired NB autoencoder with pullback isotropy loss
+# single phase joint training: NB recon + pullback regularization
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: strict_k562
+  - override /space: log1p_deg
+  - override /condition: sciplex
+  - override /task: ae
+  - override /model: ae
+  - override /loss: ae
+  - override /ae_geometry: none
+  - override /ae_schedule: single_phase
+
+experiment_name: sciplex_ae_deg_log1p_nb_pullback
+
+model:
+  family: negative_binomial
+  latent_dim: 128
+  hidden_dim: 256
+  decoder:
+    dispersion_head: shared_gene
+
+task:
+  epochs: 200
+  batch_size: 256
+  lr: 0.0003
+
+loss:
+  weights:
+    recon: 1.0
+    pullback: 0.001
+
+trainer:
+  num_workers: 12
+
+space:
+  ae_export_artifact_tag: sciplex_ae_deg_log1p_nb_pullback

@@ -1,0 +1,10 @@
+# @package _global_
+defaults:
+  - toy/fm_identity
+  - _self_
+
+experiment_name: toy_fm_identity_ot
+task:
+  use_ot_coupling: true
+  ot_reg: 0.1
+  ot_pool_multiplier: 2

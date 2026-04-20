@@ -1,0 +1,26 @@
+#!/bin/sh
+
+limit_bytes=$((100 * 1024 * 1024))
+failed=0
+tmp_file=$(mktemp)
+
+git diff --cached --name-only --diff-filter=ACMR -z > "$tmp_file"
+
+while IFS= read -r -d '' path; do
+    size=$(git cat-file -s ":$path" 2>/dev/null || printf '0')
+    if [ "$size" -gt "$limit_bytes" ]; then
+        if [ "$failed" -eq 0 ]; then
+            printf '%s\n' 'commit blocked because staged files exceed 100 mb'
+        fi
+        failed=1
+        mb=$(awk "BEGIN { printf \"%.2f\", $size / 1024 / 1024 }")
+        printf '  %s mb  %s\n' "$mb" "$path"
+    fi
+done < "$tmp_file"
+
+rm -f "$tmp_file"
+
+if [ "$failed" -ne 0 ]; then
+    printf '%s\n' 'remove the file from the commit or use git lfs'
+    exit 1
+fi

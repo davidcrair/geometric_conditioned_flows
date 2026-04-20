@@ -1,0 +1,38 @@
+# @package _global_
+# perturbench-style setup: 30% perturbation holdout, all cells, 4000 HVGs, highest dose only
+# flow matching in MSE AE d512 latent space
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: perturbench_k562
+  - override /space: ae_latent
+  - override /condition: sciplex
+  - override /task: fm
+  - override /model: fm
+  - override /loss: fm
+
+experiment_name: sciplex_pb_fm_ae_mse_d512
+
+data:
+  source: file
+  data_path: artifacts/data/sciplex3_max_dose.h5ad
+
+task:
+  epochs: 500
+  use_ot_coupling: true
+
+space:
+  base:
+    kind: normalized_log1p
+    feature_set: hvg_union_deg
+    n_hvgs: 4000
+    target_sum: 10000
+    hvg_batch_key: cell_type
+    deg_control_column: vehicle
+    deg_control_value: 1
+    deg_perturbation_column: product_name
+    deg_cell_type_column: cell_type
+    deg_n_top_genes: 25
+  projections:
+    - kind: ae_latent
+      artifact_tag: sciplex_pb_ae_mse_d512

@@ -1,0 +1,13 @@
+_target_: flatcfm.modelcore.models.AutoencoderModel
+name: ae
+family: negative_binomial
+latent_dim: 128
+hidden_dim: 256
+n_layers: 3
+dropout: 0.1
+decoder:
+  # nb ae uses full cell depth with independent hvg means
+  # retrain existing nb checkpoints after this decoder change
+  mean_head: per_cell_gene
+  dispersion_head: shared_gene
+  rate_parameterization: independent

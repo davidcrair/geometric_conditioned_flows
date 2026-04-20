@@ -1,0 +1,23 @@
+# @package _global_
+
+defaults:
+  - override /data: toy
+  - override /splitter: toy
+  - override /space: nonlinear_rff_lift
+  - override /evaluation_space: raw_counts
+  - override /condition: toy
+  - override /task: ae
+  - override /model: ae
+  - override /loss: ae
+  - override /ae_geometry: none
+
+experiment_name: toy_ae_nonlinear_rff_mse
+model:
+  family: standard
+task:
+  batch_size: 256
+loss:
+  weights:
+    recon: 1.0
+    distance: 0.0
+    pullback: 0.0

@@ -1,0 +1,18 @@
+# @package _global_
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: strict_k562
+  - override /space: log1p_all_genes
+  - override /evaluation_space: same_as_training
+  - override /condition: sciplex
+  - override /task: ae
+  - override /model: ae
+  - override /loss: ae
+  - override /ae_geometry: none
+  - override /ae_schedule: single_phase
+
+experiment_name: sciplex_ae_log1p_all_genes_recon
+
+space:
+  ae_export_artifact_tag: sciplex_ae_log1p_all_genes_recon

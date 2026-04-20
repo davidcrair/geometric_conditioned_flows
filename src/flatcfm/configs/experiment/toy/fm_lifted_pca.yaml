@@ -1,0 +1,17 @@
+# @package _global_
+
+defaults:
+  - override /data: toy
+  - override /splitter: toy
+  - override /space: orthogonal_lift_pca
+  - override /evaluation_space: raw_counts
+  - override /condition: toy
+  - override /task: fm
+  - override /model: fm
+  - override /loss: fm
+  - override /ae_geometry: none
+
+experiment_name: toy_fm_lifted_pca
+task:
+  batch_size: 128
+  steps_per_epoch: 50

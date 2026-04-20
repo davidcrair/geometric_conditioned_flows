@@ -1,0 +1,41 @@
+# @package _global_
+# hybrid ae MSE reconstruction + PHATE diffusion potential distance
+# single phase switched from negative_binomial to standard (MSE) after
+# ablations showed MSE decodes gene space metrics cleaner than NB which
+# injects sampling noise at decode and hurts downstream fm metrics
+# see discussion in the geometric regularization sweep thread
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: strict_k562
+  - override /space: log1p_deg
+  - override /condition: sciplex
+  - override /task: ae
+  - override /model: ae
+  - override /loss: ae
+  - override /ae_geometry: phate_potential
+  - override /ae_schedule: single_phase
+
+experiment_name: sciplex_ae_deg_log1p_hybrid
+
+model:
+  family: standard
+  latent_dim: 128
+
+task:
+  epochs: 100
+
+space:
+  ae_export_artifact_tag: sciplex_ae_deg_log1p_hybrid
+
+loss:
+  weights:
+    recon: 1.0
+    distance: 0.01
+    pullback: 0.0
+  # these scales match the phate diffusion potential target used by the
+  # updated ae_geometry phate_potential config (mode phate_diff_potential)
+  # old 2D PHATE values were zeta=20 alpha_min=1000 which are wrong for
+  # the diff_potential scale median pairwise dist is ~140 vs old ~0.05
+  distance_zeta: 0.007
+  distance_alpha_min: 0.1

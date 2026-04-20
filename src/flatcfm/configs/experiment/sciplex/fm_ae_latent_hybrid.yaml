@@ -1,0 +1,28 @@
+# @package _global_
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: strict_k562
+  - override /space: ae_latent
+  - override /condition: sciplex
+  - override /task: fm
+  - override /model: fm
+  - override /loss: fm
+
+experiment_name: sciplex_fm_deg_ae_latent_hybrid
+
+space:
+  base:
+    kind: normalized_log1p
+    feature_set: hvg_union_deg
+    n_hvgs: 2000
+    target_sum: 10000
+    hvg_batch_key: cell_type
+    deg_control_column: vehicle
+    deg_control_value: 1
+    deg_perturbation_column: product_name
+    deg_cell_type_column: cell_type
+    deg_n_top_genes: 25
+  projections:
+    - kind: ae_latent
+      artifact_tag: sciplex_ae_deg_log1p_hybrid

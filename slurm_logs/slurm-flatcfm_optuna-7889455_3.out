@@ -1,0 +1,16 @@
+worker 3 starting
+experiment=sciplex/ode_pca
+hpo=ode
+study=hpo_ode_pca_d16
+storage=sqlite:////nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sweeps/hpo_ode_pca_d16.db
+trials_per_worker=20
+[2026-04-10 18:53:36,819][HYDRA] Study name: hpo_ode_pca_d16
+[2026-04-10 18:53:36,819][HYDRA] Storage: sqlite:////nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sweeps/hpo_ode_pca_d16.db
+[2026-04-10 18:53:36,819][HYDRA] Sampler: TPESampler
+[2026-04-10 18:53:36,819][HYDRA] Directions: ['minimize']
+[2026-04-10 18:53:37,630][HYDRA] Launching 1 jobs locally
+[2026-04-10 18:53:37,630][HYDRA] 	#0 : task.lr=0.0001755552008572156 task.weight_decay=2.0383378378927896e-06 task.batch_size=256 task.steps_per_epoch=25 task.ode_method=rk4 task.adjoint=True task.n_energy_steps=5 loss.weights.ot=1.6450167729679617 loss.weights.density=0.15254355636490155 loss.weights.energy=0.007038955344051558 loss.sinkhorn_reg=0.12785619990959488 loss.sinkhorn_max_iter=100 model.hidden_dim=128 model.hidden_layers=3 model.dropout=0.134171612267003 model.condition_dim=256 model.embedding_dim=32 model.projection_dim=128 experiment=sciplex/ode_pca hpo=ode trainer.accelerator=gpu trainer.devices=1 trainer.precision=bf16-mixed trainer.num_workers=6 trainer.pin_memory=True space.projections.0.n_components=16
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sweeps/sciplex_ode_deg_pca/20260410_185335/0
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sweeps/sciplex_ode_deg_pca/20260410_185335/0/checkpoints/best.ckpt
+[2026-04-10 18:59:41,351][HYDRA] Launching 1 jobs locally
+[2026-04-10 18:59:41,351][HYDRA] 	#1 : task.lr=0.0007818474152814576 task.weight_decay=6.0922933797947286e-06 task.batch_size=128 task.steps_per_epoch=100 task.ode_method=rk4 task.adjoint=False task.n_energy_steps=5 loss.weights.ot=0.7659442889411932 loss.weights.density=0.2222904625008922 loss.weights.energy=0.0031569200692182138 loss.sinkhorn_reg=0.06893792876589128 loss.sinkhorn_max_iter=50 model.hidden_dim=256 model.hidden_layers=4 model.dropout=0.1861200264670162 model.condition_dim=256 model.embedding_dim=64 model.projection_dim=128 experiment=sciplex/ode_pca hpo=ode trainer.accelerator=gpu trainer.devices=1 trainer.precision=bf16-mixed trainer.num_workers=6 trainer.pin_memory=True space.projections.0.n_components=16

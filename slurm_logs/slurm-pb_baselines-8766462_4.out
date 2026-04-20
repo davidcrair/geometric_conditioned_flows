@@ -1,0 +1,205 @@
+PERTURBENCH_DIR=/home/dac227/scratch_pi_sk2433/dac227/perturbench
+TMPDIR=/home/dac227/scratch_pi_sk2433/dac227/perturbench/tmp
+== task 4 ==
+experiment=neurips2025/sciplex3/cpa_best_params_sciplex3
+wrapper=/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/scripts/run_perturbench.py
+extra_args=seed=246 callbacks.early_stopping.patience=150
+[[36m2026-04-18 11:13:52,570[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating datamodule <perturbench.data.modules.AnnDataLitModule>[0m
+Split summary: 
+           train  val  test
+('mcf7',)    132   29    30
+('a549',)    132   30    29
+('k562',)    132   29    30
+[[36m2026-04-18 11:13:55,069[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating model <perturbench.modelcore.models.CPA>[0m
+[[36m2026-04-18 11:13:55,148[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating callbacks...[0m
+[[36m2026-04-18 11:13:55,149[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 11:13:55,149[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 11:13:55,150[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 11:13:55,150[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 11:13:55,152[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 11:13:55,152[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating loggers...[0m
+[[36m2026-04-18 11:13:55,152[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 11:13:55,154[0m][[34mperturbench.modelcore.utils[0m][[32mINFO[0m] - Instantiating an object of type <DictConfig>[0m
+[[36m2026-04-18 11:13:55,154[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Instantiating trainer <lightning.pytorch.trainer.Trainer>[0m
+[[36m2026-04-18 11:13:55,197[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Starting training![0m
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━┓
+┃    ┃ Name                                             ┃ Ty… ┃ Pa… ┃ Mo… ┃ F… ┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━╇━━━━━╇━━━━━╇━━━━┩
+│ 0  │ adv_loss_drugs                                   │ Cr… │   0 │ tr… │  0 │
+│ 1  │ adv_loss_fn                                      │ Cr… │   0 │ tr… │  0 │
+│ 2  │ encoder                                          │ Va… │ 17… │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 3  │ encoder.network                                  │ Se… │ 16… │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 4  │ encoder.network.0                                │ Li… │ 11… │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 5  │ encoder.network.1                                │ La… │ 2.6 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 6  │ encoder.network.2                                │ Re… │   0 │ tr… │  0 │
+│ 7  │ encoder.network.3                                │ Dr… │   0 │ tr… │  0 │
+│ 8  │ encoder.network.4                                │ Li… │ 1.6 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 9  │ encoder.network.5                                │ La… │ 2.6 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 10 │ encoder.network.6                                │ Re… │   0 │ tr… │  0 │
+│ 11 │ encoder.network.7                                │ Dr… │   0 │ tr… │  0 │
+│ 12 │ encoder.network.8                                │ Li… │ 1.6 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 13 │ encoder.network.9                                │ La… │ 2.6 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 14 │ encoder.network.10                               │ Re… │   0 │ tr… │  0 │
+│ 15 │ encoder.network.11                               │ Dr… │   0 │ tr… │  0 │
+│ 16 │ encoder.network.12                               │ Li… │ 1.6 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 17 │ encoder.network.13                               │ La… │ 2.6 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 18 │ encoder.network.14                               │ Re… │   0 │ tr… │  0 │
+│ 19 │ encoder.network.15                               │ Dr… │   0 │ tr… │  0 │
+│ 20 │ encoder.mu_x                                     │ Li… │ 655 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 21 │ encoder.var_x                                    │ Li… │ 655 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 22 │ decoder                                          │ De… │ 16… │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 23 │ decoder.network                                  │ MLP │ 16… │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 24 │ decoder.network.network                          │ Se… │ 16… │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 25 │ decoder.network.network.0                        │ Li… │ 656 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 26 │ decoder.network.network.1                        │ Li… │ 1.6 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 27 │ decoder.network.network.2                        │ La… │   0 │ tr… │  0 │
+│ 28 │ decoder.network.network.3                        │ Re… │   0 │ tr… │  0 │
+│ 29 │ decoder.network.network.4                        │ Dr… │   0 │ tr… │  0 │
+│ 30 │ decoder.network.network.5                        │ Li… │ 1.6 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 31 │ decoder.network.network.6                        │ La… │   0 │ tr… │  0 │
+│ 32 │ decoder.network.network.7                        │ Re… │   0 │ tr… │  0 │
+│ 33 │ decoder.network.network.8                        │ Dr… │   0 │ tr… │  0 │
+│ 34 │ decoder.network.network.9                        │ Li… │ 1.6 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 35 │ decoder.network.network.10                       │ La… │   0 │ tr… │  0 │
+│ 36 │ decoder.network.network.11                       │ Re… │   0 │ tr… │  0 │
+│ 37 │ decoder.network.network.12                       │ Dr… │   0 │ tr… │  0 │
+│ 38 │ decoder.network.network.13                       │ Li… │ 11… │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 39 │ pert_network                                     │ MLP │ 4.2 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 40 │ pert_network.network                             │ Se… │ 4.2 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 41 │ pert_network.network.0                           │ Li… │ 241 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 42 │ pert_network.network.1                           │ Li… │ 1.6 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 43 │ pert_network.network.2                           │ La… │   0 │ tr… │  0 │
+│ 44 │ pert_network.network.3                           │ Re… │   0 │ tr… │  0 │
+│ 45 │ pert_network.network.4                           │ Dr… │   0 │ tr… │  0 │
+│ 46 │ pert_network.network.5                           │ Li… │ 1.6 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 47 │ pert_network.network.6                           │ La… │   0 │ tr… │  0 │
+│ 48 │ pert_network.network.7                           │ Re… │   0 │ tr… │  0 │
+│ 49 │ pert_network.network.8                           │ Dr… │   0 │ tr… │  0 │
+│ 50 │ pert_network.network.9                           │ Li… │ 655 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 51 │ perturbation_adversary_classifier                │ MLP │ 562 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 52 │ perturbation_adversary_classifier.network        │ Se… │ 562 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 53 │ perturbation_adversary_classifier.network.0      │ Li… │ 196 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 54 │ perturbation_adversary_classifier.network.1      │ Li… │ 147 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 55 │ perturbation_adversary_classifier.network.2      │ La… │   0 │ tr… │  0 │
+│ 56 │ perturbation_adversary_classifier.network.3      │ Re… │   0 │ tr… │  0 │
+│ 57 │ perturbation_adversary_classifier.network.4      │ Dr… │   0 │ tr… │  0 │
+│ 58 │ perturbation_adversary_classifier.network.5      │ Li… │ 147 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 59 │ perturbation_adversary_classifier.network.6      │ La… │   0 │ tr… │  0 │
+│ 60 │ perturbation_adversary_classifier.network.7      │ Re… │   0 │ tr… │  0 │
+│ 61 │ perturbation_adversary_classifier.network.8      │ Dr… │   0 │ tr… │  0 │
+│ 62 │ perturbation_adversary_classifier.network.9      │ Li… │ 72… │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 63 │ covars_embeddings                                │ Mo… │ 2.3 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 64 │ covars_embeddings.cell_type                      │ MLP │ 2.3 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 65 │ covars_embeddings.cell_type.network              │ Se… │ 2.3 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 66 │ covars_embeddings.cell_type.network.0            │ Li… │ 5.1 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 67 │ covars_embeddings.cell_type.network.1            │ Li… │ 1.6 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 68 │ covars_embeddings.cell_type.network.2            │ La… │   0 │ tr… │  0 │
+│ 69 │ covars_embeddings.cell_type.network.3            │ Re… │   0 │ tr… │  0 │
+│ 70 │ covars_embeddings.cell_type.network.4            │ Dr… │   0 │ tr… │  0 │
+│ 71 │ covars_embeddings.cell_type.network.5            │ Li… │ 655 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 72 │ covars_adversary_classifiers                     │ Mo… │ 491 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 73 │ covars_adversary_classifiers.cell_type           │ MLP │ 491 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 74 │ covars_adversary_classifiers.cell_type.network   │ Se… │ 491 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 75 │ covars_adversary_classifiers.cell_type.network.0 │ Li… │ 196 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 76 │ covars_adversary_classifiers.cell_type.network.1 │ Li… │ 147 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 77 │ covars_adversary_classifiers.cell_type.network.2 │ La… │   0 │ tr… │  0 │
+│ 78 │ covars_adversary_classifiers.cell_type.network.3 │ Re… │   0 │ tr… │  0 │
+│ 79 │ covars_adversary_classifiers.cell_type.network.4 │ Dr… │   0 │ tr… │  0 │
+│ 80 │ covars_adversary_classifiers.cell_type.network.5 │ Li… │ 147 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 81 │ covars_adversary_classifiers.cell_type.network.6 │ La… │   0 │ tr… │  0 │
+│ 82 │ covars_adversary_classifiers.cell_type.network.7 │ Re… │   0 │ tr… │  0 │
+│ 83 │ covars_adversary_classifiers.cell_type.network.8 │ Dr… │   0 │ tr… │  0 │
+│ 84 │ covars_adversary_classifiers.cell_type.network.9 │ Li… │ 1.2 │ tr… │  0 │
+│    │                                                  │     │   K │     │    │
+│ 85 │ generative_modules                               │ Mo… │ 40… │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+│ 86 │ adversary_modules                                │ Mo… │ 1.1 │ tr… │  0 │
+│    │                                                  │     │   M │     │    │
+└────┴──────────────────────────────────────────────────┴─────┴─────┴─────┴────┘
+Trainable params: 41.5 M                                                        
+Non-trainable params: 0                                                         
+Total params: 41.5 M                                                            
+Total estimated model params size (MB): 165                                     
+Modules in train mode: 87                                                       
+Modules in eval mode: 0                                                         
+Total FLOPs: 0                                                                  
+Epoch 499/499 ━━━━━━━━━━━━━━━━ 31/31 0:00:01 •       19.04it/s v_num: 0         
+                                     0:00:00                   train_total_loss:
+                                                               209.052          
+                                                               train_recon_loss:
+                                                               208.765          
+                                                               train_kl_loss:   
+                                                               5.832            
+                                                               train_adv_loss:  
+                                                               5.970            
+                                                               train_covariate_…
+                                                               1.000            
+                                                               train_perturbati…
+                                                               4.969            
+                                                               train_penalty_ad…
+                                                               0.000            
+                                                               train_penalty_co…
+                                                               0.000            
+                                                               train_penalty_pe…
+                                                               0.000            
+                                                               train_acc_perts: 
+                                                               0.009 val_loss:  
+                                                               200.423          
+[[36m2026-04-18 11:36:28,100[0m][[34mperturbench.modelcore.train[0m][[32mINFO[0m] - Starting testing![0m
+model                         CPA
+rmse_average             0.019240
+rmse_rank_average        0.188600
+cosine_pca_average       0.963500
+cosine_rank_pca_average  0.202000
+cosine_logfc             0.347400
+cosine_rank_logfc        0.210000
+r2_score_scores          0.000423
+top_k_recall_scores      0.000233
+mmd_pca                  0.611500
+mmd_rank_pca             0.241500
+Testing ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 0:00:46 • 0:00:00 0.00it/s 
+== task 4 done ==

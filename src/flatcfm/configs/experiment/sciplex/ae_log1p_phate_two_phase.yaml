@@ -1,0 +1,17 @@
+# @package _global_
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: strict_k562
+  - override /space: log1p_deg
+  - override /condition: sciplex
+  - override /task: ae
+  - override /model: ae
+  - override /loss: ae
+  - override /ae_geometry: phate_potential
+  - override /ae_schedule: two_phase
+
+experiment_name: sciplex_ae_deg_log1p_phate_two_phase
+
+space:
+  ae_export_artifact_tag: sciplex_ae_deg_log1p_phate_two_phase

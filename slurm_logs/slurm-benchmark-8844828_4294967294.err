@@ -1,0 +1,231 @@
+[rank: 0] Seed set to 42
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+`Trainer(limit_train_batches=1.0)` was configured so 100% of the batches per epoch will be used..
+`Trainer(limit_val_batches=1.0)` was configured so 100% of the batches will be used..
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/src/flatcfm/modelcore/models/base.py:85: UserWarning: No optimizer specified in task_cfg; defaulting to AdamW (lr=0.0001, weight_decay=0.01).
+  rank_zero_warn(
+SLURM auto-requeueing enabled. Setting signal handlers.
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/lightning/pytorch/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+Training:   0%|          | 0/100 [00:00<?, ?epoch/s]
+     Val:[ATraining:   0%|          | 0/100 [00:00<?, ?epoch/s, loss=3.766, fm_mse=3.766]Training:   1%|          | 1/100 [00:00<01:34,  1.05epoch/s, loss=3.766, fm_mse=3.766]
+     Val: loss=4.288, fm_mse=4.288[A
+     Val: loss=4.288, fm_mse=4.288[ATraining:   1%|          | 1/100 [00:01<01:34,  1.05epoch/s, loss=3.481, fm_mse=3.481]Training:   2%|▏         | 2/100 [00:01<01:34,  1.03epoch/s, loss=3.481, fm_mse=3.481]
+     Val: loss=3.125, fm_mse=3.125[A
+     Val: loss=3.125, fm_mse=3.125[ATraining:   2%|▏         | 2/100 [00:02<01:34,  1.03epoch/s, loss=3.298, fm_mse=3.298]Training:   3%|▎         | 3/100 [00:02<01:34,  1.03epoch/s, loss=3.298, fm_mse=3.298]
+     Val: loss=3.004, fm_mse=3.004[A
+     Val: loss=3.004, fm_mse=3.004[ATraining:   3%|▎         | 3/100 [00:03<01:34,  1.03epoch/s, loss=2.980, fm_mse=2.980]Training:   4%|▍         | 4/100 [00:03<01:33,  1.03epoch/s, loss=2.980, fm_mse=2.980]
+     Val: loss=2.879, fm_mse=2.879[A
+     Val: loss=2.879, fm_mse=2.879[ATraining:   4%|▍         | 4/100 [00:04<01:33,  1.03epoch/s, loss=3.092, fm_mse=3.092]Training:   5%|▌         | 5/100 [00:04<01:33,  1.02epoch/s, loss=3.092, fm_mse=3.092]
+     Val: loss=2.703, fm_mse=2.703[A
+     Val: loss=2.703, fm_mse=2.703[ATraining:   5%|▌         | 5/100 [00:05<01:33,  1.02epoch/s, loss=2.685, fm_mse=2.685]Training:   6%|▌         | 6/100 [00:05<01:32,  1.02epoch/s, loss=2.685, fm_mse=2.685]
+     Val: loss=2.613, fm_mse=2.613[A
+     Val: loss=2.613, fm_mse=2.613[ATraining:   6%|▌         | 6/100 [00:06<01:32,  1.02epoch/s, loss=2.945, fm_mse=2.945]Training:   7%|▋         | 7/100 [00:06<01:31,  1.01epoch/s, loss=2.945, fm_mse=2.945]
+     Val: loss=2.623, fm_mse=2.623[A
+     Val: loss=2.623, fm_mse=2.623[ATraining:   7%|▋         | 7/100 [00:07<01:31,  1.01epoch/s, loss=2.774, fm_mse=2.774]Training:   8%|▊         | 8/100 [00:07<01:30,  1.02epoch/s, loss=2.774, fm_mse=2.774]
+     Val: loss=2.568, fm_mse=2.568[A
+     Val: loss=2.568, fm_mse=2.568[ATraining:   8%|▊         | 8/100 [00:08<01:30,  1.02epoch/s, loss=2.712, fm_mse=2.712]Training:   9%|▉         | 9/100 [00:08<01:30,  1.01epoch/s, loss=2.712, fm_mse=2.712]
+     Val: loss=2.515, fm_mse=2.515[A
+     Val: loss=2.515, fm_mse=2.515[ATraining:   9%|▉         | 9/100 [00:09<01:30,  1.01epoch/s, loss=2.455, fm_mse=2.455]Training:  10%|█         | 10/100 [00:09<01:29,  1.00epoch/s, loss=2.455, fm_mse=2.455]
+     Val: loss=2.393, fm_mse=2.393[A
+     Val: loss=2.393, fm_mse=2.393[ATraining:  10%|█         | 10/100 [00:10<01:29,  1.00epoch/s, loss=2.487, fm_mse=2.487]Training:  11%|█         | 11/100 [00:10<01:29,  1.00s/epoch, loss=2.487, fm_mse=2.487]
+     Val: loss=2.482, fm_mse=2.482[A
+     Val: loss=2.482, fm_mse=2.482[ATraining:  11%|█         | 11/100 [00:11<01:29,  1.00s/epoch, loss=2.577, fm_mse=2.577]Training:  12%|█▏        | 12/100 [00:11<01:27,  1.00epoch/s, loss=2.577, fm_mse=2.577]
+     Val: loss=2.387, fm_mse=2.387[A
+     Val: loss=2.387, fm_mse=2.387[ATraining:  12%|█▏        | 12/100 [00:12<01:27,  1.00epoch/s, loss=2.394, fm_mse=2.394]Training:  13%|█▎        | 13/100 [00:12<01:27,  1.00s/epoch, loss=2.394, fm_mse=2.394]
+     Val: loss=2.322, fm_mse=2.322[A
+     Val: loss=2.322, fm_mse=2.322[ATraining:  13%|█▎        | 13/100 [00:13<01:27,  1.00s/epoch, loss=2.413, fm_mse=2.413]Training:  14%|█▍        | 14/100 [00:13<01:27,  1.01s/epoch, loss=2.413, fm_mse=2.413]
+     Val: loss=2.200, fm_mse=2.200[A
+     Val: loss=2.200, fm_mse=2.200[ATraining:  14%|█▍        | 14/100 [00:14<01:27,  1.01s/epoch, loss=2.282, fm_mse=2.282]Training:  15%|█▌        | 15/100 [00:14<01:26,  1.02s/epoch, loss=2.282, fm_mse=2.282]
+     Val: loss=2.174, fm_mse=2.174[A
+     Val: loss=2.174, fm_mse=2.174[ATraining:  15%|█▌        | 15/100 [00:15<01:26,  1.02s/epoch, loss=2.364, fm_mse=2.364]Training:  16%|█▌        | 16/100 [00:15<01:25,  1.02s/epoch, loss=2.364, fm_mse=2.364]
+     Val: loss=2.232, fm_mse=2.232[A
+     Val: loss=2.232, fm_mse=2.232[ATraining:  16%|█▌        | 16/100 [00:16<01:25,  1.02s/epoch, loss=2.258, fm_mse=2.258]Training:  17%|█▋        | 17/100 [00:16<01:23,  1.01s/epoch, loss=2.258, fm_mse=2.258]
+     Val: loss=2.157, fm_mse=2.157[A
+     Val: loss=2.157, fm_mse=2.157[ATraining:  17%|█▋        | 17/100 [00:17<01:23,  1.01s/epoch, loss=2.340, fm_mse=2.340]Training:  18%|█▊        | 18/100 [00:17<01:23,  1.01s/epoch, loss=2.340, fm_mse=2.340]
+     Val: loss=2.097, fm_mse=2.097[A
+     Val: loss=2.097, fm_mse=2.097[ATraining:  18%|█▊        | 18/100 [00:18<01:23,  1.01s/epoch, loss=2.260, fm_mse=2.260]Training:  19%|█▉        | 19/100 [00:18<01:22,  1.02s/epoch, loss=2.260, fm_mse=2.260]
+     Val: loss=2.068, fm_mse=2.068[A
+     Val: loss=2.068, fm_mse=2.068[ATraining:  19%|█▉        | 19/100 [00:20<01:22,  1.02s/epoch, loss=2.167, fm_mse=2.167]Training:  20%|██        | 20/100 [00:20<01:21,  1.02s/epoch, loss=2.167, fm_mse=2.167]
+     Val: loss=2.027, fm_mse=2.027[A
+     Val: loss=2.027, fm_mse=2.027[ATraining:  20%|██        | 20/100 [00:21<01:21,  1.02s/epoch, loss=2.206, fm_mse=2.206]Training:  21%|██        | 21/100 [00:21<01:20,  1.02s/epoch, loss=2.206, fm_mse=2.206]
+     Val: loss=1.994, fm_mse=1.994[A
+     Val: loss=1.994, fm_mse=1.994[ATraining:  21%|██        | 21/100 [00:22<01:20,  1.02s/epoch, loss=2.101, fm_mse=2.101]Training:  22%|██▏       | 22/100 [00:22<01:19,  1.01s/epoch, loss=2.101, fm_mse=2.101]
+     Val: loss=1.963, fm_mse=1.963[A
+     Val: loss=1.963, fm_mse=1.963[ATraining:  22%|██▏       | 22/100 [00:23<01:19,  1.01s/epoch, loss=2.047, fm_mse=2.047]Training:  23%|██▎       | 23/100 [00:23<01:17,  1.01s/epoch, loss=2.047, fm_mse=2.047]
+     Val: loss=1.901, fm_mse=1.901[A
+     Val: loss=1.901, fm_mse=1.901[ATraining:  23%|██▎       | 23/100 [00:24<01:17,  1.01s/epoch, loss=1.957, fm_mse=1.957]Training:  24%|██▍       | 24/100 [00:24<01:16,  1.01s/epoch, loss=1.957, fm_mse=1.957]
+     Val: loss=1.973, fm_mse=1.973[A
+     Val: loss=1.973, fm_mse=1.973[ATraining:  24%|██▍       | 24/100 [00:24<01:16,  1.01s/epoch, loss=2.023, fm_mse=2.023]Training:  25%|██▌       | 25/100 [00:24<01:14,  1.01epoch/s, loss=2.023, fm_mse=2.023]
+     Val: loss=1.885, fm_mse=1.885[A
+     Val: loss=1.885, fm_mse=1.885[ATraining:  25%|██▌       | 25/100 [00:26<01:14,  1.01epoch/s, loss=1.929, fm_mse=1.929]Training:  26%|██▌       | 26/100 [00:26<01:13,  1.00epoch/s, loss=1.929, fm_mse=1.929]
+     Val: loss=1.827, fm_mse=1.827[A
+     Val: loss=1.827, fm_mse=1.827[ATraining:  26%|██▌       | 26/100 [00:27<01:13,  1.00epoch/s, loss=1.904, fm_mse=1.904]Training:  27%|██▋       | 27/100 [00:27<01:12,  1.00epoch/s, loss=1.904, fm_mse=1.904]
+     Val: loss=1.814, fm_mse=1.814[A
+     Val: loss=1.814, fm_mse=1.814[ATraining:  27%|██▋       | 27/100 [00:28<01:12,  1.00epoch/s, loss=1.859, fm_mse=1.859]Training:  28%|██▊       | 28/100 [00:28<01:12,  1.00s/epoch, loss=1.859, fm_mse=1.859]
+     Val: loss=1.818, fm_mse=1.818[A
+     Val: loss=1.818, fm_mse=1.818[ATraining:  28%|██▊       | 28/100 [00:28<01:12,  1.00s/epoch, loss=1.916, fm_mse=1.916]Training:  29%|██▉       | 29/100 [00:28<01:09,  1.01epoch/s, loss=1.916, fm_mse=1.916]
+     Val: loss=1.760, fm_mse=1.760[A
+     Val: loss=1.760, fm_mse=1.760[ATraining:  29%|██▉       | 29/100 [00:29<01:09,  1.01epoch/s, loss=1.807, fm_mse=1.807]Training:  30%|███       | 30/100 [00:29<01:09,  1.01epoch/s, loss=1.807, fm_mse=1.807]
+     Val: loss=1.903, fm_mse=1.903[A
+     Val: loss=1.903, fm_mse=1.903[ATraining:  30%|███       | 30/100 [00:30<01:09,  1.01epoch/s, loss=1.862, fm_mse=1.862]Training:  31%|███       | 31/100 [00:30<01:07,  1.02epoch/s, loss=1.862, fm_mse=1.862]
+     Val: loss=1.751, fm_mse=1.751[A
+     Val: loss=1.751, fm_mse=1.751[ATraining:  31%|███       | 31/100 [00:31<01:07,  1.02epoch/s, loss=1.787, fm_mse=1.787]Training:  32%|███▏      | 32/100 [00:31<01:07,  1.01epoch/s, loss=1.787, fm_mse=1.787]
+     Val: loss=1.799, fm_mse=1.799[A
+     Val: loss=1.799, fm_mse=1.799[ATraining:  32%|███▏      | 32/100 [00:32<01:07,  1.01epoch/s, loss=1.796, fm_mse=1.796]Training:  33%|███▎      | 33/100 [00:32<01:05,  1.02epoch/s, loss=1.796, fm_mse=1.796]
+     Val: loss=1.705, fm_mse=1.705[A
+     Val: loss=1.705, fm_mse=1.705[ATraining:  33%|███▎      | 33/100 [00:33<01:05,  1.02epoch/s, loss=1.733, fm_mse=1.733]Training:  34%|███▍      | 34/100 [00:33<01:05,  1.00epoch/s, loss=1.733, fm_mse=1.733]
+     Val: loss=1.699, fm_mse=1.699[A
+     Val: loss=1.699, fm_mse=1.699[ATraining:  34%|███▍      | 34/100 [00:34<01:05,  1.00epoch/s, loss=1.802, fm_mse=1.802]Training:  35%|███▌      | 35/100 [00:34<01:05,  1.01s/epoch, loss=1.802, fm_mse=1.802]
+     Val: loss=1.630, fm_mse=1.630[A
+     Val: loss=1.630, fm_mse=1.630[ATraining:  35%|███▌      | 35/100 [00:36<01:05,  1.01s/epoch, loss=1.824, fm_mse=1.824]Training:  36%|███▌      | 36/100 [00:36<01:05,  1.02s/epoch, loss=1.824, fm_mse=1.824]
+     Val: loss=1.670, fm_mse=1.670[A
+     Val: loss=1.670, fm_mse=1.670[ATraining:  36%|███▌      | 36/100 [00:36<01:05,  1.02s/epoch, loss=1.915, fm_mse=1.915]Training:  37%|███▋      | 37/100 [00:36<01:03,  1.00s/epoch, loss=1.915, fm_mse=1.915]
+     Val: loss=1.716, fm_mse=1.716[A
+     Val: loss=1.716, fm_mse=1.716[ATraining:  37%|███▋      | 37/100 [00:37<01:03,  1.00s/epoch, loss=1.755, fm_mse=1.755]Training:  38%|███▊      | 38/100 [00:37<01:01,  1.01epoch/s, loss=1.755, fm_mse=1.755]
+     Val: loss=1.639, fm_mse=1.639[A
+     Val: loss=1.639, fm_mse=1.639[ATraining:  38%|███▊      | 38/100 [00:38<01:01,  1.01epoch/s, loss=1.775, fm_mse=1.775]Training:  39%|███▉      | 39/100 [00:38<00:59,  1.02epoch/s, loss=1.775, fm_mse=1.775]
+     Val: loss=1.659, fm_mse=1.659[A
+     Val: loss=1.659, fm_mse=1.659[ATraining:  39%|███▉      | 39/100 [00:39<00:59,  1.02epoch/s, loss=1.717, fm_mse=1.717]Training:  40%|████      | 40/100 [00:39<00:58,  1.03epoch/s, loss=1.717, fm_mse=1.717]
+     Val: loss=1.631, fm_mse=1.631[A
+     Val: loss=1.631, fm_mse=1.631[ATraining:  40%|████      | 40/100 [00:40<00:58,  1.03epoch/s, loss=1.769, fm_mse=1.769]Training:  41%|████      | 41/100 [00:40<00:57,  1.03epoch/s, loss=1.769, fm_mse=1.769]
+     Val: loss=1.645, fm_mse=1.645[A
+     Val: loss=1.645, fm_mse=1.645[ATraining:  41%|████      | 41/100 [00:41<00:57,  1.03epoch/s, loss=1.685, fm_mse=1.685]Training:  42%|████▏     | 42/100 [00:41<00:55,  1.04epoch/s, loss=1.685, fm_mse=1.685]
+     Val: loss=1.640, fm_mse=1.640[A
+     Val: loss=1.640, fm_mse=1.640[ATraining:  42%|████▏     | 42/100 [00:42<00:55,  1.04epoch/s, loss=1.699, fm_mse=1.699]Training:  43%|████▎     | 43/100 [00:42<00:55,  1.03epoch/s, loss=1.699, fm_mse=1.699]
+     Val: loss=1.616, fm_mse=1.616[A
+     Val: loss=1.616, fm_mse=1.616[ATraining:  43%|████▎     | 43/100 [00:43<00:55,  1.03epoch/s, loss=1.664, fm_mse=1.664]Training:  44%|████▍     | 44/100 [00:43<00:55,  1.01epoch/s, loss=1.664, fm_mse=1.664]
+     Val: loss=1.585, fm_mse=1.585[A
+     Val: loss=1.585, fm_mse=1.585[ATraining:  44%|████▍     | 44/100 [00:44<00:55,  1.01epoch/s, loss=1.647, fm_mse=1.647]Training:  45%|████▌     | 45/100 [00:44<00:54,  1.00epoch/s, loss=1.647, fm_mse=1.647]
+     Val: loss=1.562, fm_mse=1.562[A
+     Val: loss=1.562, fm_mse=1.562[ATraining:  45%|████▌     | 45/100 [00:45<00:54,  1.00epoch/s, loss=1.707, fm_mse=1.707]Training:  46%|████▌     | 46/100 [00:45<00:53,  1.00epoch/s, loss=1.707, fm_mse=1.707]
+     Val: loss=1.623, fm_mse=1.623[A
+     Val: loss=1.623, fm_mse=1.623[ATraining:  46%|████▌     | 46/100 [00:46<00:53,  1.00epoch/s, loss=1.661, fm_mse=1.661]Training:  47%|████▋     | 47/100 [00:46<00:52,  1.01epoch/s, loss=1.661, fm_mse=1.661]
+     Val: loss=1.547, fm_mse=1.547[A
+     Val: loss=1.547, fm_mse=1.547[ATraining:  47%|████▋     | 47/100 [00:47<00:52,  1.01epoch/s, loss=1.660, fm_mse=1.660]Training:  48%|████▊     | 48/100 [00:47<00:51,  1.01epoch/s, loss=1.660, fm_mse=1.660]
+     Val: loss=1.530, fm_mse=1.530[A
+     Val: loss=1.530, fm_mse=1.530[ATraining:  48%|████▊     | 48/100 [00:48<00:51,  1.01epoch/s, loss=1.613, fm_mse=1.613]Training:  49%|████▉     | 49/100 [00:48<00:51,  1.00s/epoch, loss=1.613, fm_mse=1.613]
+     Val: loss=1.525, fm_mse=1.525[A
+     Val: loss=1.525, fm_mse=1.525[ATraining:  49%|████▉     | 49/100 [00:49<00:51,  1.00s/epoch, loss=1.586, fm_mse=1.586]Training:  50%|█████     | 50/100 [00:49<00:50,  1.00s/epoch, loss=1.586, fm_mse=1.586]
+     Val: loss=1.520, fm_mse=1.520[A
+     Val: loss=1.520, fm_mse=1.520[ATraining:  50%|█████     | 50/100 [00:50<00:50,  1.00s/epoch, loss=1.633, fm_mse=1.633]Training:  51%|█████     | 51/100 [00:50<00:49,  1.01s/epoch, loss=1.633, fm_mse=1.633]
+     Val: loss=1.533, fm_mse=1.533[A
+     Val: loss=1.533, fm_mse=1.533[ATraining:  51%|█████     | 51/100 [00:51<00:49,  1.01s/epoch, loss=1.552, fm_mse=1.552]Training:  52%|█████▏    | 52/100 [00:51<00:47,  1.00epoch/s, loss=1.552, fm_mse=1.552]
+     Val: loss=1.490, fm_mse=1.490[A
+     Val: loss=1.490, fm_mse=1.490[ATraining:  52%|█████▏    | 52/100 [00:52<00:47,  1.00epoch/s, loss=1.559, fm_mse=1.559]Training:  53%|█████▎    | 53/100 [00:52<00:47,  1.00s/epoch, loss=1.559, fm_mse=1.559]
+     Val: loss=1.479, fm_mse=1.479[A
+     Val: loss=1.479, fm_mse=1.479[ATraining:  53%|█████▎    | 53/100 [00:53<00:47,  1.00s/epoch, loss=1.586, fm_mse=1.586]Training:  54%|█████▍    | 54/100 [00:53<00:46,  1.00s/epoch, loss=1.586, fm_mse=1.586]
+     Val: loss=1.476, fm_mse=1.476[A
+     Val: loss=1.476, fm_mse=1.476[ATraining:  54%|█████▍    | 54/100 [00:54<00:46,  1.00s/epoch, loss=1.565, fm_mse=1.565]Training:  55%|█████▌    | 55/100 [00:54<00:45,  1.00s/epoch, loss=1.565, fm_mse=1.565]
+     Val: loss=1.477, fm_mse=1.477[A
+     Val: loss=1.477, fm_mse=1.477[ATraining:  55%|█████▌    | 55/100 [00:55<00:45,  1.00s/epoch, loss=1.559, fm_mse=1.559]Training:  56%|█████▌    | 56/100 [00:55<00:43,  1.01epoch/s, loss=1.559, fm_mse=1.559]
+     Val: loss=1.562, fm_mse=1.562[A
+     Val: loss=1.562, fm_mse=1.562[ATraining:  56%|█████▌    | 56/100 [00:56<00:43,  1.01epoch/s, loss=1.577, fm_mse=1.577]Training:  57%|█████▋    | 57/100 [00:56<00:42,  1.02epoch/s, loss=1.577, fm_mse=1.577]
+     Val: loss=1.540, fm_mse=1.540[A
+     Val: loss=1.540, fm_mse=1.540[ATraining:  57%|█████▋    | 57/100 [00:57<00:42,  1.02epoch/s, loss=1.577, fm_mse=1.577]Training:  58%|█████▊    | 58/100 [00:57<00:40,  1.03epoch/s, loss=1.577, fm_mse=1.577]
+     Val: loss=1.486, fm_mse=1.486[A
+     Val: loss=1.486, fm_mse=1.486[ATraining:  58%|█████▊    | 58/100 [00:58<00:40,  1.03epoch/s, loss=1.589, fm_mse=1.589]Training:  59%|█████▉    | 59/100 [00:58<00:39,  1.03epoch/s, loss=1.589, fm_mse=1.589]
+     Val: loss=1.500, fm_mse=1.500[A
+     Val: loss=1.500, fm_mse=1.500[ATraining:  59%|█████▉    | 59/100 [00:59<00:39,  1.03epoch/s, loss=1.589, fm_mse=1.589]Training:  60%|██████    | 60/100 [00:59<00:38,  1.03epoch/s, loss=1.589, fm_mse=1.589]
+     Val: loss=1.528, fm_mse=1.528[A
+     Val: loss=1.528, fm_mse=1.528[ATraining:  60%|██████    | 60/100 [01:00<00:38,  1.03epoch/s, loss=1.529, fm_mse=1.529]Training:  61%|██████    | 61/100 [01:00<00:37,  1.03epoch/s, loss=1.529, fm_mse=1.529]
+     Val: loss=1.481, fm_mse=1.481[A
+     Val: loss=1.481, fm_mse=1.481[ATraining:  61%|██████    | 61/100 [01:01<00:37,  1.03epoch/s, loss=1.610, fm_mse=1.610]Training:  62%|██████▏   | 62/100 [01:01<00:36,  1.03epoch/s, loss=1.610, fm_mse=1.610]
+     Val: loss=1.487, fm_mse=1.487[A
+     Val: loss=1.487, fm_mse=1.487[ATraining:  62%|██████▏   | 62/100 [01:02<00:36,  1.03epoch/s, loss=1.514, fm_mse=1.514]Training:  63%|██████▎   | 63/100 [01:02<00:35,  1.04epoch/s, loss=1.514, fm_mse=1.514]
+     Val: loss=1.402, fm_mse=1.402[A
+     Val: loss=1.402, fm_mse=1.402[ATraining:  63%|██████▎   | 63/100 [01:03<00:35,  1.04epoch/s, loss=1.542, fm_mse=1.542]Training:  64%|██████▍   | 64/100 [01:03<00:35,  1.03epoch/s, loss=1.542, fm_mse=1.542]
+     Val: loss=1.455, fm_mse=1.455[A
+     Val: loss=1.455, fm_mse=1.455[ATraining:  64%|██████▍   | 64/100 [01:04<00:35,  1.03epoch/s, loss=1.538, fm_mse=1.538]Training:  65%|██████▌   | 65/100 [01:04<00:33,  1.03epoch/s, loss=1.538, fm_mse=1.538]
+     Val: loss=1.437, fm_mse=1.437[A
+     Val: loss=1.437, fm_mse=1.437[ATraining:  65%|██████▌   | 65/100 [01:05<00:33,  1.03epoch/s, loss=1.520, fm_mse=1.520]Training:  66%|██████▌   | 66/100 [01:05<00:32,  1.04epoch/s, loss=1.520, fm_mse=1.520]
+     Val: loss=1.476, fm_mse=1.476[A
+     Val: loss=1.476, fm_mse=1.476[ATraining:  66%|██████▌   | 66/100 [01:06<00:32,  1.04epoch/s, loss=1.479, fm_mse=1.479]Training:  67%|██████▋   | 67/100 [01:06<00:31,  1.04epoch/s, loss=1.479, fm_mse=1.479]
+     Val: loss=1.450, fm_mse=1.450[A
+     Val: loss=1.450, fm_mse=1.450[ATraining:  67%|██████▋   | 67/100 [01:07<00:31,  1.04epoch/s, loss=1.520, fm_mse=1.520]Training:  68%|██████▊   | 68/100 [01:07<00:30,  1.04epoch/s, loss=1.520, fm_mse=1.520]
+     Val: loss=1.401, fm_mse=1.401[A
+     Val: loss=1.401, fm_mse=1.401[ATraining:  68%|██████▊   | 68/100 [01:08<00:30,  1.04epoch/s, loss=1.512, fm_mse=1.512]Training:  69%|██████▉   | 69/100 [01:08<00:30,  1.03epoch/s, loss=1.512, fm_mse=1.512]
+     Val: loss=1.435, fm_mse=1.435[A
+     Val: loss=1.435, fm_mse=1.435[ATraining:  69%|██████▉   | 69/100 [01:09<00:30,  1.03epoch/s, loss=1.509, fm_mse=1.509]Training:  70%|███████   | 70/100 [01:09<00:28,  1.04epoch/s, loss=1.509, fm_mse=1.509]
+     Val: loss=1.433, fm_mse=1.433[A
+     Val: loss=1.433, fm_mse=1.433[ATraining:  70%|███████   | 70/100 [01:10<00:28,  1.04epoch/s, loss=1.482, fm_mse=1.482]Training:  71%|███████   | 71/100 [01:10<00:27,  1.04epoch/s, loss=1.482, fm_mse=1.482]
+     Val: loss=1.452, fm_mse=1.452[A
+     Val: loss=1.452, fm_mse=1.452[ATraining:  71%|███████   | 71/100 [01:11<00:27,  1.04epoch/s, loss=1.477, fm_mse=1.477]Training:  72%|███████▏  | 72/100 [01:11<00:26,  1.05epoch/s, loss=1.477, fm_mse=1.477]
+     Val: loss=1.359, fm_mse=1.359[A
+     Val: loss=1.359, fm_mse=1.359[ATraining:  72%|███████▏  | 72/100 [01:12<00:26,  1.05epoch/s, loss=1.477, fm_mse=1.477]Training:  73%|███████▎  | 73/100 [01:12<00:26,  1.03epoch/s, loss=1.477, fm_mse=1.477]
+     Val: loss=1.413, fm_mse=1.413[A
+     Val: loss=1.413, fm_mse=1.413[ATraining:  73%|███████▎  | 73/100 [01:13<00:26,  1.03epoch/s, loss=1.458, fm_mse=1.458]Training:  74%|███████▍  | 74/100 [01:13<00:24,  1.04epoch/s, loss=1.458, fm_mse=1.458]
+     Val: loss=1.403, fm_mse=1.403[A
+     Val: loss=1.403, fm_mse=1.403[ATraining:  74%|███████▍  | 74/100 [01:14<00:24,  1.04epoch/s, loss=1.464, fm_mse=1.464]Training:  75%|███████▌  | 75/100 [01:14<00:23,  1.05epoch/s, loss=1.464, fm_mse=1.464]
+     Val: loss=1.415, fm_mse=1.415[A
+     Val: loss=1.415, fm_mse=1.415[ATraining:  75%|███████▌  | 75/100 [01:14<00:23,  1.05epoch/s, loss=1.460, fm_mse=1.460]Training:  76%|███████▌  | 76/100 [01:14<00:22,  1.05epoch/s, loss=1.460, fm_mse=1.460]
+     Val: loss=1.380, fm_mse=1.380[A
+     Val: loss=1.380, fm_mse=1.380[ATraining:  76%|███████▌  | 76/100 [01:15<00:22,  1.05epoch/s, loss=1.442, fm_mse=1.442]Training:  77%|███████▋  | 77/100 [01:15<00:21,  1.05epoch/s, loss=1.442, fm_mse=1.442]
+     Val: loss=1.379, fm_mse=1.379[A
+     Val: loss=1.379, fm_mse=1.379[ATraining:  77%|███████▋  | 77/100 [01:16<00:21,  1.05epoch/s, loss=1.524, fm_mse=1.524]Training:  78%|███████▊  | 78/100 [01:16<00:20,  1.06epoch/s, loss=1.524, fm_mse=1.524]
+     Val: loss=1.474, fm_mse=1.474[A
+     Val: loss=1.474, fm_mse=1.474[ATraining:  78%|███████▊  | 78/100 [01:17<00:20,  1.06epoch/s, loss=1.490, fm_mse=1.490]Training:  79%|███████▉  | 79/100 [01:17<00:19,  1.06epoch/s, loss=1.490, fm_mse=1.490]
+     Val: loss=1.629, fm_mse=1.629[A
+     Val: loss=1.629, fm_mse=1.629[ATraining:  79%|███████▉  | 79/100 [01:18<00:19,  1.06epoch/s, loss=1.496, fm_mse=1.496]Training:  80%|████████  | 80/100 [01:18<00:18,  1.06epoch/s, loss=1.496, fm_mse=1.496]
+     Val: loss=1.394, fm_mse=1.394[A
+     Val: loss=1.394, fm_mse=1.394[ATraining:  80%|████████  | 80/100 [01:19<00:18,  1.06epoch/s, loss=1.447, fm_mse=1.447]Training:  81%|████████  | 81/100 [01:19<00:17,  1.06epoch/s, loss=1.447, fm_mse=1.447]
+     Val: loss=1.351, fm_mse=1.351[A
+     Val: loss=1.351, fm_mse=1.351[ATraining:  81%|████████  | 81/100 [01:20<00:17,  1.06epoch/s, loss=1.399, fm_mse=1.399]Training:  82%|████████▏ | 82/100 [01:20<00:17,  1.04epoch/s, loss=1.399, fm_mse=1.399]
+     Val: loss=1.412, fm_mse=1.412[A
+     Val: loss=1.412, fm_mse=1.412[ATraining:  82%|████████▏ | 82/100 [01:21<00:17,  1.04epoch/s, loss=1.456, fm_mse=1.456]Training:  83%|████████▎ | 83/100 [01:21<00:16,  1.05epoch/s, loss=1.456, fm_mse=1.456]
+     Val: loss=1.426, fm_mse=1.426[A
+     Val: loss=1.426, fm_mse=1.426[ATraining:  83%|████████▎ | 83/100 [01:22<00:16,  1.05epoch/s, loss=1.445, fm_mse=1.445]Training:  84%|████████▍ | 84/100 [01:22<00:15,  1.05epoch/s, loss=1.445, fm_mse=1.445]
+     Val: loss=1.331, fm_mse=1.331[A
+     Val: loss=1.331, fm_mse=1.331[ATraining:  84%|████████▍ | 84/100 [01:23<00:15,  1.05epoch/s, loss=1.456, fm_mse=1.456]Training:  85%|████████▌ | 85/100 [01:23<00:14,  1.04epoch/s, loss=1.456, fm_mse=1.456]
+     Val: loss=1.391, fm_mse=1.391[A
+     Val: loss=1.391, fm_mse=1.391[ATraining:  85%|████████▌ | 85/100 [01:24<00:14,  1.04epoch/s, loss=1.417, fm_mse=1.417]Training:  86%|████████▌ | 86/100 [01:24<00:13,  1.04epoch/s, loss=1.417, fm_mse=1.417]
+     Val: loss=1.346, fm_mse=1.346[A
+     Val: loss=1.346, fm_mse=1.346[ATraining:  86%|████████▌ | 86/100 [01:25<00:13,  1.04epoch/s, loss=1.403, fm_mse=1.403]Training:  87%|████████▋ | 87/100 [01:25<00:12,  1.04epoch/s, loss=1.403, fm_mse=1.403]
+     Val: loss=1.341, fm_mse=1.341[A
+     Val: loss=1.341, fm_mse=1.341[ATraining:  87%|████████▋ | 87/100 [01:26<00:12,  1.04epoch/s, loss=1.382, fm_mse=1.382]Training:  88%|████████▊ | 88/100 [01:26<00:11,  1.04epoch/s, loss=1.382, fm_mse=1.382]
+     Val: loss=1.372, fm_mse=1.372[A
+     Val: loss=1.372, fm_mse=1.372[ATraining:  88%|████████▊ | 88/100 [01:27<00:11,  1.04epoch/s, loss=1.406, fm_mse=1.406]Training:  89%|████████▉ | 89/100 [01:27<00:10,  1.04epoch/s, loss=1.406, fm_mse=1.406]
+     Val: loss=1.344, fm_mse=1.344[A
+     Val: loss=1.344, fm_mse=1.344[ATraining:  89%|████████▉ | 89/100 [01:28<00:10,  1.04epoch/s, loss=1.409, fm_mse=1.409]Training:  90%|█████████ | 90/100 [01:28<00:09,  1.04epoch/s, loss=1.409, fm_mse=1.409]
+     Val: loss=1.367, fm_mse=1.367[A
+     Val: loss=1.367, fm_mse=1.367[ATraining:  90%|█████████ | 90/100 [01:29<00:09,  1.04epoch/s, loss=1.427, fm_mse=1.427]Training:  91%|█████████ | 91/100 [01:29<00:08,  1.05epoch/s, loss=1.427, fm_mse=1.427]
+     Val: loss=1.381, fm_mse=1.381[A
+     Val: loss=1.381, fm_mse=1.381[ATraining:  91%|█████████ | 91/100 [01:30<00:08,  1.05epoch/s, loss=1.379, fm_mse=1.379]Training:  92%|█████████▏| 92/100 [01:30<00:07,  1.04epoch/s, loss=1.379, fm_mse=1.379]
+     Val: loss=1.325, fm_mse=1.325[A
+     Val: loss=1.325, fm_mse=1.325[ATraining:  92%|█████████▏| 92/100 [01:31<00:07,  1.04epoch/s, loss=1.371, fm_mse=1.371]Training:  93%|█████████▎| 93/100 [01:31<00:06,  1.03epoch/s, loss=1.371, fm_mse=1.371]
+     Val: loss=1.331, fm_mse=1.331[A
+     Val: loss=1.331, fm_mse=1.331[ATraining:  93%|█████████▎| 93/100 [01:32<00:06,  1.03epoch/s, loss=1.370, fm_mse=1.370]Training:  94%|█████████▍| 94/100 [01:32<00:05,  1.02epoch/s, loss=1.370, fm_mse=1.370]
+     Val: loss=1.378, fm_mse=1.378[A
+     Val: loss=1.378, fm_mse=1.378[ATraining:  94%|█████████▍| 94/100 [01:33<00:05,  1.02epoch/s, loss=1.359, fm_mse=1.359]Training:  95%|█████████▌| 95/100 [01:33<00:04,  1.03epoch/s, loss=1.359, fm_mse=1.359]
+     Val: loss=1.344, fm_mse=1.344[A
+     Val: loss=1.344, fm_mse=1.344[ATraining:  95%|█████████▌| 95/100 [01:34<00:04,  1.03epoch/s, loss=1.396, fm_mse=1.396]Training:  96%|█████████▌| 96/100 [01:34<00:03,  1.04epoch/s, loss=1.396, fm_mse=1.396]
+     Val: loss=1.352, fm_mse=1.352[A
+     Val: loss=1.352, fm_mse=1.352[ATraining:  96%|█████████▌| 96/100 [01:35<00:03,  1.04epoch/s, loss=1.399, fm_mse=1.399]Training:  97%|█████████▋| 97/100 [01:35<00:02,  1.04epoch/s, loss=1.399, fm_mse=1.399]
+     Val: loss=1.327, fm_mse=1.327[A
+     Val: loss=1.327, fm_mse=1.327[ATraining:  97%|█████████▋| 97/100 [01:36<00:02,  1.04epoch/s, loss=1.395, fm_mse=1.395]Training:  98%|█████████▊| 98/100 [01:36<00:01,  1.03epoch/s, loss=1.395, fm_mse=1.395]
+     Val: loss=1.339, fm_mse=1.339[A
+     Val: loss=1.339, fm_mse=1.339[ATraining:  98%|█████████▊| 98/100 [01:37<00:01,  1.03epoch/s, loss=1.341, fm_mse=1.341]Training:  99%|█████████▉| 99/100 [01:37<00:00,  1.03epoch/s, loss=1.341, fm_mse=1.341]
+     Val: loss=1.352, fm_mse=1.352[A
+     Val: loss=1.352, fm_mse=1.352[ATraining:  99%|█████████▉| 99/100 [01:38<00:00,  1.03epoch/s, loss=1.396, fm_mse=1.396]Training: 100%|██████████| 100/100 [01:38<00:00,  1.03epoch/s, loss=1.396, fm_mse=1.396]
+     Val: loss=1.381, fm_mse=1.381[A
+     Val: loss=1.381, fm_mse=1.381[A`Trainer.fit` stopped: `max_epochs=100` reached.
+     Val: loss=1.381, fm_mse=1.381
+Training: 100%|██████████| 100/100 [01:38<00:00,  1.02epoch/s, loss=1.396, fm_mse=1.396]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+`Trainer(limit_train_batches=1.0)` was configured so 100% of the batches per epoch will be used..
+`Trainer(limit_val_batches=1.0)` was configured so 100% of the batches will be used..
+You are using a CUDA device ('NVIDIA RTX 5000 Ada Generation') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+Restoring states from the checkpoint path at /nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sciplex_fm_deg_ae_latent_hybrid_d1e3_k562/20260418_171001_8844828/checkpoints/best.ckpt
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py:283: Be aware that when using `ckpt_path`, callbacks used to create the checkpoint need to be provided during `Trainer` instantiation. Please add the following callbacks: ["ModelCheckpoint{'monitor': 'val_loss', 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}"].
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Loaded model weights from the checkpoint at /nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sciplex_fm_deg_ae_latent_hybrid_d1e3_k562/20260418_171001_8844828/checkpoints/best.ckpt
+SLURM auto-requeueing enabled. Setting signal handlers.
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/lightning/pytorch/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+... storing '_control_obs_name' as categorical
+... storing '_prediction_space' as categorical

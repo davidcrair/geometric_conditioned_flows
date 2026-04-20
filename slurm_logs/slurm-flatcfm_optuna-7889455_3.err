@@ -1,0 +1,385 @@
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/optuna/samplers/_tpe/sampler.py:319: ExperimentalWarning: ``multivariate`` option is an experimental feature. The interface can change in the future.
+  warnings.warn(
+[I 2026-04-10 18:53:36,804] Using an existing study with name 'hpo_ode_pca_d16' instead of creating a new one.
+[rank: 0] Seed set to 42
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/lightning/fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/src/fl ...
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+`Trainer(limit_train_batches=1.0)` was configured so 100% of the batches per epoch will be used..
+`Trainer(limit_val_batches=1.0)` was configured so 100% of the batches will be used..
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/src/flatcfm/modelcore/models/base.py:85: UserWarning: No optimizer specified in task_cfg; defaulting to AdamW (lr=0.0001755552008572156, weight_decay=2.0383378378927896e-06).
+  rank_zero_warn(
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/lightning/pytorch/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+Training:   0%|          | 0/100 [00:00<?, ?epoch/s]
+     Val:[ATraining:   0%|          | 0/100 [00:03<?, ?epoch/s, loss=1.906, ot=0.3723, density=8.382, energy=2.175]Training:   1%|          | 1/100 [00:03<06:28,  3.92s/epoch, loss=1.906, ot=0.3723, density=8.382, energy=2.175]
+     Val: loss=1.544, ot=0.3012, density=6.707, energy=3.681[A
+     Val: loss=1.544, ot=0.3012, density=6.707, energy=3.681[ATraining:   1%|          | 1/100 [00:07<06:28,  3.92s/epoch, loss=1.754, ot=0.3390, density=7.669, energy=3.793]Training:   2%|▏         | 2/100 [00:07<05:52,  3.60s/epoch, loss=1.754, ot=0.3390, density=7.669, energy=3.793]
+     Val: loss=1.510, ot=0.2981, density=6.487, energy=4.304[A
+     Val: loss=1.510, ot=0.2981, density=6.487, energy=4.304[ATraining:   2%|▏         | 2/100 [00:10<05:52,  3.60s/epoch, loss=1.798, ot=0.3499, density=7.685, energy=7.158]Training:   3%|▎         | 3/100 [00:10<05:38,  3.49s/epoch, loss=1.798, ot=0.3499, density=7.685, energy=7.158]
+     Val: loss=1.507, ot=0.2941, density=6.376, energy=7.152[A
+     Val: loss=1.507, ot=0.2941, density=6.376, energy=7.152[ATraining:   3%|▎         | 3/100 [00:14<05:38,  3.49s/epoch, loss=1.705, ot=0.3417, density=7.140, energy=7.585]Training:   4%|▍         | 4/100 [00:14<05:29,  3.44s/epoch, loss=1.705, ot=0.3417, density=7.140, energy=7.585]
+     Val: loss=1.485, ot=0.2969, density=6.188, energy=7.482[A
+     Val: loss=1.485, ot=0.2969, density=6.188, energy=7.482[ATraining:   4%|▍         | 4/100 [00:17<05:29,  3.44s/epoch, loss=1.731, ot=0.3381, density=7.323, energy=8.181]Training:   5%|▌         | 5/100 [00:17<05:23,  3.41s/epoch, loss=1.731, ot=0.3381, density=7.323, energy=8.181]
+     Val: loss=1.454, ot=0.2918, density=6.025, energy=7.866[A
+     Val: loss=1.454, ot=0.2918, density=6.025, energy=7.866[ATraining:   5%|▌         | 5/100 [00:20<05:23,  3.41s/epoch, loss=1.765, ot=0.3500, density=7.273, energy=11.316]Training:   6%|▌         | 6/100 [00:20<05:18,  3.39s/epoch, loss=1.765, ot=0.3500, density=7.273, energy=11.316]
+     Val: loss=1.496, ot=0.2919, density=6.072, energy=12.768[A
+     Val: loss=1.496, ot=0.2919, density=6.072, energy=12.768[ATraining:   6%|▌         | 6/100 [00:24<05:18,  3.39s/epoch, loss=1.632, ot=0.3147, density=6.742, energy=12.248]Training:   7%|▋         | 7/100 [00:24<05:13,  3.37s/epoch, loss=1.632, ot=0.3147, density=6.742, energy=12.248]
+     Val: loss=1.439, ot=0.2891, density=5.829, energy=10.532[A
+     Val: loss=1.439, ot=0.2891, density=5.829, energy=10.532[ATraining:   7%|▋         | 7/100 [00:27<05:13,  3.37s/epoch, loss=1.656, ot=0.3304, density=6.730, energy=12.170]Training:   8%|▊         | 8/100 [00:27<05:09,  3.36s/epoch, loss=1.656, ot=0.3304, density=6.730, energy=12.170]
+     Val: loss=1.442, ot=0.2936, density=5.762, energy=11.406[A
+     Val: loss=1.442, ot=0.2936, density=5.762, energy=11.406[ATraining:   8%|▊         | 8/100 [00:30<05:09,  3.36s/epoch, loss=1.702, ot=0.3415, density=6.873, energy=13.094]Training:   9%|▉         | 9/100 [00:30<05:04,  3.35s/epoch, loss=1.702, ot=0.3415, density=6.873, energy=13.094]
+     Val: loss=1.440, ot=0.2850, density=5.733, energy=13.655[A
+     Val: loss=1.440, ot=0.2850, density=5.733, energy=13.655[ATraining:   9%|▉         | 9/100 [00:34<05:04,  3.35s/epoch, loss=1.809, ot=0.3598, density=7.187, energy=17.083]Training:  10%|█         | 10/100 [00:34<05:00,  3.34s/epoch, loss=1.809, ot=0.3598, density=7.187, energy=17.083]
+     Val: loss=1.483, ot=0.2892, density=5.824, energy=16.886[A
+     Val: loss=1.483, ot=0.2892, density=5.824, energy=16.886[ATraining:  10%|█         | 10/100 [00:37<05:00,  3.34s/epoch, loss=1.781, ot=0.3543, density=6.935, energy=19.907]Training:  11%|█         | 11/100 [00:37<04:56,  3.33s/epoch, loss=1.781, ot=0.3543, density=6.935, energy=19.907]
+     Val: loss=1.501, ot=0.2944, density=5.823, energy=18.215[A
+     Val: loss=1.501, ot=0.2944, density=5.823, energy=18.215[ATraining:  11%|█         | 11/100 [00:40<04:56,  3.33s/epoch, loss=1.812, ot=0.3642, density=6.897, energy=22.783]Training:  12%|█▏        | 12/100 [00:40<04:52,  3.32s/epoch, loss=1.812, ot=0.3642, density=6.897, energy=22.783]
+     Val: loss=1.512, ot=0.2888, density=5.854, energy=20.484[A
+     Val: loss=1.512, ot=0.2888, density=5.854, energy=20.484[ATraining:  12%|█▏        | 12/100 [00:43<04:52,  3.32s/epoch, loss=1.631, ot=0.3182, density=6.429, energy=18.057]Training:  13%|█▎        | 13/100 [00:43<04:48,  3.31s/epoch, loss=1.631, ot=0.3182, density=6.429, energy=18.057]
+     Val: loss=1.432, ot=0.2838, density=5.618, energy=15.305[A
+     Val: loss=1.432, ot=0.2838, density=5.618, energy=15.305[ATraining:  13%|█▎        | 13/100 [00:47<04:48,  3.31s/epoch, loss=1.683, ot=0.3341, density=6.657, energy=16.704]Training:  14%|█▍        | 14/100 [00:47<04:45,  3.32s/epoch, loss=1.683, ot=0.3341, density=6.657, energy=16.704]
+     Val: loss=1.441, ot=0.2824, density=5.638, energy=16.486[A
+     Val: loss=1.441, ot=0.2824, density=5.638, energy=16.486[ATraining:  14%|█▍        | 14/100 [00:50<04:45,  3.32s/epoch, loss=1.863, ot=0.3795, density=7.206, energy=19.763]Training:  15%|█▌        | 15/100 [00:50<04:41,  3.32s/epoch, loss=1.863, ot=0.3795, density=7.206, energy=19.763]
+     Val: loss=1.532, ot=0.2919, density=5.889, energy=21.781[A
+     Val: loss=1.532, ot=0.2919, density=5.889, energy=21.781[ATraining:  15%|█▌        | 15/100 [00:53<04:41,  3.32s/epoch, loss=1.709, ot=0.3307, density=6.644, energy=21.461]Training:  16%|█▌        | 16/100 [00:53<04:38,  3.32s/epoch, loss=1.709, ot=0.3307, density=6.644, energy=21.461]
+     Val: loss=1.474, ot=0.2881, density=5.689, energy=18.734[A
+     Val: loss=1.474, ot=0.2881, density=5.689, energy=18.734[ATraining:  16%|█▌        | 16/100 [00:57<04:38,  3.32s/epoch, loss=1.776, ot=0.3533, density=6.934, energy=19.489]Training:  17%|█▋        | 17/100 [00:57<04:36,  3.33s/epoch, loss=1.776, ot=0.3533, density=6.934, energy=19.489]
+     Val: loss=1.477, ot=0.2890, density=5.713, energy=18.460[A
+     Val: loss=1.477, ot=0.2890, density=5.713, energy=18.460[ATraining:  17%|█▋        | 17/100 [01:00<04:36,  3.33s/epoch, loss=1.794, ot=0.3564, density=6.839, energy=23.333]Training:  18%|█▊        | 18/100 [01:00<04:32,  3.33s/epoch, loss=1.794, ot=0.3564, density=6.839, energy=23.333]
+     Val: loss=1.514, ot=0.2890, density=5.806, energy=21.811[A
+     Val: loss=1.514, ot=0.2890, density=5.806, energy=21.811[ATraining:  18%|█▊        | 18/100 [01:03<04:32,  3.33s/epoch, loss=1.645, ot=0.3133, density=6.419, energy=21.328]Training:  19%|█▉        | 19/100 [01:03<04:28,  3.32s/epoch, loss=1.645, ot=0.3133, density=6.419, energy=21.328]
+     Val: loss=1.441, ot=0.2828, density=5.618, energy=16.867[A
+     Val: loss=1.441, ot=0.2828, density=5.618, energy=16.867[ATraining:  19%|█▉        | 19/100 [01:07<04:28,  3.32s/epoch, loss=1.640, ot=0.3201, density=6.551, energy=16.215]Training:  20%|██        | 20/100 [01:07<04:25,  3.32s/epoch, loss=1.640, ot=0.3201, density=6.551, energy=16.215]
+     Val: loss=1.435, ot=0.2824, density=5.598, energy=16.543[A
+     Val: loss=1.435, ot=0.2824, density=5.598, energy=16.543[ATraining:  20%|██        | 20/100 [01:10<04:25,  3.32s/epoch, loss=1.779, ot=0.3578, density=6.890, energy=19.768]Training:  21%|██        | 21/100 [01:10<04:21,  3.31s/epoch, loss=1.779, ot=0.3578, density=6.890, energy=19.768]
+     Val: loss=1.451, ot=0.2806, density=5.655, energy=17.980[A
+     Val: loss=1.451, ot=0.2806, density=5.655, energy=17.980[ATraining:  21%|██        | 21/100 [01:13<04:21,  3.31s/epoch, loss=1.698, ot=0.3303, density=6.676, energy=19.381]Training:  22%|██▏       | 22/100 [01:13<04:18,  3.32s/epoch, loss=1.698, ot=0.3303, density=6.676, energy=19.381]
+     Val: loss=1.486, ot=0.2894, density=5.715, energy=19.555[A
+     Val: loss=1.486, ot=0.2894, density=5.715, energy=19.555[ATraining:  22%|██▏       | 22/100 [01:17<04:18,  3.32s/epoch, loss=1.721, ot=0.3425, density=6.674, energy=19.848]Training:  23%|██▎       | 23/100 [01:17<04:15,  3.32s/epoch, loss=1.721, ot=0.3425, density=6.674, energy=19.848]
+     Val: loss=1.435, ot=0.2829, density=5.610, energy=16.210[A
+     Val: loss=1.435, ot=0.2829, density=5.610, energy=16.210[ATraining:  23%|██▎       | 23/100 [01:20<04:15,  3.32s/epoch, loss=1.723, ot=0.3358, density=6.679, energy=21.535]Training:  24%|██▍       | 24/100 [01:20<04:13,  3.33s/epoch, loss=1.723, ot=0.3358, density=6.679, energy=21.535]
+     Val: loss=1.479, ot=0.2835, density=5.716, energy=20.046[A
+     Val: loss=1.479, ot=0.2835, density=5.716, energy=20.046[ATraining:  24%|██▍       | 24/100 [01:23<04:13,  3.33s/epoch, loss=1.699, ot=0.3366, density=6.442, energy=23.047]Training:  25%|██▌       | 25/100 [01:23<04:09,  3.33s/epoch, loss=1.699, ot=0.3366, density=6.442, energy=23.047]
+     Val: loss=1.466, ot=0.2826, density=5.683, energy=19.040[A
+     Val: loss=1.466, ot=0.2826, density=5.683, energy=19.040[ATraining:  25%|██▌       | 25/100 [01:27<04:09,  3.33s/epoch, loss=1.818, ot=0.3707, density=6.946, energy=21.071]Training:  26%|██▌       | 26/100 [01:27<04:05,  3.32s/epoch, loss=1.818, ot=0.3707, density=6.946, energy=21.071]
+     Val: loss=1.513, ot=0.2876, density=5.779, energy=22.475[A
+     Val: loss=1.513, ot=0.2876, density=5.779, energy=22.475[ATraining:  26%|██▌       | 26/100 [01:30<04:05,  3.32s/epoch, loss=1.689, ot=0.3205, density=6.448, energy=25.350]Training:  27%|██▋       | 27/100 [01:30<04:02,  3.32s/epoch, loss=1.689, ot=0.3205, density=6.448, energy=25.350]
+     Val: loss=1.475, ot=0.2799, density=5.721, energy=20.152[A
+     Val: loss=1.475, ot=0.2799, density=5.721, energy=20.152[ATraining:  27%|██▋       | 27/100 [01:33<04:02,  3.32s/epoch, loss=1.689, ot=0.3380, density=6.572, energy=18.576]Training:  28%|██▊       | 28/100 [01:33<03:58,  3.31s/epoch, loss=1.689, ot=0.3380, density=6.572, energy=18.576]
+     Val: loss=1.426, ot=0.2781, density=5.593, energy=16.469[A
+     Val: loss=1.426, ot=0.2781, density=5.593, energy=16.469[ATraining:  28%|██▊       | 28/100 [01:37<03:58,  3.31s/epoch, loss=1.571, ot=0.3029, density=6.167, energy=18.760]Training:  29%|██▉       | 29/100 [01:37<03:55,  3.32s/epoch, loss=1.571, ot=0.3029, density=6.167, energy=18.760]
+     Val: loss=1.460, ot=0.2759, density=5.690, energy=19.591[A
+     Val: loss=1.460, ot=0.2759, density=5.690, energy=19.591[ATraining:  29%|██▉       | 29/100 [01:40<03:55,  3.32s/epoch, loss=1.720, ot=0.3296, density=6.681, energy=22.525]Training:  30%|███       | 30/100 [01:40<03:58,  3.41s/epoch, loss=1.720, ot=0.3296, density=6.681, energy=22.525]
+     Val: loss=1.477, ot=0.2852, density=5.695, energy=19.811[A
+     Val: loss=1.477, ot=0.2852, density=5.695, energy=19.811[ATraining:  30%|███       | 30/100 [01:44<03:58,  3.41s/epoch, loss=1.777, ot=0.3540, density=6.680, energy=24.940]Training:  31%|███       | 31/100 [01:44<03:52,  3.38s/epoch, loss=1.777, ot=0.3540, density=6.680, energy=24.940]
+     Val: loss=1.502, ot=0.2847, density=5.753, energy=22.175[A
+     Val: loss=1.502, ot=0.2847, density=5.753, energy=22.175[ATraining:  31%|███       | 31/100 [01:47<03:52,  3.38s/epoch, loss=1.690, ot=0.3367, density=6.389, energy=23.023]Training:  32%|███▏      | 32/100 [01:47<03:47,  3.35s/epoch, loss=1.690, ot=0.3367, density=6.389, energy=23.023]
+     Val: loss=1.437, ot=0.2764, density=5.615, energy=17.886[A
+     Val: loss=1.437, ot=0.2764, density=5.615, energy=17.886[ATraining:  32%|███▏      | 32/100 [01:50<03:47,  3.35s/epoch, loss=1.740, ot=0.3483, density=6.617, energy=22.378]Training:  33%|███▎      | 33/100 [01:50<03:42,  3.33s/epoch, loss=1.740, ot=0.3483, density=6.617, energy=22.378]
+     Val: loss=1.489, ot=0.2796, density=5.732, energy=22.029[A
+     Val: loss=1.489, ot=0.2796, density=5.732, energy=22.029[ATraining:  33%|███▎      | 33/100 [01:53<03:42,  3.33s/epoch, loss=1.721, ot=0.3351, density=6.454, energy=26.340]Training:  34%|███▍      | 34/100 [01:53<03:38,  3.32s/epoch, loss=1.721, ot=0.3351, density=6.454, energy=26.340]
+     Val: loss=1.481, ot=0.2786, density=5.722, energy=21.255[A
+     Val: loss=1.481, ot=0.2786, density=5.722, energy=21.255[ATraining:  34%|███▍      | 34/100 [01:57<03:38,  3.32s/epoch, loss=1.733, ot=0.3398, density=6.531, energy=25.293]Training:  35%|███▌      | 35/100 [01:57<03:34,  3.31s/epoch, loss=1.733, ot=0.3398, density=6.531, energy=25.293]
+     Val: loss=1.500, ot=0.2799, density=5.757, energy=22.954[A
+     Val: loss=1.500, ot=0.2799, density=5.757, energy=22.954[ATraining:  35%|███▌      | 35/100 [02:00<03:34,  3.31s/epoch, loss=1.674, ot=0.3269, density=6.550, energy=19.523]Training:  36%|███▌      | 36/100 [02:00<03:31,  3.30s/epoch, loss=1.674, ot=0.3269, density=6.550, energy=19.523]
+     Val: loss=1.459, ot=0.2785, density=5.657, energy=19.552[A
+     Val: loss=1.459, ot=0.2785, density=5.657, energy=19.552[ATraining:  36%|███▌      | 36/100 [02:03<03:31,  3.30s/epoch, loss=1.710, ot=0.3333, density=6.500, energy=24.187]Training:  37%|███▋      | 37/100 [02:03<03:27,  3.29s/epoch, loss=1.710, ot=0.3333, density=6.500, energy=24.187]
+     Val: loss=1.457, ot=0.2779, density=5.660, energy=19.352[A
+     Val: loss=1.457, ot=0.2779, density=5.660, energy=19.352[ATraining:  37%|███▋      | 37/100 [02:07<03:27,  3.29s/epoch, loss=1.736, ot=0.3402, density=6.491, energy=26.469]Training:  38%|███▊      | 38/100 [02:07<03:24,  3.31s/epoch, loss=1.736, ot=0.3402, density=6.491, energy=26.469]
+     Val: loss=1.476, ot=0.2808, density=5.680, energy=21.037[A
+     Val: loss=1.476, ot=0.2808, density=5.680, energy=21.037[ATraining:  38%|███▊      | 38/100 [02:10<03:24,  3.31s/epoch, loss=1.705, ot=0.3400, density=6.487, energy=22.243]Training:  39%|███▉      | 39/100 [02:10<03:21,  3.30s/epoch, loss=1.705, ot=0.3400, density=6.487, energy=22.243]
+     Val: loss=1.476, ot=0.2813, density=5.686, energy=20.696[A
+     Val: loss=1.476, ot=0.2813, density=5.686, energy=20.696[ATraining:  39%|███▉      | 39/100 [02:13<03:21,  3.30s/epoch, loss=1.727, ot=0.3436, density=6.652, energy=20.841]Training:  40%|████      | 40/100 [02:13<03:17,  3.29s/epoch, loss=1.727, ot=0.3436, density=6.652, energy=20.841]
+     Val: loss=1.511, ot=0.2843, density=5.755, energy=23.485[A
+     Val: loss=1.511, ot=0.2843, density=5.755, energy=23.485[ATraining:  40%|████      | 40/100 [02:16<03:17,  3.29s/epoch, loss=1.636, ot=0.3070, density=6.213, energy=26.061]Training:  41%|████      | 41/100 [02:16<03:14,  3.29s/epoch, loss=1.636, ot=0.3070, density=6.213, energy=26.061]
+     Val: loss=1.461, ot=0.2774, density=5.652, energy=20.298[A
+     Val: loss=1.461, ot=0.2774, density=5.652, energy=20.298[ATraining:  41%|████      | 41/100 [02:20<03:14,  3.29s/epoch, loss=1.602, ot=0.3139, density=6.315, energy=17.425]Training:  42%|████▏     | 42/100 [02:20<03:10,  3.29s/epoch, loss=1.602, ot=0.3139, density=6.315, energy=17.425]
+     Val: loss=1.403, ot=0.2715, density=5.513, energy=16.365[A
+     Val: loss=1.403, ot=0.2715, density=5.513, energy=16.365[ATraining:  42%|████▏     | 42/100 [02:23<03:10,  3.29s/epoch, loss=1.711, ot=0.3345, density=6.519, energy=23.575]Training:  43%|████▎     | 43/100 [02:23<03:08,  3.30s/epoch, loss=1.711, ot=0.3345, density=6.519, energy=23.575]
+     Val: loss=1.495, ot=0.2797, density=5.747, energy=22.526[A
+     Val: loss=1.495, ot=0.2797, density=5.747, energy=22.526[ATraining:  43%|████▎     | 43/100 [02:26<03:08,  3.30s/epoch, loss=1.698, ot=0.3331, density=6.345, energy=25.860]Training:  44%|████▍     | 44/100 [02:26<03:04,  3.29s/epoch, loss=1.698, ot=0.3331, density=6.345, energy=25.860]
+     Val: loss=1.496, ot=0.2773, density=5.743, energy=23.323[A
+     Val: loss=1.496, ot=0.2773, density=5.743, energy=23.323[ATraining:  44%|████▍     | 44/100 [02:30<03:04,  3.29s/epoch, loss=1.612, ot=0.3071, density=6.232, energy=22.228]Training:  45%|████▌     | 45/100 [02:30<03:00,  3.28s/epoch, loss=1.612, ot=0.3071, density=6.232, energy=22.228]
+     Val: loss=1.472, ot=0.2808, density=5.681, energy=20.327[A
+     Val: loss=1.472, ot=0.2808, density=5.681, energy=20.327[ATraining:  45%|████▌     | 45/100 [02:33<03:00,  3.28s/epoch, loss=1.613, ot=0.3150, density=6.222, energy=20.643]Training:  46%|████▌     | 46/100 [02:33<02:57,  3.28s/epoch, loss=1.613, ot=0.3150, density=6.222, energy=20.643]
+     Val: loss=1.452, ot=0.2838, density=5.610, energy=18.432[A
+     Val: loss=1.452, ot=0.2838, density=5.610, energy=18.432[ATraining:  46%|████▌     | 46/100 [02:36<02:57,  3.28s/epoch, loss=1.666, ot=0.3261, density=6.451, energy=20.614]Training:  47%|████▋     | 47/100 [02:36<02:54,  3.28s/epoch, loss=1.666, ot=0.3261, density=6.451, energy=20.614]
+     Val: loss=1.469, ot=0.2752, density=5.673, energy=21.448[A
+     Val: loss=1.469, ot=0.2752, density=5.673, energy=21.448[ATraining:  47%|████▋     | 47/100 [02:39<02:54,  3.28s/epoch, loss=1.690, ot=0.3293, density=6.323, energy=26.104]Training:  48%|████▊     | 48/100 [02:39<02:51,  3.30s/epoch, loss=1.690, ot=0.3293, density=6.323, energy=26.104]
+     Val: loss=1.467, ot=0.2738, density=5.674, energy=21.478[A
+     Val: loss=1.467, ot=0.2738, density=5.674, energy=21.478[ATraining:  48%|████▊     | 48/100 [02:43<02:51,  3.30s/epoch, loss=1.615, ot=0.3065, density=6.211, energy=23.188]Training:  49%|████▉     | 49/100 [02:43<02:47,  3.29s/epoch, loss=1.615, ot=0.3065, density=6.211, energy=23.188]
+     Val: loss=1.458, ot=0.2752, density=5.635, energy=20.644[A
+     Val: loss=1.458, ot=0.2752, density=5.635, energy=20.644[ATraining:  49%|████▉     | 49/100 [02:46<02:47,  3.29s/epoch, loss=1.611, ot=0.3087, density=6.102, energy=24.419]Training:  50%|█████     | 50/100 [02:46<02:44,  3.29s/epoch, loss=1.611, ot=0.3087, density=6.102, energy=24.419]
+     Val: loss=1.458, ot=0.2712, density=5.663, energy=20.985[A
+     Val: loss=1.458, ot=0.2712, density=5.663, energy=20.985[ATraining:  50%|█████     | 50/100 [02:49<02:44,  3.29s/epoch, loss=1.626, ot=0.3127, density=6.204, energy=23.417]Training:  51%|█████     | 51/100 [02:49<02:41,  3.29s/epoch, loss=1.626, ot=0.3127, density=6.204, energy=23.417]
+     Val: loss=1.450, ot=0.2721, density=5.636, energy=20.258[A
+     Val: loss=1.450, ot=0.2721, density=5.636, energy=20.258[ATraining:  51%|█████     | 51/100 [02:53<02:41,  3.29s/epoch, loss=1.736, ot=0.3450, density=6.565, energy=23.767]Training:  52%|█████▏    | 52/100 [02:53<02:37,  3.28s/epoch, loss=1.736, ot=0.3450, density=6.565, energy=23.767]
+     Val: loss=1.507, ot=0.2776, density=5.756, energy=24.503[A
+     Val: loss=1.507, ot=0.2776, density=5.756, energy=24.503[ATraining:  52%|█████▏    | 52/100 [02:56<02:37,  3.28s/epoch, loss=1.608, ot=0.3049, density=6.065, energy=25.752]Training:  53%|█████▎    | 53/100 [02:56<02:34,  3.29s/epoch, loss=1.608, ot=0.3049, density=6.065, energy=25.752]
+     Val: loss=1.437, ot=0.2729, density=5.609, energy=18.872[A
+     Val: loss=1.437, ot=0.2729, density=5.609, energy=18.872[ATraining:  53%|█████▎    | 53/100 [02:59<02:34,  3.29s/epoch, loss=1.615, ot=0.3118, density=6.243, energy=21.268]Training:  54%|█████▍    | 54/100 [02:59<02:31,  3.29s/epoch, loss=1.615, ot=0.3118, density=6.243, energy=21.268]
+     Val: loss=1.485, ot=0.2742, density=5.680, energy=23.836[A
+     Val: loss=1.485, ot=0.2742, density=5.680, energy=23.836[ATraining:  54%|█████▍    | 54/100 [03:02<02:31,  3.29s/epoch, loss=1.663, ot=0.3213, density=6.298, energy=24.690]Training:  55%|█████▌    | 55/100 [03:02<02:28,  3.29s/epoch, loss=1.663, ot=0.3213, density=6.298, energy=24.690]
+     Val: loss=1.452, ot=0.2707, density=5.644, energy=20.747[A
+     Val: loss=1.452, ot=0.2707, density=5.644, energy=20.747[ATraining:  55%|█████▌    | 55/100 [03:06<02:28,  3.29s/epoch, loss=1.733, ot=0.3376, density=6.400, energy=28.649]Training:  56%|█████▌    | 56/100 [03:06<02:24,  3.29s/epoch, loss=1.733, ot=0.3376, density=6.400, energy=28.649]
+     Val: loss=1.496, ot=0.2778, density=5.716, energy=23.676[A
+     Val: loss=1.496, ot=0.2778, density=5.716, energy=23.676[ATraining:  56%|█████▌    | 56/100 [03:09<02:24,  3.29s/epoch, loss=1.692, ot=0.3341, density=6.428, energy=22.944]Training:  57%|█████▋    | 57/100 [03:09<02:21,  3.29s/epoch, loss=1.692, ot=0.3341, density=6.428, energy=22.944]
+     Val: loss=1.468, ot=0.2729, density=5.667, energy=21.987[A
+     Val: loss=1.468, ot=0.2729, density=5.667, energy=21.987[ATraining:  57%|█████▋    | 57/100 [03:12<02:21,  3.29s/epoch, loss=1.656, ot=0.3282, density=6.224, energy=23.703]Training:  58%|█████▊    | 58/100 [03:12<02:18,  3.29s/epoch, loss=1.656, ot=0.3282, density=6.224, energy=23.703]
+     Val: loss=1.515, ot=0.2772, density=5.747, energy=25.848[A
+     Val: loss=1.515, ot=0.2772, density=5.747, energy=25.848[ATraining:  58%|█████▊    | 58/100 [03:16<02:18,  3.29s/epoch, loss=1.568, ot=0.3041, density=6.042, energy=20.792]Training:  59%|█████▉    | 59/100 [03:16<02:14,  3.29s/epoch, loss=1.568, ot=0.3041, density=6.042, energy=20.792]
+     Val: loss=1.449, ot=0.2713, density=5.645, energy=20.081[A
+     Val: loss=1.449, ot=0.2713, density=5.645, energy=20.081[ATraining:  59%|█████▉    | 59/100 [03:19<02:14,  3.29s/epoch, loss=1.575, ot=0.3004, density=6.068, energy=22.089]Training:  60%|██████    | 60/100 [03:19<02:11,  3.29s/epoch, loss=1.575, ot=0.3004, density=6.068, energy=22.089]
+     Val: loss=1.443, ot=0.2703, density=5.615, energy=20.111[A
+     Val: loss=1.443, ot=0.2703, density=5.615, energy=20.111[ATraining:  60%|██████    | 60/100 [03:22<02:11,  3.29s/epoch, loss=1.613, ot=0.3099, density=6.146, energy=23.509]Training:  61%|██████    | 61/100 [03:22<02:08,  3.29s/epoch, loss=1.613, ot=0.3099, density=6.146, energy=23.509]
+     Val: loss=1.502, ot=0.2732, density=5.718, energy=25.613[A
+     Val: loss=1.502, ot=0.2732, density=5.718, energy=25.613[ATraining:  61%|██████    | 61/100 [03:26<02:08,  3.29s/epoch, loss=1.679, ot=0.3228, density=6.153, energy=29.756]Training:  62%|██████▏   | 62/100 [03:26<02:05,  3.29s/epoch, loss=1.679, ot=0.3228, density=6.153, energy=29.756]
+     Val: loss=1.494, ot=0.2755, density=5.705, energy=24.158[A
+     Val: loss=1.494, ot=0.2755, density=5.705, energy=24.158[ATraining:  62%|██████▏   | 62/100 [03:29<02:05,  3.29s/epoch, loss=1.685, ot=0.3300, density=6.252, energy=26.758]Training:  63%|██████▎   | 63/100 [03:29<02:01,  3.29s/epoch, loss=1.685, ot=0.3300, density=6.252, energy=26.758]
+     Val: loss=1.462, ot=0.2713, density=5.661, energy=21.681[A
+     Val: loss=1.462, ot=0.2713, density=5.661, energy=21.681[ATraining:  63%|██████▎   | 63/100 [03:32<02:01,  3.29s/epoch, loss=1.685, ot=0.3276, density=6.310, energy=26.061]Training:  64%|██████▍   | 64/100 [03:32<01:58,  3.29s/epoch, loss=1.685, ot=0.3276, density=6.310, energy=26.061]
+     Val: loss=1.495, ot=0.2779, density=5.695, energy=23.953[A
+     Val: loss=1.495, ot=0.2779, density=5.695, energy=23.953[ATraining:  64%|██████▍   | 64/100 [03:35<01:58,  3.29s/epoch, loss=1.546, ot=0.2912, density=5.892, energy=23.901]Training:  65%|██████▌   | 65/100 [03:35<01:55,  3.29s/epoch, loss=1.546, ot=0.2912, density=5.892, energy=23.901]
+     Val: loss=1.437, ot=0.2673, density=5.604, energy=20.263[A
+     Val: loss=1.437, ot=0.2673, density=5.604, energy=20.263[ATraining:  65%|██████▌   | 65/100 [03:39<01:55,  3.29s/epoch, loss=1.506, ot=0.2837, density=5.864, energy=20.552]Training:  66%|██████▌   | 66/100 [03:39<01:51,  3.29s/epoch, loss=1.506, ot=0.2837, density=5.864, energy=20.552]
+     Val: loss=1.449, ot=0.2676, density=5.641, energy=21.053[A
+     Val: loss=1.449, ot=0.2676, density=5.641, energy=21.053[ATraining:  66%|██████▌   | 66/100 [03:42<01:51,  3.29s/epoch, loss=1.706, ot=0.3414, density=6.282, energy=26.399]Training:  67%|██████▋   | 67/100 [03:42<01:48,  3.28s/epoch, loss=1.706, ot=0.3414, density=6.282, energy=26.399]
+     Val: loss=1.488, ot=0.2699, density=5.698, energy=24.794[A
+     Val: loss=1.488, ot=0.2699, density=5.698, energy=24.794[ATraining:  67%|██████▋   | 67/100 [03:45<01:48,  3.28s/epoch, loss=1.679, ot=0.3232, density=6.079, energy=31.265]Training:  68%|██████▊   | 68/100 [03:45<01:45,  3.28s/epoch, loss=1.679, ot=0.3232, density=6.079, energy=31.265]
+     Val: loss=1.475, ot=0.2724, density=5.657, energy=23.233[A
+     Val: loss=1.475, ot=0.2724, density=5.657, energy=23.233[ATraining:  68%|██████▊   | 68/100 [03:49<01:45,  3.28s/epoch, loss=1.631, ot=0.3102, density=6.089, energy=27.231]Training:  69%|██████▉   | 69/100 [03:49<01:41,  3.29s/epoch, loss=1.631, ot=0.3102, density=6.089, energy=27.231]
+     Val: loss=1.470, ot=0.2694, density=5.653, energy=23.422[A
+     Val: loss=1.470, ot=0.2694, density=5.653, energy=23.422[ATraining:  69%|██████▉   | 69/100 [03:52<01:41,  3.29s/epoch, loss=1.634, ot=0.3121, density=6.079, energy=27.401]Training:  70%|███████   | 70/100 [03:52<01:38,  3.28s/epoch, loss=1.634, ot=0.3121, density=6.079, energy=27.401]
+     Val: loss=1.458, ot=0.2695, density=5.643, energy=21.810[A
+     Val: loss=1.458, ot=0.2695, density=5.643, energy=21.810[ATraining:  70%|███████   | 70/100 [03:55<01:38,  3.28s/epoch, loss=1.607, ot=0.3147, density=6.012, energy=24.470]Training:  71%|███████   | 71/100 [03:55<01:35,  3.28s/epoch, loss=1.607, ot=0.3147, density=6.012, energy=24.470]
+     Val: loss=1.490, ot=0.2755, density=5.689, energy=24.069[A
+     Val: loss=1.490, ot=0.2755, density=5.689, energy=24.069[ATraining:  71%|███████   | 71/100 [03:58<01:35,  3.28s/epoch, loss=1.550, ot=0.2964, density=5.840, energy=24.404]Training:  72%|███████▏  | 72/100 [03:58<01:31,  3.28s/epoch, loss=1.550, ot=0.2964, density=5.840, energy=24.404]
+     Val: loss=1.450, ot=0.2684, density=5.626, energy=21.383[A
+     Val: loss=1.450, ot=0.2684, density=5.626, energy=21.383[ATraining:  72%|███████▏  | 72/100 [04:02<01:31,  3.28s/epoch, loss=1.611, ot=0.3115, density=6.108, energy=23.659]Training:  73%|███████▎  | 73/100 [04:02<01:29,  3.30s/epoch, loss=1.611, ot=0.3115, density=6.108, energy=23.659]
+     Val: loss=1.498, ot=0.2758, density=5.691, energy=25.004[A
+     Val: loss=1.498, ot=0.2758, density=5.691, energy=25.004[ATraining:  73%|███████▎  | 73/100 [04:05<01:29,  3.30s/epoch, loss=1.629, ot=0.3141, density=5.938, energy=29.390]Training:  74%|███████▍  | 74/100 [04:05<01:25,  3.29s/epoch, loss=1.629, ot=0.3141, density=5.938, energy=29.390]
+     Val: loss=1.454, ot=0.2675, density=5.649, energy=21.577[A
+     Val: loss=1.454, ot=0.2675, density=5.649, energy=21.577[ATraining:  74%|███████▍  | 74/100 [04:08<01:25,  3.29s/epoch, loss=1.606, ot=0.3067, density=5.968, energy=27.160]Training:  75%|███████▌  | 75/100 [04:08<01:22,  3.28s/epoch, loss=1.606, ot=0.3067, density=5.968, energy=27.160]
+     Val: loss=1.499, ot=0.2740, density=5.682, energy=25.747[A
+     Val: loss=1.499, ot=0.2740, density=5.682, energy=25.747[ATraining:  75%|███████▌  | 75/100 [04:12<01:22,  3.28s/epoch, loss=1.707, ot=0.3311, density=6.182, energy=31.200]Training:  76%|███████▌  | 76/100 [04:12<01:18,  3.29s/epoch, loss=1.707, ot=0.3311, density=6.182, energy=31.200]
+     Val: loss=1.458, ot=0.2682, density=5.650, energy=21.996[A
+     Val: loss=1.458, ot=0.2682, density=5.650, energy=21.996[ATraining:  76%|███████▌  | 76/100 [04:15<01:18,  3.29s/epoch, loss=1.561, ot=0.3046, density=5.822, energy=24.398]Training:  77%|███████▋  | 77/100 [04:15<01:15,  3.29s/epoch, loss=1.561, ot=0.3046, density=5.822, energy=24.398]
+     Val: loss=1.476, ot=0.2679, density=5.669, energy=24.300[A
+     Val: loss=1.476, ot=0.2679, density=5.669, energy=24.300[ATraining:  77%|███████▋  | 77/100 [04:18<01:15,  3.29s/epoch, loss=1.549, ot=0.2925, density=5.841, energy=25.092]Training:  78%|███████▊  | 78/100 [04:18<01:12,  3.29s/epoch, loss=1.549, ot=0.2925, density=5.841, energy=25.092]
+     Val: loss=1.503, ot=0.2738, density=5.716, energy=25.649[A
+     Val: loss=1.503, ot=0.2738, density=5.716, energy=25.649[ATraining:  78%|███████▊  | 78/100 [04:21<01:12,  3.29s/epoch, loss=1.800, ot=0.3715, density=6.463, energy=28.873]Training:  79%|███████▉  | 79/100 [04:21<01:09,  3.29s/epoch, loss=1.800, ot=0.3715, density=6.463, energy=28.873]
+     Val: loss=1.486, ot=0.2689, density=5.733, energy=23.976[A
+     Val: loss=1.486, ot=0.2689, density=5.733, energy=23.976[ATraining:  79%|███████▉  | 79/100 [04:25<01:09,  3.29s/epoch, loss=1.715, ot=0.3417, density=6.211, energy=29.249]Training:  80%|████████  | 80/100 [04:25<01:05,  3.29s/epoch, loss=1.715, ot=0.3417, density=6.211, energy=29.249]
+     Val: loss=1.482, ot=0.2716, density=5.684, energy=23.882[A
+     Val: loss=1.482, ot=0.2716, density=5.684, energy=23.882[ATraining:  80%|████████  | 80/100 [04:28<01:05,  3.29s/epoch, loss=1.670, ot=0.3206, density=6.038, energy=31.557]Training:  81%|████████  | 81/100 [04:28<01:02,  3.29s/epoch, loss=1.670, ot=0.3206, density=6.038, energy=31.557]
+     Val: loss=1.473, ot=0.2671, density=5.680, energy=23.742[A
+     Val: loss=1.473, ot=0.2671, density=5.680, energy=23.742[ATraining:  81%|████████  | 81/100 [04:31<01:02,  3.29s/epoch, loss=1.743, ot=0.3413, density=6.176, energy=33.973]Training:  82%|████████▏ | 82/100 [04:31<00:59,  3.28s/epoch, loss=1.743, ot=0.3413, density=6.176, energy=33.973]
+     Val: loss=1.469, ot=0.2714, density=5.645, energy=22.926[A
+     Val: loss=1.469, ot=0.2714, density=5.645, energy=22.926[ATraining:  82%|████████▏ | 82/100 [04:35<00:59,  3.28s/epoch, loss=1.694, ot=0.3304, density=6.191, energy=29.228]Training:  83%|████████▎ | 83/100 [04:35<00:55,  3.29s/epoch, loss=1.694, ot=0.3304, density=6.191, energy=29.228]
+     Val: loss=1.507, ot=0.2718, density=5.691, energy=27.251[A
+     Val: loss=1.507, ot=0.2718, density=5.691, energy=27.251[ATraining:  83%|████████▎ | 83/100 [04:38<00:55,  3.29s/epoch, loss=1.660, ot=0.3183, density=5.910, energy=33.317]Training:  84%|████████▍ | 84/100 [04:38<00:52,  3.29s/epoch, loss=1.660, ot=0.3183, density=5.910, energy=33.317]
+     Val: loss=1.452, ot=0.2690, density=5.606, energy=21.972[A
+     Val: loss=1.452, ot=0.2690, density=5.606, energy=21.972[ATraining:  84%|████████▍ | 84/100 [04:41<00:52,  3.29s/epoch, loss=1.648, ot=0.3227, density=6.075, energy=26.993]Training:  85%|████████▌ | 85/100 [04:41<00:49,  3.30s/epoch, loss=1.648, ot=0.3227, density=6.075, energy=26.993]
+     Val: loss=1.463, ot=0.2662, density=5.665, energy=22.916[A
+     Val: loss=1.463, ot=0.2662, density=5.665, energy=22.916[ATraining:  85%|████████▌ | 85/100 [04:44<00:49,  3.30s/epoch, loss=1.607, ot=0.3104, density=6.030, energy=25.066]Training:  86%|████████▌ | 86/100 [04:44<00:46,  3.30s/epoch, loss=1.607, ot=0.3104, density=6.030, energy=25.066]
+     Val: loss=1.476, ot=0.2688, density=5.653, energy=24.342[A
+     Val: loss=1.476, ot=0.2688, density=5.653, energy=24.342[ATraining:  86%|████████▌ | 86/100 [04:48<00:46,  3.30s/epoch, loss=1.546, ot=0.2958, density=5.787, energy=25.052]Training:  87%|████████▋ | 87/100 [04:48<00:42,  3.30s/epoch, loss=1.546, ot=0.2958, density=5.787, energy=25.052]
+     Val: loss=1.478, ot=0.2646, density=5.674, energy=25.213[A
+     Val: loss=1.478, ot=0.2646, density=5.674, energy=25.213[ATraining:  87%|████████▋ | 87/100 [04:51<00:42,  3.30s/epoch, loss=1.540, ot=0.2914, density=5.733, energy=26.390]Training:  88%|████████▊ | 88/100 [04:51<00:39,  3.29s/epoch, loss=1.540, ot=0.2914, density=5.733, energy=26.390]
+     Val: loss=1.481, ot=0.2657, density=5.691, energy=24.933[A
+     Val: loss=1.481, ot=0.2657, density=5.691, energy=24.933[ATraining:  88%|████████▊ | 88/100 [04:54<00:39,  3.29s/epoch, loss=1.698, ot=0.3220, density=6.087, energy=34.145]Training:  89%|████████▉ | 89/100 [04:54<00:36,  3.29s/epoch, loss=1.698, ot=0.3220, density=6.087, energy=34.145]
+     Val: loss=1.493, ot=0.2742, density=5.675, energy=25.033[A
+     Val: loss=1.493, ot=0.2742, density=5.675, energy=25.033[ATraining:  89%|████████▉ | 89/100 [04:58<00:36,  3.29s/epoch, loss=1.654, ot=0.3204, density=5.973, energy=30.711]Training:  90%|█████████ | 90/100 [04:58<00:32,  3.29s/epoch, loss=1.654, ot=0.3204, density=5.973, energy=30.711]
+     Val: loss=1.469, ot=0.2649, density=5.674, energy=23.749[A
+     Val: loss=1.469, ot=0.2649, density=5.674, energy=23.749[ATraining:  90%|█████████ | 90/100 [05:01<00:32,  3.29s/epoch, loss=1.551, ot=0.2938, density=5.754, energy=26.936]Training:  91%|█████████ | 91/100 [05:01<00:29,  3.29s/epoch, loss=1.551, ot=0.2938, density=5.754, energy=26.936]
+     Val: loss=1.469, ot=0.2688, density=5.654, energy=23.324[A
+     Val: loss=1.469, ot=0.2688, density=5.654, energy=23.324[ATraining:  91%|█████████ | 91/100 [05:04<00:29,  3.29s/epoch, loss=1.702, ot=0.3300, density=6.232, energy=29.647]Training:  92%|█████████▏| 92/100 [05:04<00:26,  3.29s/epoch, loss=1.702, ot=0.3300, density=6.232, energy=29.647]
+     Val: loss=1.476, ot=0.2671, density=5.651, energy=24.761[A
+     Val: loss=1.476, ot=0.2671, density=5.651, energy=24.761[ATraining:  92%|█████████▏| 92/100 [05:07<00:26,  3.29s/epoch, loss=1.747, ot=0.3444, density=6.120, energy=35.037]Training:  93%|█████████▎| 93/100 [05:07<00:23,  3.29s/epoch, loss=1.747, ot=0.3444, density=6.120, energy=35.037]
+     Val: loss=1.480, ot=0.2707, density=5.645, energy=24.687[A
+     Val: loss=1.480, ot=0.2707, density=5.645, energy=24.687[ATraining:  93%|█████████▎| 93/100 [05:11<00:23,  3.29s/epoch, loss=1.694, ot=0.3328, density=6.132, energy=30.039]Training:  94%|█████████▍| 94/100 [05:11<00:19,  3.29s/epoch, loss=1.694, ot=0.3328, density=6.132, energy=30.039]
+     Val: loss=1.470, ot=0.2669, density=5.666, energy=23.666[A
+     Val: loss=1.470, ot=0.2669, density=5.666, energy=23.666[ATraining:  94%|█████████▍| 94/100 [05:14<00:19,  3.29s/epoch, loss=1.754, ot=0.3425, density=6.213, energy=34.556]Training:  95%|█████████▌| 95/100 [05:14<00:16,  3.29s/epoch, loss=1.754, ot=0.3425, density=6.213, energy=34.556]
+     Val: loss=1.500, ot=0.2720, density=5.705, energy=25.879[A
+     Val: loss=1.500, ot=0.2720, density=5.705, energy=25.879[ATraining:  95%|█████████▌| 95/100 [05:17<00:16,  3.29s/epoch, loss=1.619, ot=0.3010, density=5.879, energy=32.217]Training:  96%|█████████▌| 96/100 [05:17<00:13,  3.29s/epoch, loss=1.619, ot=0.3010, density=5.879, energy=32.217]
+     Val: loss=1.458, ot=0.2649, density=5.633, energy=23.140[A
+     Val: loss=1.458, ot=0.2649, density=5.633, energy=23.140[ATraining:  96%|█████████▌| 96/100 [05:21<00:13,  3.29s/epoch, loss=1.681, ot=0.3273, density=6.021, energy=31.794]Training:  97%|█████████▋| 97/100 [05:21<00:09,  3.29s/epoch, loss=1.681, ot=0.3273, density=6.021, energy=31.794]
+     Val: loss=1.504, ot=0.2720, density=5.689, energy=26.817[A
+     Val: loss=1.504, ot=0.2720, density=5.689, energy=26.817[ATraining:  97%|█████████▋| 97/100 [05:24<00:09,  3.29s/epoch, loss=1.517, ot=0.2896, density=5.687, energy=24.614]Training:  98%|█████████▊| 98/100 [05:24<00:06,  3.29s/epoch, loss=1.517, ot=0.2896, density=5.687, energy=24.614]
+     Val: loss=1.472, ot=0.2703, density=5.646, energy=23.567[A
+     Val: loss=1.472, ot=0.2703, density=5.646, energy=23.567[ATraining:  98%|█████████▊| 98/100 [05:27<00:06,  3.29s/epoch, loss=1.693, ot=0.3333, density=6.120, energy=29.992]Training:  99%|█████████▉| 99/100 [05:27<00:03,  3.29s/epoch, loss=1.693, ot=0.3333, density=6.120, energy=29.992]
+     Val: loss=1.484, ot=0.2669, density=5.684, energy=25.322[A
+     Val: loss=1.484, ot=0.2669, density=5.684, energy=25.322[ATraining:  99%|█████████▉| 99/100 [05:31<00:03,  3.29s/epoch, loss=1.583, ot=0.2973, density=5.893, energy=27.671]Training: 100%|██████████| 100/100 [05:31<00:00,  3.31s/epoch, loss=1.583, ot=0.2973, density=5.893, energy=27.671]
+     Val: loss=1.483, ot=0.2702, density=5.660, energy=24.830[A
+     Val: loss=1.483, ot=0.2702, density=5.660, energy=24.830[A`Trainer.fit` stopped: `max_epochs=100` reached.
+     Val: loss=1.483, ot=0.2702, density=5.660, energy=24.830
+Training: 100%|██████████| 100/100 [05:31<00:00,  3.31s/epoch, loss=1.583, ot=0.2973, density=5.893, energy=27.671]
+[rank: 0] Seed set to 42
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/lightning/fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/src/fl ...
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+`Trainer(limit_train_batches=1.0)` was configured so 100% of the batches per epoch will be used..
+`Trainer(limit_val_batches=1.0)` was configured so 100% of the batches will be used..
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/src/flatcfm/modelcore/models/base.py:85: UserWarning: No optimizer specified in task_cfg; defaulting to AdamW (lr=0.0007818474152814576, weight_decay=6.0922933797947286e-06).
+  rank_zero_warn(
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/lightning/pytorch/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+Training:   0%|          | 0/100 [00:00<?, ?epoch/s]
+     Val:[ATraining:   0%|          | 0/100 [00:06<?, ?epoch/s, loss=1.984, ot=0.3539, density=6.575, energy=79.524]Training:   1%|          | 1/100 [00:06<11:02,  6.69s/epoch, loss=1.984, ot=0.3539, density=6.575, energy=79.524]
+     Val: loss=1.801, ot=0.3263, density=5.783, energy=84.229[A
+     Val: loss=1.801, ot=0.3263, density=5.783, energy=84.229[ATraining:   1%|          | 1/100 [00:13<11:02,  6.69s/epoch, loss=1.868, ot=0.3520, density=5.852, energy=94.331]Training:   2%|▏         | 2/100 [00:13<11:07,  6.81s/epoch, loss=1.868, ot=0.3520, density=5.852, energy=94.331]
+     Val: loss=1.784, ot=0.3244, density=5.699, energy=85.145[A
+     Val: loss=1.784, ot=0.3244, density=5.699, energy=85.145[ATraining:   2%|▏         | 2/100 [00:20<11:07,  6.81s/epoch, loss=1.861, ot=0.3448, density=5.780, energy=98.733]Training:   3%|▎         | 3/100 [00:20<11:03,  6.84s/epoch, loss=1.861, ot=0.3448, density=5.780, energy=98.733]
+     Val: loss=1.786, ot=0.3351, density=5.589, energy=90.957[A
+     Val: loss=1.786, ot=0.3351, density=5.589, energy=90.957[ATraining:   3%|▎         | 3/100 [00:27<11:03,  6.84s/epoch, loss=1.893, ot=0.3542, density=5.908, energy=97.826]Training:   4%|▍         | 4/100 [00:27<10:56,  6.84s/epoch, loss=1.893, ot=0.3542, density=5.908, energy=97.826]
+     Val: loss=1.793, ot=0.3244, density=5.801, energy=80.741[A
+     Val: loss=1.793, ot=0.3244, density=5.801, energy=80.741[ATraining:   4%|▍         | 4/100 [00:34<10:56,  6.84s/epoch, loss=1.952, ot=0.3693, density=6.228, energy=90.091]Training:   5%|▌         | 5/100 [00:34<10:49,  6.84s/epoch, loss=1.952, ot=0.3693, density=6.228, energy=90.091]
+     Val: loss=1.812, ot=0.3261, density=5.705, energy=93.201[A
+     Val: loss=1.812, ot=0.3261, density=5.705, energy=93.201[ATraining:   5%|▌         | 5/100 [00:40<10:49,  6.84s/epoch, loss=1.818, ot=0.3335, density=5.667, energy=95.835]Training:   6%|▌         | 6/100 [00:40<10:43,  6.85s/epoch, loss=1.818, ot=0.3335, density=5.667, energy=95.835]
+     Val: loss=1.773, ot=0.3164, density=5.732, energy=81.358[A
+     Val: loss=1.773, ot=0.3164, density=5.732, energy=81.358[ATraining:   6%|▌         | 6/100 [00:47<10:43,  6.85s/epoch, loss=1.882, ot=0.3544, density=5.844, energy=98.656]Training:   7%|▋         | 7/100 [00:47<10:39,  6.87s/epoch, loss=1.882, ot=0.3544, density=5.844, energy=98.656]
+     Val: loss=1.807, ot=0.3134, density=5.785, energy=89.129[A
+     Val: loss=1.807, ot=0.3134, density=5.785, energy=89.129[ATraining:   7%|▋         | 7/100 [00:54<10:39,  6.87s/epoch, loss=1.856, ot=0.3511, density=5.732, energy=99.081]Training:   8%|▊         | 8/100 [00:54<10:32,  6.87s/epoch, loss=1.856, ot=0.3511, density=5.732, energy=99.081]
+     Val: loss=1.798, ot=0.3236, density=5.724, energy=87.842[A
+     Val: loss=1.798, ot=0.3236, density=5.724, energy=87.842[ATraining:   8%|▊         | 8/100 [01:01<10:32,  6.87s/epoch, loss=1.863, ot=0.3479, density=5.768, energy=99.594]Training:   9%|▉         | 9/100 [01:01<10:24,  6.87s/epoch, loss=1.863, ot=0.3479, density=5.768, energy=99.594]
+     Val: loss=1.821, ot=0.3282, density=5.547, energy=106.6 [A
+     Val: loss=1.821, ot=0.3282, density=5.547, energy=106.6[ATraining:   9%|▉         | 9/100 [01:08<10:24,  6.87s/epoch, loss=1.844, ot=0.3529, density=5.701, energy=96.982]Training:  10%|█         | 10/100 [01:08<10:18,  6.88s/epoch, loss=1.844, ot=0.3529, density=5.701, energy=96.982]
+     Val: loss=1.780, ot=0.3105, density=5.830, energy=78.085[A
+     Val: loss=1.780, ot=0.3105, density=5.830, energy=78.085[ATraining:  10%|█         | 10/100 [01:15<10:18,  6.88s/epoch, loss=1.891, ot=0.3556, density=5.877, energy=99.030]Training:  11%|█         | 11/100 [01:15<10:12,  6.88s/epoch, loss=1.891, ot=0.3556, density=5.877, energy=99.030]
+     Val: loss=1.780, ot=0.3062, density=5.705, energy=87.760[A
+     Val: loss=1.780, ot=0.3062, density=5.705, energy=87.760[ATraining:  11%|█         | 11/100 [01:22<10:12,  6.88s/epoch, loss=1.829, ot=0.3109, density=6.172, energy=69.430]Training:  12%|█▏        | 12/100 [01:22<10:05,  6.88s/epoch, loss=1.829, ot=0.3109, density=6.172, energy=69.430]
+     Val: loss=1.718, ot=0.2561, density=6.208, energy=44.896[A
+     Val: loss=1.718, ot=0.2561, density=6.208, energy=44.896[ATraining:  12%|█▏        | 12/100 [01:29<10:05,  6.88s/epoch, loss=1.866, ot=0.3079, density=6.481, energy=60.173]Training:  13%|█▎        | 13/100 [01:29<09:59,  6.90s/epoch, loss=1.866, ot=0.3079, density=6.481, energy=60.173]
+     Val: loss=1.601, ot=0.2502, density=5.846, energy=34.856[A
+     Val: loss=1.601, ot=0.2502, density=5.846, energy=34.856[ATraining:  13%|█▎        | 13/100 [01:36<09:59,  6.90s/epoch, loss=1.750, ot=0.2853, density=6.078, energy=57.224]Training:  14%|█▍        | 14/100 [01:36<09:53,  6.90s/epoch, loss=1.750, ot=0.2853, density=6.078, energy=57.224]
+     Val: loss=1.697, ot=0.2605, density=5.703, energy=72.642[A
+     Val: loss=1.697, ot=0.2605, density=5.703, energy=72.642[ATraining:  14%|█▍        | 14/100 [01:43<09:53,  6.90s/epoch, loss=1.769, ot=0.3012, density=5.914, energy=70.864]Training:  15%|█▌        | 15/100 [01:43<09:45,  6.89s/epoch, loss=1.769, ot=0.3012, density=5.914, energy=70.864]
+     Val: loss=1.648, ot=0.2420, density=5.773, energy=56.689[A
+     Val: loss=1.648, ot=0.2420, density=5.773, energy=56.689[ATraining:  15%|█▌        | 15/100 [01:49<09:45,  6.89s/epoch, loss=1.735, ot=0.2950, density=5.819, energy=68.337]Training:  16%|█▌        | 16/100 [01:49<09:37,  6.87s/epoch, loss=1.735, ot=0.2950, density=5.819, energy=68.337]
+     Val: loss=1.642, ot=0.2402, density=5.724, energy=58.758[A
+     Val: loss=1.642, ot=0.2402, density=5.724, energy=58.758[ATraining:  16%|█▌        | 16/100 [01:56<09:37,  6.87s/epoch, loss=1.704, ot=0.2858, density=5.705, energy=68.859]Training:  17%|█▋        | 17/100 [01:56<09:30,  6.87s/epoch, loss=1.704, ot=0.2858, density=5.705, energy=68.859]
+     Val: loss=1.651, ot=0.2408, density=5.769, energy=58.341[A
+     Val: loss=1.651, ot=0.2408, density=5.769, energy=58.341[ATraining:  17%|█▋        | 17/100 [02:03<09:30,  6.87s/epoch, loss=1.695, ot=0.2926, density=5.668, energy=66.782]Training:  18%|█▊        | 18/100 [02:03<09:24,  6.88s/epoch, loss=1.695, ot=0.2926, density=5.668, energy=66.782]
+     Val: loss=1.634, ot=0.2460, density=5.681, energy=57.862[A
+     Val: loss=1.634, ot=0.2460, density=5.681, energy=57.862[ATraining:  18%|█▊        | 18/100 [02:10<09:24,  6.88s/epoch, loss=1.715, ot=0.2879, density=5.740, energy=69.381]Training:  19%|█▉        | 19/100 [02:10<09:17,  6.88s/epoch, loss=1.715, ot=0.2879, density=5.740, energy=69.381]
+     Val: loss=1.619, ot=0.2392, density=5.603, energy=60.237[A
+     Val: loss=1.619, ot=0.2392, density=5.603, energy=60.237[ATraining:  19%|█▉        | 19/100 [02:17<09:17,  6.88s/epoch, loss=1.697, ot=0.2878, density=5.597, energy=73.665]Training:  20%|██        | 20/100 [02:17<09:10,  6.88s/epoch, loss=1.697, ot=0.2878, density=5.597, energy=73.665]
+     Val: loss=1.638, ot=0.2439, density=5.609, energy=64.586[A
+     Val: loss=1.638, ot=0.2439, density=5.609, energy=64.586[ATraining:  20%|██        | 20/100 [02:24<09:10,  6.88s/epoch, loss=1.670, ot=0.2831, density=5.530, energy=71.044]Training:  21%|██        | 21/100 [02:24<09:02,  6.87s/epoch, loss=1.670, ot=0.2831, density=5.530, energy=71.044]
+     Val: loss=1.612, ot=0.2353, density=5.657, energy=55.345[A
+     Val: loss=1.612, ot=0.2353, density=5.657, energy=55.345[ATraining:  21%|██        | 21/100 [02:31<09:02,  6.87s/epoch, loss=1.669, ot=0.2831, density=5.557, energy=68.695]Training:  22%|██▏       | 22/100 [02:31<08:55,  6.87s/epoch, loss=1.669, ot=0.2831, density=5.557, energy=68.695]
+     Val: loss=1.629, ot=0.2382, density=5.608, energy=63.370[A
+     Val: loss=1.629, ot=0.2382, density=5.608, energy=63.370[ATraining:  22%|██▏       | 22/100 [02:37<08:55,  6.87s/epoch, loss=1.678, ot=0.2898, density=5.432, energy=78.675]Training:  23%|██▎       | 23/100 [02:37<08:48,  6.86s/epoch, loss=1.678, ot=0.2898, density=5.432, energy=78.675]
+     Val: loss=1.607, ot=0.2393, density=5.566, energy=58.916[A
+     Val: loss=1.607, ot=0.2393, density=5.566, energy=58.916[ATraining:  23%|██▎       | 23/100 [02:44<08:48,  6.86s/epoch, loss=1.657, ot=0.2832, density=5.431, energy=73.780]Training:  24%|██▍       | 24/100 [02:44<08:41,  6.86s/epoch, loss=1.657, ot=0.2832, density=5.431, energy=73.780]
+     Val: loss=1.633, ot=0.2456, density=5.605, energy=63.023[A
+     Val: loss=1.633, ot=0.2456, density=5.605, energy=63.023[ATraining:  24%|██▍       | 24/100 [02:51<08:41,  6.86s/epoch, loss=1.664, ot=0.2926, density=5.406, energy=75.328]Training:  25%|██▌       | 25/100 [02:51<08:34,  6.86s/epoch, loss=1.664, ot=0.2926, density=5.406, energy=75.328]
+     Val: loss=1.626, ot=0.2354, density=5.630, energy=61.607[A
+     Val: loss=1.626, ot=0.2354, density=5.630, energy=61.607[ATraining:  25%|██▌       | 25/100 [02:58<08:34,  6.86s/epoch, loss=1.679, ot=0.2870, density=5.467, energy=77.190]Training:  26%|██▌       | 26/100 [02:58<08:28,  6.87s/epoch, loss=1.679, ot=0.2870, density=5.467, energy=77.190]
+     Val: loss=1.617, ot=0.2321, density=5.586, energy=62.482[A
+     Val: loss=1.617, ot=0.2321, density=5.586, energy=62.482[ATraining:  26%|██▌       | 26/100 [03:05<08:28,  6.87s/epoch, loss=1.630, ot=0.2752, density=5.354, energy=72.674]Training:  27%|██▋       | 27/100 [03:05<08:21,  6.87s/epoch, loss=1.630, ot=0.2752, density=5.354, energy=72.674]
+     Val: loss=1.629, ot=0.2366, density=5.635, energy=61.850[A
+     Val: loss=1.629, ot=0.2366, density=5.635, energy=61.850[ATraining:  27%|██▋       | 27/100 [03:12<08:21,  6.87s/epoch, loss=1.626, ot=0.2765, density=5.340, energy=72.014]Training:  28%|██▊       | 28/100 [03:12<08:13,  6.86s/epoch, loss=1.626, ot=0.2765, density=5.340, energy=72.014]
+     Val: loss=1.626, ot=0.2387, density=5.593, energy=63.138[A
+     Val: loss=1.626, ot=0.2387, density=5.593, energy=63.138[ATraining:  28%|██▊       | 28/100 [03:19<08:13,  6.86s/epoch, loss=1.588, ot=0.2593, density=5.285, energy=68.020]Training:  29%|██▉       | 29/100 [03:19<08:06,  6.85s/epoch, loss=1.588, ot=0.2593, density=5.285, energy=68.020]
+     Val: loss=1.616, ot=0.2431, density=5.531, energy=63.490[A
+     Val: loss=1.616, ot=0.2431, density=5.531, energy=63.490[ATraining:  29%|██▉       | 29/100 [03:25<08:06,  6.85s/epoch, loss=1.672, ot=0.2879, density=5.441, energy=76.515]Training:  30%|███       | 30/100 [03:25<07:59,  6.85s/epoch, loss=1.672, ot=0.2879, density=5.441, energy=76.515]
+     Val: loss=1.619, ot=0.2395, density=5.574, energy=62.356[A
+     Val: loss=1.619, ot=0.2395, density=5.574, energy=62.356[ATraining:  30%|███       | 30/100 [03:32<07:59,  6.85s/epoch, loss=1.663, ot=0.2929, density=5.341, energy=79.532]Training:  31%|███       | 31/100 [03:32<07:53,  6.86s/epoch, loss=1.663, ot=0.2929, density=5.341, energy=79.532]
+     Val: loss=1.632, ot=0.2355, density=5.673, energy=60.487[A
+     Val: loss=1.632, ot=0.2355, density=5.673, energy=60.487[ATraining:  31%|███       | 31/100 [03:39<07:53,  6.86s/epoch, loss=1.668, ot=0.2807, density=5.371, energy=82.169]Training:  32%|███▏      | 32/100 [03:39<07:46,  6.86s/epoch, loss=1.668, ot=0.2807, density=5.371, energy=82.169]
+     Val: loss=1.599, ot=0.2390, density=5.524, energy=59.417[A
+     Val: loss=1.599, ot=0.2390, density=5.524, energy=59.417[ATraining:  32%|███▏      | 32/100 [03:46<07:46,  6.86s/epoch, loss=1.690, ot=0.2976, density=5.452, energy=79.247]Training:  33%|███▎      | 33/100 [03:46<07:39,  6.86s/epoch, loss=1.690, ot=0.2976, density=5.452, energy=79.247]
+     Val: loss=1.610, ot=0.2379, density=5.527, energy=63.123[A
+     Val: loss=1.610, ot=0.2379, density=5.527, energy=63.123[ATraining:  33%|███▎      | 33/100 [03:53<07:39,  6.86s/epoch, loss=1.657, ot=0.2878, density=5.373, energy=76.675]Training:  34%|███▍      | 34/100 [03:53<07:32,  6.85s/epoch, loss=1.657, ot=0.2878, density=5.373, energy=76.675]
+     Val: loss=1.607, ot=0.2405, density=5.549, energy=59.901[A
+     Val: loss=1.607, ot=0.2405, density=5.549, energy=59.901[ATraining:  34%|███▍      | 34/100 [04:00<07:32,  6.85s/epoch, loss=1.648, ot=0.2769, density=5.388, energy=75.584]Training:  35%|███▌      | 35/100 [04:00<07:25,  6.85s/epoch, loss=1.648, ot=0.2769, density=5.388, energy=75.584]
+     Val: loss=1.616, ot=0.2386, density=5.521, energy=65.295[A
+     Val: loss=1.616, ot=0.2386, density=5.521, energy=65.295[ATraining:  35%|███▌      | 35/100 [04:07<07:25,  6.85s/epoch, loss=1.665, ot=0.2825, density=5.383, energy=79.760]Training:  36%|███▌      | 36/100 [04:07<07:18,  6.85s/epoch, loss=1.665, ot=0.2825, density=5.383, energy=79.760]
+     Val: loss=1.617, ot=0.2390, density=5.558, energy=62.916[A
+     Val: loss=1.617, ot=0.2390, density=5.558, energy=62.916[ATraining:  36%|███▌      | 36/100 [04:13<07:18,  6.85s/epoch, loss=1.597, ot=0.2632, density=5.300, energy=68.916]Training:  37%|███▋      | 37/100 [04:13<07:10,  6.84s/epoch, loss=1.597, ot=0.2632, density=5.300, energy=68.916]
+     Val: loss=1.616, ot=0.2392, density=5.587, energy=60.510[A
+     Val: loss=1.616, ot=0.2392, density=5.587, energy=60.510[ATraining:  37%|███▋      | 37/100 [04:20<07:10,  6.84s/epoch, loss=1.622, ot=0.2785, density=5.338, energy=70.480]Training:  38%|███▊      | 38/100 [04:20<07:09,  6.92s/epoch, loss=1.622, ot=0.2785, density=5.338, energy=70.480]
+     Val: loss=1.612, ot=0.2385, density=5.532, energy=63.103[A
+     Val: loss=1.612, ot=0.2385, density=5.532, energy=63.103[ATraining:  38%|███▊      | 38/100 [04:27<07:09,  6.92s/epoch, loss=1.625, ot=0.2728, density=5.275, energy=76.959]Training:  39%|███▉      | 39/100 [04:27<07:01,  6.91s/epoch, loss=1.625, ot=0.2728, density=5.275, energy=76.959]
+     Val: loss=1.605, ot=0.2304, density=5.551, energy=61.779[A
+     Val: loss=1.605, ot=0.2304, density=5.551, energy=61.779[ATraining:  39%|███▉      | 39/100 [04:34<07:01,  6.91s/epoch, loss=1.696, ot=0.2980, density=5.405, energy=84.485]Training:  40%|████      | 40/100 [04:34<06:53,  6.89s/epoch, loss=1.696, ot=0.2980, density=5.405, energy=84.485]
+     Val: loss=1.594, ot=0.2400, density=5.497, energy=59.661[A
+     Val: loss=1.594, ot=0.2400, density=5.497, energy=59.661[ATraining:  40%|████      | 40/100 [04:41<06:53,  6.89s/epoch, loss=1.627, ot=0.2725, density=5.331, energy=73.764]Training:  41%|████      | 41/100 [04:41<06:46,  6.90s/epoch, loss=1.627, ot=0.2725, density=5.331, energy=73.764]
+     Val: loss=1.612, ot=0.2435, density=5.511, energy=63.386[A
+     Val: loss=1.612, ot=0.2435, density=5.511, energy=63.386[ATraining:  41%|████      | 41/100 [04:48<06:46,  6.90s/epoch, loss=1.623, ot=0.2740, density=5.288, energy=75.235]Training:  42%|████▏     | 42/100 [04:48<06:39,  6.88s/epoch, loss=1.623, ot=0.2740, density=5.288, energy=75.235]
+     Val: loss=1.616, ot=0.2447, density=5.493, energy=65.768[A
+     Val: loss=1.616, ot=0.2447, density=5.493, energy=65.768[ATraining:  42%|████▏     | 42/100 [04:55<06:39,  6.88s/epoch, loss=1.624, ot=0.2752, density=5.336, energy=71.791]Training:  43%|████▎     | 43/100 [04:55<06:31,  6.88s/epoch, loss=1.624, ot=0.2752, density=5.336, energy=71.791]
+     Val: loss=1.614, ot=0.2359, density=5.538, energy=64.027[A
+     Val: loss=1.614, ot=0.2359, density=5.538, energy=64.027[ATraining:  43%|████▎     | 43/100 [05:02<06:31,  6.88s/epoch, loss=1.631, ot=0.2782, density=5.352, energy=72.266]Training:  44%|████▍     | 44/100 [05:02<06:24,  6.87s/epoch, loss=1.631, ot=0.2782, density=5.352, energy=72.266]
+     Val: loss=1.616, ot=0.2386, density=5.532, energy=64.614[A
+     Val: loss=1.616, ot=0.2386, density=5.532, energy=64.614[ATraining:  44%|████▍     | 44/100 [05:09<06:24,  6.87s/epoch, loss=1.627, ot=0.2768, density=5.299, energy=75.178]Training:  45%|████▌     | 45/100 [05:09<06:17,  6.86s/epoch, loss=1.627, ot=0.2768, density=5.299, energy=75.178]
+     Val: loss=1.607, ot=0.2388, density=5.511, energy=63.141[A
+     Val: loss=1.607, ot=0.2388, density=5.511, energy=63.141[ATraining:  45%|████▌     | 45/100 [05:15<06:17,  6.86s/epoch, loss=1.649, ot=0.2815, density=5.381, energy=75.063]Training:  46%|████▌     | 46/100 [05:15<06:10,  6.86s/epoch, loss=1.649, ot=0.2815, density=5.381, energy=75.063]
+     Val: loss=1.617, ot=0.2462, density=5.523, energy=63.678[A
+     Val: loss=1.617, ot=0.2462, density=5.523, energy=63.678[ATraining:  46%|████▌     | 46/100 [05:22<06:10,  6.86s/epoch, loss=1.645, ot=0.2813, density=5.291, energy=80.333]Training:  47%|████▋     | 47/100 [05:22<06:03,  6.86s/epoch, loss=1.645, ot=0.2813, density=5.291, energy=80.333]
+     Val: loss=1.613, ot=0.2412, density=5.466, energy=67.529[A
+     Val: loss=1.613, ot=0.2412, density=5.466, energy=67.529[ATraining:  47%|████▋     | 47/100 [05:29<06:03,  6.86s/epoch, loss=1.651, ot=0.2887, density=5.257, energy=82.716]Training:  48%|████▊     | 48/100 [05:29<05:56,  6.86s/epoch, loss=1.651, ot=0.2887, density=5.257, energy=82.716]
+     Val: loss=1.616, ot=0.2385, density=5.574, energy=61.421[A
+     Val: loss=1.616, ot=0.2385, density=5.574, energy=61.421[ATraining:  48%|████▊     | 48/100 [05:36<05:56,  6.86s/epoch, loss=1.641, ot=0.2814, density=5.337, energy=75.779]Training:  49%|████▉     | 49/100 [05:36<05:49,  6.86s/epoch, loss=1.641, ot=0.2814, density=5.337, energy=75.779]
+     Val: loss=1.615, ot=0.2323, density=5.519, energy=66.507[A
+     Val: loss=1.615, ot=0.2323, density=5.519, energy=66.507[ATraining:  49%|████▉     | 49/100 [05:43<05:49,  6.86s/epoch, loss=1.618, ot=0.2789, density=5.247, energy=75.493]Training:  50%|█████     | 50/100 [05:43<05:42,  6.85s/epoch, loss=1.618, ot=0.2789, density=5.247, energy=75.493]
+     Val: loss=1.616, ot=0.2326, density=5.555, energy=64.304[A
+     Val: loss=1.616, ot=0.2326, density=5.555, energy=64.304[ATraining:  50%|█████     | 50/100 [05:50<05:42,  6.85s/epoch, loss=1.618, ot=0.2703, density=5.347, energy=70.321]Training:  51%|█████     | 51/100 [05:50<05:35,  6.84s/epoch, loss=1.618, ot=0.2703, density=5.347, energy=70.321]
+     Val: loss=1.623, ot=0.2429, density=5.595, energy=61.336[A
+     Val: loss=1.623, ot=0.2429, density=5.595, energy=61.336[ATraining:  51%|█████     | 51/100 [05:56<05:35,  6.84s/epoch, loss=1.642, ot=0.2724, density=5.350, energy=77.228]Training:  52%|█████▏    | 52/100 [05:56<05:28,  6.84s/epoch, loss=1.642, ot=0.2724, density=5.350, energy=77.228]
+     Val: loss=1.643, ot=0.2473, density=5.562, energy=68.958[A
+     Val: loss=1.643, ot=0.2473, density=5.562, energy=68.958[ATraining:  52%|█████▏    | 52/100 [06:03<05:28,  6.84s/epoch, loss=1.640, ot=0.2819, density=5.344, energy=74.775]Training:  53%|█████▎    | 53/100 [06:03<05:21,  6.84s/epoch, loss=1.640, ot=0.2819, density=5.344, energy=74.775]
+     Val: loss=1.622, ot=0.2424, density=5.552, energy=64.045[A
+     Val: loss=1.622, ot=0.2424, density=5.552, energy=64.045[ATraining:  53%|█████▎    | 53/100 [06:10<05:21,  6.84s/epoch, loss=1.652, ot=0.2881, density=5.301, energy=80.051]Training:  54%|█████▍    | 54/100 [06:10<05:14,  6.85s/epoch, loss=1.652, ot=0.2881, density=5.301, energy=80.051]
+     Val: loss=1.609, ot=0.2403, density=5.544, energy=60.855[A
+     Val: loss=1.609, ot=0.2403, density=5.544, energy=60.855[ATraining:  54%|█████▍    | 54/100 [06:17<05:14,  6.85s/epoch, loss=1.652, ot=0.2847, density=5.351, energy=77.530]Training:  55%|█████▌    | 55/100 [06:17<05:08,  6.85s/epoch, loss=1.652, ot=0.2847, density=5.351, energy=77.530]
+     Val: loss=1.623, ot=0.2310, density=5.558, energy=66.785[A
+     Val: loss=1.623, ot=0.2310, density=5.558, energy=66.785[ATraining:  55%|█████▌    | 55/100 [06:24<05:08,  6.85s/epoch, loss=1.659, ot=0.2851, density=5.346, energy=80.060]Training:  56%|█████▌    | 56/100 [06:24<05:01,  6.84s/epoch, loss=1.659, ot=0.2851, density=5.346, energy=80.060]
+     Val: loss=1.625, ot=0.2327, density=5.627, energy=61.945[A
+     Val: loss=1.625, ot=0.2327, density=5.627, energy=61.945[ATraining:  56%|█████▌    | 56/100 [06:31<05:01,  6.84s/epoch, loss=1.688, ot=0.2931, density=5.409, energy=82.832]Training:  57%|█████▋    | 57/100 [06:31<04:54,  6.85s/epoch, loss=1.688, ot=0.2931, density=5.409, energy=82.832]
+     Val: loss=1.624, ot=0.2379, density=5.576, energy=64.112[A
+     Val: loss=1.624, ot=0.2379, density=5.576, energy=64.112[ATraining:  57%|█████▋    | 57/100 [06:38<04:54,  6.85s/epoch, loss=1.626, ot=0.2815, density=5.219, energy=79.279]Training:  58%|█████▊    | 58/100 [06:38<04:47,  6.85s/epoch, loss=1.626, ot=0.2815, density=5.219, energy=79.279]
+     Val: loss=1.613, ot=0.2399, density=5.521, energy=63.947[A
+     Val: loss=1.613, ot=0.2399, density=5.521, energy=63.947[ATraining:  58%|█████▊    | 58/100 [06:44<04:47,  6.85s/epoch, loss=1.648, ot=0.2850, density=5.379, energy=74.073]Training:  59%|█████▉    | 59/100 [06:44<04:41,  6.85s/epoch, loss=1.648, ot=0.2850, density=5.379, energy=74.073]
+     Val: loss=1.621, ot=0.2413, density=5.540, energy=64.961[A
+     Val: loss=1.621, ot=0.2413, density=5.540, energy=64.961[ATraining:  59%|█████▉    | 59/100 [06:51<04:41,  6.85s/epoch, loss=1.615, ot=0.2739, density=5.288, energy=72.767]Training:  60%|██████    | 60/100 [06:51<04:33,  6.85s/epoch, loss=1.615, ot=0.2739, density=5.288, energy=72.767]
+     Val: loss=1.610, ot=0.2430, density=5.480, energy=64.985[A
+     Val: loss=1.610, ot=0.2430, density=5.480, energy=64.985[ATraining:  60%|██████    | 60/100 [06:58<04:33,  6.85s/epoch, loss=1.652, ot=0.2808, density=5.309, energy=81.398]Training:  61%|██████    | 61/100 [06:58<04:28,  6.88s/epoch, loss=1.652, ot=0.2808, density=5.309, energy=81.398]
+     Val: loss=1.608, ot=0.2345, density=5.528, energy=63.251[A
+     Val: loss=1.608, ot=0.2345, density=5.528, energy=63.251[ATraining:  61%|██████    | 61/100 [07:05<04:28,  6.88s/epoch, loss=1.586, ot=0.2661, density=5.211, energy=70.938]Training:  62%|██████▏   | 62/100 [07:05<04:20,  6.86s/epoch, loss=1.586, ot=0.2661, density=5.211, energy=70.938]
+     Val: loss=1.616, ot=0.2379, density=5.591, energy=60.423[A
+     Val: loss=1.616, ot=0.2379, density=5.591, energy=60.423[ATraining:  62%|██████▏   | 62/100 [07:12<04:20,  6.86s/epoch, loss=1.604, ot=0.2729, density=5.229, energy=73.703]Training:  63%|██████▎   | 63/100 [07:12<04:13,  6.86s/epoch, loss=1.604, ot=0.2729, density=5.229, energy=73.703]
+     Val: loss=1.620, ot=0.2363, density=5.541, energy=65.765[A
+     Val: loss=1.620, ot=0.2363, density=5.541, energy=65.765[ATraining:  63%|██████▎   | 63/100 [07:19<04:13,  6.86s/epoch, loss=1.613, ot=0.2746, density=5.282, energy=72.402]Training:  64%|██████▍   | 64/100 [07:19<04:06,  6.85s/epoch, loss=1.613, ot=0.2746, density=5.282, energy=72.402]
+     Val: loss=1.618, ot=0.2416, density=5.573, energy=61.655[A
+     Val: loss=1.618, ot=0.2416, density=5.573, energy=61.655[ATraining:  64%|██████▍   | 64/100 [07:26<04:06,  6.85s/epoch, loss=1.608, ot=0.2714, density=5.227, energy=75.454]Training:  65%|██████▌   | 65/100 [07:26<03:59,  6.85s/epoch, loss=1.608, ot=0.2714, density=5.227, energy=75.454]
+     Val: loss=1.611, ot=0.2385, density=5.517, energy=64.021[A
+     Val: loss=1.611, ot=0.2385, density=5.517, energy=64.021[ATraining:  65%|██████▌   | 65/100 [07:32<03:59,  6.85s/epoch, loss=1.649, ot=0.2866, density=5.185, energy=87.572]Training:  66%|██████▌   | 66/100 [07:32<03:53,  6.86s/epoch, loss=1.649, ot=0.2866, density=5.185, energy=87.572]
+     Val: loss=1.618, ot=0.2335, density=5.601, energy=61.588[A
+     Val: loss=1.618, ot=0.2335, density=5.601, energy=61.588[ATraining:  66%|██████▌   | 66/100 [07:39<03:53,  6.86s/epoch, loss=1.607, ot=0.2683, density=5.303, energy=70.495]Training:  67%|██████▋   | 67/100 [07:39<03:45,  6.84s/epoch, loss=1.607, ot=0.2683, density=5.303, energy=70.495]
+     Val: loss=1.614, ot=0.2369, density=5.577, energy=61.114[A
+     Val: loss=1.614, ot=0.2369, density=5.577, energy=61.114[ATraining:  67%|██████▋   | 67/100 [07:46<03:45,  6.84s/epoch, loss=1.664, ot=0.2927, density=5.303, energy=82.735]Training:  68%|██████▊   | 68/100 [07:46<03:38,  6.84s/epoch, loss=1.664, ot=0.2927, density=5.303, energy=82.735]
+     Val: loss=1.616, ot=0.2385, density=5.557, energy=62.875[A
+     Val: loss=1.616, ot=0.2385, density=5.557, energy=62.875[ATraining:  68%|██████▊   | 68/100 [07:53<03:38,  6.84s/epoch, loss=1.645, ot=0.2836, density=5.297, energy=79.154]Training:  69%|██████▉   | 69/100 [07:53<03:32,  6.84s/epoch, loss=1.645, ot=0.2836, density=5.297, energy=79.154]
+     Val: loss=1.606, ot=0.2359, density=5.511, energy=63.390[A
+     Val: loss=1.606, ot=0.2359, density=5.511, energy=63.390[ATraining:  69%|██████▉   | 69/100 [08:00<03:32,  6.84s/epoch, loss=1.645, ot=0.2806, density=5.286, energy=80.813]Training:  70%|███████   | 70/100 [08:00<03:25,  6.84s/epoch, loss=1.645, ot=0.2806, density=5.286, energy=80.813]
+     Val: loss=1.622, ot=0.2447, density=5.544, energy=64.159[A
+     Val: loss=1.622, ot=0.2447, density=5.544, energy=64.159[ATraining:  70%|███████   | 70/100 [08:07<03:25,  6.84s/epoch, loss=1.652, ot=0.2783, density=5.379, energy=77.007]Training:  71%|███████   | 71/100 [08:07<03:18,  6.84s/epoch, loss=1.652, ot=0.2783, density=5.379, energy=77.007]
+     Val: loss=1.608, ot=0.2309, density=5.535, energy=63.639[A
+     Val: loss=1.608, ot=0.2309, density=5.535, energy=63.639[ATraining:  71%|███████   | 71/100 [08:13<03:18,  6.84s/epoch, loss=1.627, ot=0.2830, density=5.271, energy=75.671]Training:  72%|███████▏  | 72/100 [08:13<03:11,  6.84s/epoch, loss=1.627, ot=0.2830, density=5.271, energy=75.671]
+     Val: loss=1.614, ot=0.2371, density=5.578, energy=61.094[A
+     Val: loss=1.614, ot=0.2371, density=5.578, energy=61.094[ATraining:  72%|███████▏  | 72/100 [08:20<03:11,  6.84s/epoch, loss=1.653, ot=0.2947, density=5.259, energy=81.900]Training:  73%|███████▎  | 73/100 [08:20<03:04,  6.85s/epoch, loss=1.653, ot=0.2947, density=5.259, energy=81.900]
+     Val: loss=1.620, ot=0.2382, density=5.582, energy=62.172[A
+     Val: loss=1.620, ot=0.2382, density=5.582, energy=62.172[ATraining:  73%|███████▎  | 73/100 [08:27<03:04,  6.85s/epoch, loss=1.624, ot=0.2813, density=5.224, energy=78.274]Training:  74%|███████▍  | 74/100 [08:27<02:58,  6.85s/epoch, loss=1.624, ot=0.2813, density=5.224, energy=78.274]
+     Val: loss=1.615, ot=0.2370, density=5.541, energy=63.999[A
+     Val: loss=1.615, ot=0.2370, density=5.541, energy=63.999[ATraining:  74%|███████▍  | 74/100 [08:34<02:58,  6.85s/epoch, loss=1.656, ot=0.2824, density=5.299, energy=82.797]Training:  75%|███████▌  | 75/100 [08:34<02:53,  6.93s/epoch, loss=1.656, ot=0.2824, density=5.299, energy=82.797]
+     Val: loss=1.625, ot=0.2374, density=5.572, energy=64.733[A
+     Val: loss=1.625, ot=0.2374, density=5.572, energy=64.733[ATraining:  75%|███████▌  | 75/100 [08:41<02:53,  6.93s/epoch, loss=1.607, ot=0.2706, density=5.258, energy=73.055]Training:  76%|███████▌  | 76/100 [08:41<02:45,  6.91s/epoch, loss=1.607, ot=0.2706, density=5.258, energy=73.055]
+     Val: loss=1.615, ot=0.2357, density=5.522, energy=65.561[A
+     Val: loss=1.615, ot=0.2357, density=5.522, energy=65.561[Aslurmstepd: error: *** JOB 7889599 ON a1128u05n01 CANCELLED AT 2026-04-10T19:08:56 ***

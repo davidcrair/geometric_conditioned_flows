@@ -1,0 +1,10 @@
+# @package _global_
+
+defaults:
+  - base
+  - _self_
+
+hydra:
+  sweeper:
+    n_trials: 40
+    custom_search_space: flatcfm.modelcore.hpo.configure_autoencoder_search_space

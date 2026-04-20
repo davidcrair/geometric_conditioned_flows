@@ -1,0 +1,13 @@
+names:
+  - mean_gene_w1
+  - w2_squared
+metric_spaces:
+  - name: comparison
+    kind: comparison
+    fit_split: full_dataset
+group_columns:
+  - product_dose
+reductions:
+  - unweighted_mean
+  - cell_weighted_mean
+aggregation: null

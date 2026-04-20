@@ -1,0 +1,17 @@
+# @package _global_
+
+defaults:
+  - override /data: toy
+  - override /splitter: toy
+  - override /space: nonlinear_rff_lift_ae_latent
+  - override /evaluation_space: raw_counts
+  - override /condition: toy
+  - override /task: fm
+  - override /model: fm
+  - override /loss: fm
+  - override /ae_geometry: none
+
+experiment_name: toy_fm_nonlinear_rff_ae_latent
+task:
+  batch_size: 128
+  steps_per_epoch: 50

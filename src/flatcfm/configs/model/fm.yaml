@@ -1,0 +1,23 @@
+_target_: flatcfm.modelcore.models.FlowMatchingModel
+name: fm
+hidden_dim: 256
+hidden_layers: 4
+condition_dim: 128
+embedding_dim: 64
+projection_dim: 64
+dropout: 0.2
+conditioning: concat
+# optional path to a pretrained drug embedding pt file produced by
+# scripts/build_drug_embeddings.py when set the ConditionEncoder swaps
+# its learned perturbation nn.Embedding for a frozen lookup of these
+# vectors this lets held out drugs with similar SMILES share
+# representation with training drugs
+drug_embedding_path: null
+# optional conditioning encoder regularizers the defaults match the
+# pre existing behavior (no extra regularization) set one or more to
+# combat the held out cosine_log_fc collapse driven by (pert x cell_type)
+# co adaptations in the output_mlp see docs on ConditionEncoder for
+# details
+embedding_dropout: 0.0         # per embedding projection dropout before concat
+perturbation_dropout: 0.0      # probability to zero the pert token CFG style
+sample_covariate_dropout: 0.0  # same for cell_type token the most direct fix

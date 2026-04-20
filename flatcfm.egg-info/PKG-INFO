@@ -1,0 +1,54 @@
+Metadata-Version: 2.4
+Name: flatcfm
+Version: 0.1.0
+Summary: A senior thesis project for flow matching on flat latent spaces for single-cell perturbation modeling.
+Author-email: David Crair <david.crair@yale.edu>
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: anndata>=0.12.7
+Requires-Dist: hydra-core>=1.3.2
+Requires-Dist: hydra-optuna-sweeper>=1.2.0
+Requires-Dist: ipykernel>=7.1.0
+Requires-Dist: ipywidgets>=8.1.8
+Requires-Dist: lightning>=2.5.6
+Requires-Dist: matplotlib>=3.10.8
+Requires-Dist: nbformat>=5.10.4
+Requires-Dist: pandas>=2.3.3
+Requires-Dist: pertpy>=1.0.4
+Requires-Dist: phate>=2.0.0
+Requires-Dist: pip>=26.0
+Requires-Dist: plotly>=6.6.0
+Requires-Dist: pot>=0.9.6.post1
+Requires-Dist: scanpy>=1.11.5
+Requires-Dist: torch>=2.9.1
+Requires-Dist: torchdiffeq>=0.2.5
+Requires-Dist: hydra-core>=1.3.2
+Requires-Dist: pytest>=9.0.2
+
+1 FlatCFM/
+2 ├── data/                  # Data loading, splitting, and simulation
+3 │   ├── dataset.py         # PyTorch Datasets (CondFMDataset)
+4 │   ├── samplers.py        # Custom batch samplers
+5 │   ├── splitters.py       # Logic for train/val/test splits (OOD, random)
+6 │   ├── simulations.py     # Toy dataset generators (Gaussian to Moons)
+7 │   └── space.py           # SpaceManager: Bi-directional space transformations
+8 ├── models/                # Neural network architectures and baselines
+9 │   ├── autoencoder.py     # NBAutoEncoder and its components
+10 │   ├── flow.py            # CondFlow, ConditionEncoder, and ODE logic
+11 │   └── baselines.py       # Interface and implementations of baseline models
+12 ├── training/              # Training loops and modular losses
+13 │   ├── losses.py          # Composable loss registry (KL, Pullback, Recon)
+14 │   ├── trainer_ae.py      # Autoencoder training loop
+15 │   └── trainer_flow.py    # Flow Matching training loop
+16 ├── evaluation/            # Metrics and visualization
+17 │   ├── metrics.py         # MMD, E-distance, 2-WD, Rank, Cosine logFC
+18 │   └── plotting.py        # UMAPs, Volcano plots, trajectory visualizations
+19 └── scripts/               # Entry points for running experiments
+20     ├── train_ae.py
+21     ├── train_flow.py
+22     └── run_baselines.py
+
+
+train_ode_sciplex.ipynb → train_fm_sciplex.ipynb → benchmark_real.ipynb
+
+Repo setup is inspired by [perturbench](https://github.com/altoslabs/perturbench)

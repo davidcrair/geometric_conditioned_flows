@@ -1,0 +1,377 @@
+Metadata-Version: 2.4
+Name: flatcfm
+Version: 0.1.0
+Summary: A senior thesis project for flow matching on flat latent spaces for single-cell perturbation modeling.
+Author-email: David Crair <david.crair@yale.edu>
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: anndata>=0.12.7
+Requires-Dist: hydra-core>=1.3.2
+Requires-Dist: hydra-optuna-sweeper>=1.2.0
+Requires-Dist: ipykernel>=7.1.0
+Requires-Dist: ipywidgets>=8.1.8
+Requires-Dist: lightning>=2.5.6
+Requires-Dist: matplotlib>=3.10.8
+Requires-Dist: nbformat>=5.10.4
+Requires-Dist: pandas>=2.3.3
+Requires-Dist: pertpy>=1.0.4
+Requires-Dist: phate>=2.0.0
+Requires-Dist: pip>=26.0
+Requires-Dist: plotly>=6.6.0
+Requires-Dist: pot>=0.9.6.post1
+Requires-Dist: scanpy>=1.11.5
+Requires-Dist: torch>=2.9.1
+Requires-Dist: torchdiffeq>=0.2.5
+Requires-Dist: hydra-core>=1.3.2
+Requires-Dist: pytest>=9.0.2
+Requires-Dist: typer>=0.15
+Requires-Dist: rich>=14
+Requires-Dist: plotext>=5.2
+Requires-Dist: pysr>=1.5.9
+Requires-Dist: optuna-dashboard>=0.14.0
+Requires-Dist: transformers<4.48,>=4.44
+Requires-Dist: sentencepiece>=0.2.1
+Requires-Dist: protobuf>=6.33.5
+
+# FlatCFM
+
+Flow matching on flat latent spaces for single-cell perturbation modeling. Predicts heterogeneous single-cell transcriptional responses to drug/gene perturbations in underrepresented contexts.
+
+Senior thesis project. Repo structure inspired by [perturbench](https://github.com/altoslabs/perturbench).
+
+## Setup
+
+Requires Python >= 3.12. Uses `uv` for package management.
+
+```bash
+uv sync
+```
+
+## Quick start
+
+```bash
+# train a flow matching model on sciplex data in log1p HVG space
+PYTHONPATH=src .venv/bin/python -m flatcfm.modelcore.train \
+  experiment=sciplex/fm_log1p \
+  experiment_name=sciplex_fm_hvg \
+  trainer.precision=bf16-mixed
+
+# generate predictions (auto-picks latest run)
+PYTHONPATH=src .venv/bin/python -m flatcfm.modelcore.predict \
+  predict.experiment_name=sciplex_fm_hvg
+
+# evaluate
+PYTHONPATH=src .venv/bin/python scripts/run_eval.py sciplex_fm_hvg
+```
+
+All outputs go to `artifacts/runs/{experiment_name}/{timestamp}/`.
+
+## Space hierarchy
+
+```
+raw space       all genes, integer counts
+    | base transform (log1p normalize + select 2000 HVGs)
+base space      2000 HVGs, normalized -- all metrics computed here
+    | projections (pca, ae_latent, orthogonal_lift, etc.)
+training space  where the model operates (50 PCA dims, 128 AE latent, etc.)
+```
+
+Predictions are always exported in **base space** so models trained in different projection spaces (PCA vs AE latent) can be directly compared.
+
+## Configuration (Hydra)
+
+The project uses [Hydra](https://hydra.cc/) for configuration. Configs live in `src/flatcfm/configs/` and compose hierarchically.
+
+### Config groups
+
+| Group | Location | Purpose |
+|---|---|---|
+| `experiment` | `experiment/sciplex/`, `experiment/toy/` | Presets that override multiple groups at once |
+| `space` | `space/` | Feature space and projections for training |
+| `evaluation_space` | `evaluation_space/` | Space for evaluation (default: same as training) |
+| `data` | `data/` | Data source (`sciplex`, `toy`) |
+| `task` | `task/` | Task type, epochs, learning rate |
+| `model` | `model/` | Architecture (hidden dim, layers, dropout) |
+| `loss` | `loss/` | Loss function and component weights |
+| `splitter` | `splitter/` | Data splitting strategy |
+| `condition` | `condition/` | Perturbation and covariate definitions |
+| `ae_geometry` | `ae_geometry/` | AE geometry (`phate_potential`, `ambient_euclidean`, `none`) |
+| `trainer` | `trainer/` | PyTorch Lightning trainer settings |
+
+### Available spaces
+
+| Config | Base | Projection | Training dim |
+|---|---|---|---|
+| `log1p` | log1p + 2000 HVGs | none | 2000 |
+| `pca` | log1p + 2000 HVGs | PCA 50 | 50 |
+| `ae_latent` | log1p + 2000 HVGs | AE encoder | 128 |
+| `orthogonal_lift` | log1p + 2000 HVGs | random orthogonal lift | 4000 |
+| `nonlinear_rff_lift` | log1p + 2000 HVGs | random fourier features | 4000 |
+| `log1p_all_genes` | log1p + all genes | none | ~20k |
+| `pca_all_genes` | log1p + all genes | PCA 50 | 50 |
+| `raw_counts` | raw integer counts | none | varies |
+
+Compound spaces like `orthogonal_lift_pca` and `nonlinear_rff_lift_ae_latent` chain multiple projections.
+
+### Experiment presets
+
+Experiment configs override multiple groups at once. Use them as starting points:
+
+```bash
+# flow matching in log1p space (no projection)
+experiment=sciplex/fm_log1p
+
+# flow matching in PCA space
+experiment=sciplex/fm_log1p space=pca
+
+# flow matching in AE latent space with PHATE geometry
+experiment=sciplex/fm_ae_latent_phate
+
+# ODE baseline
+experiment=sciplex/ode_log1p
+
+# analytical baselines (no_effect, additive, context_mean, perturb_mean)
+experiment=sciplex/baseline_no_effect
+```
+
+### Overriding config values
+
+Any config value can be overridden from the command line:
+
+```bash
+# change epochs and learning rate
+PYTHONPATH=src .venv/bin/python -m flatcfm.modelcore.train \
+  experiment=sciplex/fm_log1p \
+  task.epochs=200 \
+  task.lr=0.0005 \
+  model.hidden_dim=512
+
+# change number of PCA components
+PYTHONPATH=src .venv/bin/python -m flatcfm.modelcore.train \
+  experiment=sciplex/fm_log1p \
+  space=pca \
+  space.projections.0.n_components=100
+```
+
+## Training
+
+```bash
+PYTHONPATH=src .venv/bin/python -m flatcfm.modelcore.train \
+  experiment=sciplex/fm_log1p \
+  experiment_name=sciplex_fm_hvg \
+  trainer.precision=bf16-mixed
+```
+
+Output structure:
+```
+artifacts/runs/sciplex_fm_hvg/20260315_153557/
+  checkpoints/best.ckpt    # best model checkpoint
+  run_config.yaml           # full resolved hydra config
+  run_metadata.json         # feature names, covariate dicts, task metadata
+  history.json              # train/val loss curves per epoch
+  metrics.csv               # lightning metrics log
+```
+
+### Training baselines
+
+Train all baseline methods at once:
+
+```bash
+./scripts/train_sciplex_baselines.sh
+```
+
+This trains no_effect, additive, context_mean, perturb_mean (1 epoch each), then decoder and linear (100 epochs each), and generates predictions for all.
+
+Set `FORCE_RETRAIN=1` to retrain even if checkpoints exist. Set `FORCE_PREDICT=1` to regenerate predictions.
+
+## Prediction
+
+```bash
+# by experiment name (uses most recent run)
+PYTHONPATH=src .venv/bin/python -m flatcfm.modelcore.predict \
+  predict.experiment_name=sciplex_fm_hvg
+
+# by explicit run directory
+PYTHONPATH=src .venv/bin/python -m flatcfm.modelcore.predict \
+  predict.run_dir=artifacts/runs/sciplex_fm_hvg/20260315_153557
+```
+
+Predictions are saved to `{run_dir}/predictions/held_out/predictions.h5ad`.
+
+## Evaluation
+
+### Model card
+
+View a structured summary of how a model was trained:
+
+```bash
+.venv/bin/python scripts/model_card.py sciplex_fm_deg_ae_latent_phate
+```
+
+Shows panels for model identity, space, architecture, training, loss, data split, and (for AEs) schedule and geometry config. Accepts experiment names or full run directory paths.
+
+### CLI evaluation
+
+```bash
+# single run
+PYTHONPATH=src .venv/bin/python scripts/run_eval.py sciplex_fm_hvg
+
+# compare multiple runs side by side
+PYTHONPATH=src .venv/bin/python scripts/run_eval.py sciplex_fm_hvg sciplex_fm_pca_hvg
+
+# evaluate all runs of an experiment (mean +/- std across runs with matching config)
+PYTHONPATH=src .venv/bin/python scripts/run_eval.py sciplex_fm_hvg --all-runs
+
+# loss curves only (no metric computation)
+PYTHONPATH=src .venv/bin/python scripts/run_eval.py sciplex_fm_hvg --losses-only
+
+# skip loss curves
+PYTHONPATH=src .venv/bin/python scripts/run_eval.py sciplex_fm_hvg --no-losses
+
+# custom metrics and reduction
+PYTHONPATH=src .venv/bin/python scripts/run_eval.py sciplex_fm_hvg \
+  --metrics mean_gene_w1,w2_squared,cosine_log_fc \
+  --reduction cell_weighted_mean
+```
+
+`run_eval.py` accepts either experiment names (resolves to latest run) or full run directory paths.
+
+### PerturBench evaluation
+
+Models can be trained and evaluated through the [perturbench](https://github.com/altoslabs/perturbench) pipeline using the FlatCFM model wrappers in `src/flatcfm/perturbench/`. This uses perturbench's gene space and metrics (not the FlatCFM evaluation above).
+
+Use the `experiment=sciplex3/<name>` invocation below — these pin `data/evaluation=final_test` so results are evaluated on the test split, matching the PerturBench Table 2 protocol. Invoking via `data=sciplex3 model=<name>` directly falls back to the default evaluation which uses the val split and is **not comparable to Table 2**.
+
+```bash
+# flow matching (full gene space)
+.venv/bin/python scripts/run_perturbench.py experiment=sciplex3/flatcfm_fm_sciplex3
+
+# flow matching in PCA16 latent
+.venv/bin/python scripts/run_perturbench.py experiment=sciplex3/flatcfm_fm_pca16_sciplex3
+
+# neural ODE (full gene space)
+.venv/bin/python scripts/run_perturbench.py experiment=sciplex3/flatcfm_ode_sciplex3
+
+# neural ODE in PCA16 latent
+.venv/bin/python scripts/run_perturbench.py experiment=sciplex3/flatcfm_ode_pca16_sciplex3
+
+# decoder baseline
+.venv/bin/python scripts/run_perturbench.py experiment=sciplex3/flatcfm_decoder_sciplex3
+
+# latent additive baseline (from perturbench)
+.venv/bin/python scripts/run_perturbench.py experiment=neurips2025/sciplex3/latent_best_params_sciplex3
+
+# view all perturbench results (bold = best, underline = second best)
+.venv/bin/python scripts/view_perturbench.py
+
+# show all metrics including rank metrics
+.venv/bin/python scripts/view_perturbench.py --all-metrics
+```
+
+Results are saved to perturbench's logs directory and picked up automatically by `view_perturbench.py`.
+
+### Dimensionality reduction comparison
+
+Compare theoretical reconstruction limits of PCA vs autoencoders (MSE, FlatVI, PHATE) at latent dims 16-1024.
+
+```bash
+# check which models are trained and which need training
+.venv/bin/python scripts/check_dim_sweep.py
+
+# generate training commands for missing models
+.venv/bin/python scripts/check_dim_sweep.py --generate
+
+# train a single model (example: MSE AE at dim 64)
+.venv/bin/python -m flatcfm.modelcore.train \
+  experiment=sciplex/ae_log1p_mse_d512 \
+  model.latent_dim=64 \
+  experiment_name=sciplex_ae_deg_mse_d64 \
+  space.ae_export_artifact_tag=sciplex_ae_deg_mse_d64
+```
+
+After training, open `view_theoretical_limits.ipynb` to plot cosine logfc and W2 vs variance explained / latent dim for all methods. The notebook skips missing models, so it can be run at any point during the sweep.
+
+### Available metrics
+
+| Metric | Direction | Description |
+|---|---|---|
+| `mean_gene_w1` | lower is better | mean gene-wise 1-Wasserstein distance |
+| `w2_squared` | lower is better | 2-Wasserstein distance squared (in PCA space) |
+| `cosine_log_fc` | higher is better | cosine similarity of log fold-change vectors |
+| `top_k_recall` | higher is better | recall of top-K differentially expressed genes |
+| `deg_jaccard` | higher is better | Jaccard similarity of DEG sets |
+| `e_distance` | lower is better | energy distance |
+| `mmd` | lower is better | maximum mean discrepancy |
+
+## Notebooks
+
+| Notebook | Purpose |
+|---|---|
+| `view_flow_results.ipynb` | Inspect a single flow matching or ODE run: loss curves, perturbation ranking by W1, five-way distribution overlays for selected genes |
+| `view_benchmark_results.ipynb` | Compare multiple models (flow + baselines) via the benchmark suite API: per-group metrics, summary tables, box plots, dose breakdowns |
+| `view_autoencoder_results.ipynb` | Inspect trained autoencoder: reconstruction quality, latent space |
+| `view_toy_results.ipynb` | Toy dataset experiments: compare projection methods and architectures |
+| `toy-orthogonal-lift-fm-vs-grae.ipynb` | Flow matching vs GRAE comparison on toy data with orthogonal lifts |
+
+### Running the benchmark notebook
+
+`view_benchmark_results.ipynb` requires predictions to be pre-generated for all models. Typical workflow:
+
+```bash
+# 1. train and predict flow model
+PYTHONPATH=src .venv/bin/python -m flatcfm.modelcore.train \
+  experiment=sciplex/fm_log1p experiment_name=sciplex_fm_hvg trainer.precision=bf16-mixed
+PYTHONPATH=src .venv/bin/python -m flatcfm.modelcore.predict \
+  predict.experiment_name=sciplex_fm_hvg
+
+# 2. train and predict all baselines
+./scripts/train_sciplex_baselines.sh
+
+# 3. open the notebook
+jupyter lab view_benchmark_results.ipynb
+```
+
+## Project layout
+
+```
+src/flatcfm/
+  configs/           # hydra configuration hierarchy
+  data/              # data loading, splitting, space transforms, geometry
+    datamodules.py   # SciplexDataModule, ToyDataModule (lightning)
+    geometry.py      # TransformPipeline, BaseTransform, ProjectionTransform
+    space.py         # pipeline construction, labels, config normalization
+    splitters.py     # OOD context splits, stratified sampling
+    dataset.py       # CondFMDataset (pytorch)
+  modelcore/         # training and prediction entrypoints
+    train.py         # hydra training entrypoint
+    predict.py       # hydra prediction entrypoint
+    models/          # lightning modules (flow_matching, autoencoder, baselines)
+    predictors/      # benchmark predictor implementations
+  models/            # neural network architectures
+    autoencoder.py   # NBAutoEncoder (negative binomial)
+    flow.py          # CondFlow, ConditionEncoder
+  training/          # loss functions
+    losses.py        # composable loss registry
+  analysis/          # evaluation and benchmarking
+    benchmarking.py  # benchmark suite runner
+    benchmarks/      # metric computation, aggregation, metric spaces
+    flow_results.py  # load and inspect flow runs
+scripts/
+  run_eval.py        # CLI evaluation tool
+  view_perturbench.py # view perturbench results across runs
+  run_perturbench.py # train models through perturbench pipeline
+  run_status.py      # monitor training runs
+  common.sh          # shared bash helpers (latest_run_dir, ensure_train, ensure_predict)
+  train_sciplex_baselines.sh  # train all baselines
+  train_toy_*.sh     # toy experiment grid sweeps
+artifacts/
+  runs/              # training outputs (gitignored)
+  models/            # pretrained AE checkpoints
+  spaces/            # cached fitted pipelines
+```
+
+## Tests
+
+```bash
+PYTHONPATH=src .venv/bin/python -m pytest tests/
+```

@@ -1,0 +1,10 @@
+base:
+  kind: normalized_log1p
+  feature_set: hvg
+  n_hvgs: 2000
+  target_sum: 10000
+projections:
+  - kind: pca
+    n_components: 50
+fit_scope: full_dataset
+chunk_size: 2048

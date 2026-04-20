@@ -1,0 +1,13 @@
+# @package _global_
+
+# flatcfm neural ode sciplex3 table 2 reproduction
+# pins final_test eval so results are comparable to perturbench table 2
+
+defaults:
+  - override /model: flatcfm_ode
+  - override /data: sciplex3
+  - override /data/evaluation: final_test
+
+trainer:
+  min_epochs: 5
+  max_epochs: 500

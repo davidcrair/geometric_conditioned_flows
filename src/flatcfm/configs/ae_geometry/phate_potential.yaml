@@ -1,0 +1,14 @@
+mode: phate_diff_potential
+source: phate_diff_potential
+cache_path: null
+per_cell_type: true
+cell_type_column: cell_type
+# fit phate once on (train union val) then slice the diff potential back
+# per split so val targets live in the same landmark basis as train targets
+# set to false to fit train and val independently (legacy behavior)
+unified_train_val_fit: true
+phate:
+  knn: 5
+  n_landmark: 2000
+  t: auto
+  verbose: false

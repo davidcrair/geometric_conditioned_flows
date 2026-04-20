@@ -1,0 +1,10 @@
+# @package _global_
+defaults:
+  - toy/fm_nonlinear_rff
+  - _self_
+
+experiment_name: toy_fm_nonlinear_rff_ot
+task:
+  use_ot_coupling: true
+  ot_reg: 0.1
+  ot_pool_multiplier: 2

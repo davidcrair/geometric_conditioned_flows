@@ -1,0 +1,11 @@
+anchor_run_dir: null
+prediction_name: held_out
+prediction_spec:
+  split: held_out
+  target_subset: perturbed
+  target_filters:
+    obs_equals: {}
+    obs_in: {}
+  control_source:
+    split: all_controls
+    match_cell_types_from: test_cell_type

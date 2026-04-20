@@ -1,0 +1,14 @@
+worker 6 starting
+experiment=sciplex/ode_pca
+hpo=ode
+study=hpo_ode_pca_d16
+storage=sqlite:////nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sweeps/hpo_ode_pca_d16.db
+trials_per_worker=20
+[2026-04-10 19:01:38,428][HYDRA] Study name: hpo_ode_pca_d16
+[2026-04-10 19:01:38,428][HYDRA] Storage: sqlite:////nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/artifacts/runs/sweeps/hpo_ode_pca_d16.db
+[2026-04-10 19:01:38,428][HYDRA] Sampler: TPESampler
+[2026-04-10 19:01:38,428][HYDRA] Directions: ['minimize']
+[2026-04-10 19:01:39,392][HYDRA] Launching 1 jobs locally
+[2026-04-10 19:01:39,392][HYDRA] 	#0 : task.lr=1.1130585498576875e-05 task.weight_decay=0.0005898399390892149 task.batch_size=512 task.steps_per_epoch=50 task.ode_method=midpoint task.adjoint=True task.n_energy_steps=10 loss.weights.ot=1.7369488865620573 loss.weights.density=1.3845904562824398 loss.weights.energy=0.00033067237806792105 loss.sinkhorn_reg=0.011495598965819951 loss.sinkhorn_max_iter=50 model.hidden_dim=128 model.hidden_layers=3 model.dropout=0.16877587888757928 model.condition_dim=64 model.embedding_dim=128 model.projection_dim=32 experiment=sciplex/ode_pca hpo=ode trainer.accelerator=gpu trainer.devices=1 trainer.precision=bf16-mixed trainer.num_workers=6 trainer.pin_memory=True space.projections.0.n_components=16
+[2026-04-10 19:07:24,786][HYDRA] Failed experiment: cannot resolve hpo objective for metric 'val_loss' from history
+[2026-04-10 19:07:24,786][HYDRA] Failed [ValueError("cannot resolve hpo objective for metric 'val_loss' from history")] times out of 1 with max_failure_rate=0.0.

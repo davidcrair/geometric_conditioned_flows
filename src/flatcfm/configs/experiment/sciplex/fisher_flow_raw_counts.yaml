@@ -1,0 +1,13 @@
+# @package _global_
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: strict_k562
+  - override /space: raw_counts_deg
+  - override /evaluation_space: log1p_all_genes
+  - override /condition: sciplex
+  - override /task: fisher_flow
+  - override /model: fisher_flow
+  - override /loss: fisher_flow
+
+experiment_name: sciplex_fisher_flow_raw_counts

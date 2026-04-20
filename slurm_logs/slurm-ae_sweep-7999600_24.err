@@ -1,0 +1,218 @@
+[rank: 0] Seed set to 42
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+`Trainer(limit_train_batches=1.0)` was configured so 100% of the batches per epoch will be used..
+`Trainer(limit_val_batches=1.0)` was configured so 100% of the batches will be used..
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/src/flatcfm/modelcore/models/autoencoder.py:239: UserWarning: No optimizer specified in task_cfg; defaulting to AdamW (lr=0.001, weight_decay=0.0).
+  rank_zero_warn(
+SLURM auto-requeueing enabled. Setting signal handlers.
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/lightning/pytorch/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:434: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=11` in the `DataLoader` to improve performance.
+/nfs/roberts/scratch/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:434: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=11` in the `DataLoader` to improve performance.
+Training:   0%|          | 0/100 [00:00<?, ?epoch/s]
+     Val:[ATraining:   0%|          | 0/100 [00:00<?, ?epoch/s, loss=0.3626, recon=0.3626]Training:   1%|          | 1/100 [00:00<01:11,  1.38epoch/s, loss=0.3626, recon=0.3626]
+     Val: loss=0.3074, recon=0.3074[A
+     Val: loss=0.3074, recon=0.3074[ATraining:   1%|          | 1/100 [00:01<01:11,  1.38epoch/s, loss=0.2959, recon=0.2959]Training:   2%|▏         | 2/100 [00:01<01:06,  1.48epoch/s, loss=0.2959, recon=0.2959]
+     Val: loss=0.2913, recon=0.2913[A
+     Val: loss=0.2913, recon=0.2913[ATraining:   2%|▏         | 2/100 [00:02<01:06,  1.48epoch/s, loss=0.2892, recon=0.2892]Training:   3%|▎         | 3/100 [00:02<01:04,  1.50epoch/s, loss=0.2892, recon=0.2892]
+     Val: loss=0.2881, recon=0.2881[A
+     Val: loss=0.2881, recon=0.2881[ATraining:   3%|▎         | 3/100 [00:02<01:04,  1.50epoch/s, loss=0.2860, recon=0.2860]Training:   4%|▍         | 4/100 [00:02<01:03,  1.52epoch/s, loss=0.2860, recon=0.2860]
+     Val: loss=0.2854, recon=0.2854[A
+     Val: loss=0.2854, recon=0.2854[ATraining:   4%|▍         | 4/100 [00:03<01:03,  1.52epoch/s, loss=0.2840, recon=0.2840]Training:   5%|▌         | 5/100 [00:03<01:06,  1.43epoch/s, loss=0.2840, recon=0.2840]
+     Val: loss=0.2839, recon=0.2839[A
+     Val: loss=0.2839, recon=0.2839[ATraining:   5%|▌         | 5/100 [00:04<01:06,  1.43epoch/s, loss=0.2826, recon=0.2826]Training:   6%|▌         | 6/100 [00:04<01:07,  1.40epoch/s, loss=0.2826, recon=0.2826]
+     Val: loss=0.2825, recon=0.2825[A
+     Val: loss=0.2825, recon=0.2825[ATraining:   6%|▌         | 6/100 [00:04<01:07,  1.40epoch/s, loss=0.2814, recon=0.2814]Training:   7%|▋         | 7/100 [00:04<01:07,  1.39epoch/s, loss=0.2814, recon=0.2814]
+     Val: loss=0.2813, recon=0.2813[A
+     Val: loss=0.2813, recon=0.2813[ATraining:   7%|▋         | 7/100 [00:05<01:07,  1.39epoch/s, loss=0.2802, recon=0.2802]Training:   8%|▊         | 8/100 [00:05<01:09,  1.32epoch/s, loss=0.2802, recon=0.2802]
+     Val: loss=0.2802, recon=0.2802[A
+     Val: loss=0.2802, recon=0.2802[ATraining:   8%|▊         | 8/100 [00:06<01:09,  1.32epoch/s, loss=0.2794, recon=0.2794]Training:   9%|▉         | 9/100 [00:06<01:09,  1.31epoch/s, loss=0.2794, recon=0.2794]
+     Val: loss=0.2804, recon=0.2804[A
+     Val: loss=0.2804, recon=0.2804[ATraining:   9%|▉         | 9/100 [00:07<01:09,  1.31epoch/s, loss=0.2782, recon=0.2782]Training:  10%|█         | 10/100 [00:07<01:04,  1.40epoch/s, loss=0.2782, recon=0.2782]
+     Val: loss=0.2784, recon=0.2784[A
+     Val: loss=0.2784, recon=0.2784[ATraining:  10%|█         | 10/100 [00:07<01:04,  1.40epoch/s, loss=0.2775, recon=0.2775]Training:  11%|█         | 11/100 [00:07<01:01,  1.44epoch/s, loss=0.2775, recon=0.2775]
+     Val: loss=0.2778, recon=0.2778[A
+     Val: loss=0.2778, recon=0.2778[ATraining:  11%|█         | 11/100 [00:08<01:01,  1.44epoch/s, loss=0.2765, recon=0.2765]Training:  12%|█▏        | 12/100 [00:08<01:00,  1.47epoch/s, loss=0.2765, recon=0.2765]
+     Val: loss=0.2768, recon=0.2768[A
+     Val: loss=0.2768, recon=0.2768[ATraining:  12%|█▏        | 12/100 [00:09<01:00,  1.47epoch/s, loss=0.2758, recon=0.2758]Training:  13%|█▎        | 13/100 [00:09<00:58,  1.49epoch/s, loss=0.2758, recon=0.2758]
+     Val: loss=0.2763, recon=0.2763[A
+     Val: loss=0.2763, recon=0.2763[ATraining:  13%|█▎        | 13/100 [00:09<00:58,  1.49epoch/s, loss=0.2753, recon=0.2753]Training:  14%|█▍        | 14/100 [00:09<00:57,  1.50epoch/s, loss=0.2753, recon=0.2753]
+     Val: loss=0.2756, recon=0.2756[A
+     Val: loss=0.2756, recon=0.2756[ATraining:  14%|█▍        | 14/100 [00:10<00:57,  1.50epoch/s, loss=0.2748, recon=0.2748]Training:  15%|█▌        | 15/100 [00:10<00:56,  1.51epoch/s, loss=0.2748, recon=0.2748]
+     Val: loss=0.2755, recon=0.2755[A
+     Val: loss=0.2755, recon=0.2755[ATraining:  15%|█▌        | 15/100 [00:11<00:56,  1.51epoch/s, loss=0.2740, recon=0.2740]Training:  16%|█▌        | 16/100 [00:11<00:55,  1.52epoch/s, loss=0.2740, recon=0.2740]
+     Val: loss=0.2748, recon=0.2748[A
+     Val: loss=0.2748, recon=0.2748[ATraining:  16%|█▌        | 16/100 [00:11<00:55,  1.52epoch/s, loss=0.2739, recon=0.2739]Training:  17%|█▋        | 17/100 [00:11<00:54,  1.53epoch/s, loss=0.2739, recon=0.2739]
+     Val: loss=0.2746, recon=0.2746[A
+     Val: loss=0.2746, recon=0.2746[ATraining:  17%|█▋        | 17/100 [00:12<00:54,  1.53epoch/s, loss=0.2732, recon=0.2732]Training:  18%|█▊        | 18/100 [00:12<00:53,  1.53epoch/s, loss=0.2732, recon=0.2732]
+     Val: loss=0.2744, recon=0.2744[A
+     Val: loss=0.2744, recon=0.2744[ATraining:  18%|█▊        | 18/100 [00:12<00:53,  1.53epoch/s, loss=0.2728, recon=0.2728]Training:  19%|█▉        | 19/100 [00:12<00:52,  1.54epoch/s, loss=0.2728, recon=0.2728]
+     Val: loss=0.2740, recon=0.2740[A
+     Val: loss=0.2740, recon=0.2740[ATraining:  19%|█▉        | 19/100 [00:13<00:52,  1.54epoch/s, loss=0.2728, recon=0.2728]Training:  20%|██        | 20/100 [00:13<00:51,  1.54epoch/s, loss=0.2728, recon=0.2728]
+     Val: loss=0.2738, recon=0.2738[A
+     Val: loss=0.2738, recon=0.2738[ATraining:  20%|██        | 20/100 [00:14<00:51,  1.54epoch/s, loss=0.2723, recon=0.2723]Training:  21%|██        | 21/100 [00:14<00:51,  1.53epoch/s, loss=0.2723, recon=0.2723]
+     Val: loss=0.2735, recon=0.2735[A
+     Val: loss=0.2735, recon=0.2735[ATraining:  21%|██        | 21/100 [00:15<00:51,  1.53epoch/s, loss=0.2720, recon=0.2720]Training:  22%|██▏       | 22/100 [00:15<00:53,  1.47epoch/s, loss=0.2720, recon=0.2720]
+     Val: loss=0.2732, recon=0.2732[A
+     Val: loss=0.2732, recon=0.2732[ATraining:  22%|██▏       | 22/100 [00:15<00:53,  1.47epoch/s, loss=0.2720, recon=0.2720]Training:  23%|██▎       | 23/100 [00:15<00:53,  1.44epoch/s, loss=0.2720, recon=0.2720]
+     Val: loss=0.2731, recon=0.2731[A
+     Val: loss=0.2731, recon=0.2731[ATraining:  23%|██▎       | 23/100 [00:16<00:53,  1.44epoch/s, loss=0.2717, recon=0.2717]Training:  24%|██▍       | 24/100 [00:16<00:53,  1.41epoch/s, loss=0.2717, recon=0.2717]
+     Val: loss=0.2730, recon=0.2730[A
+     Val: loss=0.2730, recon=0.2730[ATraining:  24%|██▍       | 24/100 [00:17<00:53,  1.41epoch/s, loss=0.2715, recon=0.2715]Training:  25%|██▌       | 25/100 [00:17<00:53,  1.40epoch/s, loss=0.2715, recon=0.2715]
+     Val: loss=0.2728, recon=0.2728[A
+     Val: loss=0.2728, recon=0.2728[ATraining:  25%|██▌       | 25/100 [00:17<00:53,  1.40epoch/s, loss=0.2715, recon=0.2715]Training:  26%|██▌       | 26/100 [00:17<00:53,  1.39epoch/s, loss=0.2715, recon=0.2715]
+     Val: loss=0.2729, recon=0.2729[A
+     Val: loss=0.2729, recon=0.2729[ATraining:  26%|██▌       | 26/100 [00:18<00:53,  1.39epoch/s, loss=0.2713, recon=0.2713]Training:  27%|██▋       | 27/100 [00:18<00:51,  1.41epoch/s, loss=0.2713, recon=0.2713]
+     Val: loss=0.2726, recon=0.2726[A
+     Val: loss=0.2726, recon=0.2726[ATraining:  27%|██▋       | 27/100 [00:19<00:51,  1.41epoch/s, loss=0.2711, recon=0.2711]Training:  28%|██▊       | 28/100 [00:19<00:51,  1.39epoch/s, loss=0.2711, recon=0.2711]
+     Val: loss=0.2727, recon=0.2727[A
+     Val: loss=0.2727, recon=0.2727[ATraining:  28%|██▊       | 28/100 [00:20<00:51,  1.39epoch/s, loss=0.2709, recon=0.2709]Training:  29%|██▉       | 29/100 [00:20<00:50,  1.41epoch/s, loss=0.2709, recon=0.2709]
+     Val: loss=0.2725, recon=0.2725[A
+     Val: loss=0.2725, recon=0.2725[ATraining:  29%|██▉       | 29/100 [00:20<00:50,  1.41epoch/s, loss=0.2710, recon=0.2710]Training:  30%|███       | 30/100 [00:20<00:50,  1.39epoch/s, loss=0.2710, recon=0.2710]
+     Val: loss=0.2722, recon=0.2722[A
+     Val: loss=0.2722, recon=0.2722[ATraining:  30%|███       | 30/100 [00:21<00:50,  1.39epoch/s, loss=0.2709, recon=0.2709]Training:  31%|███       | 31/100 [00:21<00:50,  1.38epoch/s, loss=0.2709, recon=0.2709]
+     Val: loss=0.2721, recon=0.2721[A
+     Val: loss=0.2721, recon=0.2721[ATraining:  31%|███       | 31/100 [00:22<00:50,  1.38epoch/s, loss=0.2708, recon=0.2708]Training:  32%|███▏      | 32/100 [00:22<00:49,  1.38epoch/s, loss=0.2708, recon=0.2708]
+     Val: loss=0.2721, recon=0.2721[A
+     Val: loss=0.2721, recon=0.2721[ATraining:  32%|███▏      | 32/100 [00:22<00:49,  1.38epoch/s, loss=0.2706, recon=0.2706]Training:  33%|███▎      | 33/100 [00:22<00:47,  1.41epoch/s, loss=0.2706, recon=0.2706]
+     Val: loss=0.2719, recon=0.2719[A
+     Val: loss=0.2719, recon=0.2719[ATraining:  33%|███▎      | 33/100 [00:23<00:47,  1.41epoch/s, loss=0.2707, recon=0.2707]Training:  34%|███▍      | 34/100 [00:23<00:45,  1.44epoch/s, loss=0.2707, recon=0.2707]
+     Val: loss=0.2720, recon=0.2720[A
+     Val: loss=0.2720, recon=0.2720[ATraining:  34%|███▍      | 34/100 [00:24<00:45,  1.44epoch/s, loss=0.2705, recon=0.2705]Training:  35%|███▌      | 35/100 [00:24<00:43,  1.50epoch/s, loss=0.2705, recon=0.2705]
+     Val: loss=0.2719, recon=0.2719[A
+     Val: loss=0.2719, recon=0.2719[ATraining:  35%|███▌      | 35/100 [00:24<00:43,  1.50epoch/s, loss=0.2705, recon=0.2705]Training:  36%|███▌      | 36/100 [00:24<00:42,  1.50epoch/s, loss=0.2705, recon=0.2705]
+     Val: loss=0.2718, recon=0.2718[A
+     Val: loss=0.2718, recon=0.2718[ATraining:  36%|███▌      | 36/100 [00:25<00:42,  1.50epoch/s, loss=0.2704, recon=0.2704]Training:  37%|███▋      | 37/100 [00:25<00:41,  1.51epoch/s, loss=0.2704, recon=0.2704]
+     Val: loss=0.2717, recon=0.2717[A
+     Val: loss=0.2717, recon=0.2717[ATraining:  37%|███▋      | 37/100 [00:26<00:41,  1.51epoch/s, loss=0.2705, recon=0.2705]Training:  38%|███▊      | 38/100 [00:26<00:40,  1.51epoch/s, loss=0.2705, recon=0.2705]
+     Val: loss=0.2718, recon=0.2718[A
+     Val: loss=0.2718, recon=0.2718[ATraining:  38%|███▊      | 38/100 [00:26<00:40,  1.51epoch/s, loss=0.2703, recon=0.2703]Training:  39%|███▉      | 39/100 [00:26<00:39,  1.54epoch/s, loss=0.2703, recon=0.2703]
+     Val: loss=0.2718, recon=0.2718[A
+     Val: loss=0.2718, recon=0.2718[ATraining:  39%|███▉      | 39/100 [00:27<00:39,  1.54epoch/s, loss=0.2703, recon=0.2703]Training:  40%|████      | 40/100 [00:27<00:38,  1.57epoch/s, loss=0.2703, recon=0.2703]
+     Val: loss=0.2717, recon=0.2717[A
+     Val: loss=0.2717, recon=0.2717[ATraining:  40%|████      | 40/100 [00:28<00:38,  1.57epoch/s, loss=0.2704, recon=0.2704]Training:  41%|████      | 41/100 [00:28<00:37,  1.56epoch/s, loss=0.2704, recon=0.2704]
+     Val: loss=0.2717, recon=0.2717[A
+     Val: loss=0.2717, recon=0.2717[ATraining:  41%|████      | 41/100 [00:28<00:37,  1.56epoch/s, loss=0.2703, recon=0.2703]Training:  42%|████▏     | 42/100 [00:28<00:37,  1.55epoch/s, loss=0.2703, recon=0.2703]
+     Val: loss=0.2717, recon=0.2717[A
+     Val: loss=0.2717, recon=0.2717[ATraining:  42%|████▏     | 42/100 [00:29<00:37,  1.55epoch/s, loss=0.2701, recon=0.2701]Training:  43%|████▎     | 43/100 [00:29<00:39,  1.45epoch/s, loss=0.2701, recon=0.2701]
+     Val: loss=0.2715, recon=0.2715[A
+     Val: loss=0.2715, recon=0.2715[ATraining:  43%|████▎     | 43/100 [00:30<00:39,  1.45epoch/s, loss=0.2702, recon=0.2702]Training:  44%|████▍     | 44/100 [00:30<00:38,  1.47epoch/s, loss=0.2702, recon=0.2702]
+     Val: loss=0.2716, recon=0.2716[A
+     Val: loss=0.2716, recon=0.2716[ATraining:  44%|████▍     | 44/100 [00:30<00:38,  1.47epoch/s, loss=0.2704, recon=0.2704]Training:  45%|████▌     | 45/100 [00:30<00:36,  1.50epoch/s, loss=0.2704, recon=0.2704]
+     Val: loss=0.2716, recon=0.2716[A
+     Val: loss=0.2716, recon=0.2716[ATraining:  45%|████▌     | 45/100 [00:31<00:36,  1.50epoch/s, loss=0.2700, recon=0.2700]Training:  46%|████▌     | 46/100 [00:31<00:35,  1.53epoch/s, loss=0.2700, recon=0.2700]
+     Val: loss=0.2716, recon=0.2716[A
+     Val: loss=0.2716, recon=0.2716[ATraining:  46%|████▌     | 46/100 [00:32<00:35,  1.53epoch/s, loss=0.2703, recon=0.2703]Training:  47%|████▋     | 47/100 [00:32<00:33,  1.56epoch/s, loss=0.2703, recon=0.2703]
+     Val: loss=0.2715, recon=0.2715[A
+     Val: loss=0.2715, recon=0.2715[ATraining:  47%|████▋     | 47/100 [00:32<00:33,  1.56epoch/s, loss=0.2701, recon=0.2701]Training:  48%|████▊     | 48/100 [00:32<00:33,  1.55epoch/s, loss=0.2701, recon=0.2701]
+     Val: loss=0.2714, recon=0.2714[A
+     Val: loss=0.2714, recon=0.2714[ATraining:  48%|████▊     | 48/100 [00:33<00:33,  1.55epoch/s, loss=0.2700, recon=0.2700]Training:  49%|████▉     | 49/100 [00:33<00:32,  1.56epoch/s, loss=0.2700, recon=0.2700]
+     Val: loss=0.2714, recon=0.2714[A
+     Val: loss=0.2714, recon=0.2714[ATraining:  49%|████▉     | 49/100 [00:33<00:32,  1.56epoch/s, loss=0.2700, recon=0.2700]Training:  50%|█████     | 50/100 [00:33<00:32,  1.54epoch/s, loss=0.2700, recon=0.2700]
+     Val: loss=0.2715, recon=0.2715[A
+     Val: loss=0.2715, recon=0.2715[ATraining:  50%|█████     | 50/100 [00:34<00:32,  1.54epoch/s, loss=0.2701, recon=0.2701]Training:  51%|█████     | 51/100 [00:34<00:31,  1.57epoch/s, loss=0.2701, recon=0.2701]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  51%|█████     | 51/100 [00:35<00:31,  1.57epoch/s, loss=0.2700, recon=0.2700]Training:  52%|█████▏    | 52/100 [00:35<00:31,  1.54epoch/s, loss=0.2700, recon=0.2700]
+     Val: loss=0.2718, recon=0.2718[A
+     Val: loss=0.2718, recon=0.2718[ATraining:  52%|█████▏    | 52/100 [00:35<00:31,  1.54epoch/s, loss=0.2700, recon=0.2700]Training:  53%|█████▎    | 53/100 [00:35<00:30,  1.56epoch/s, loss=0.2700, recon=0.2700]
+     Val: loss=0.2714, recon=0.2714[A
+     Val: loss=0.2714, recon=0.2714[ATraining:  53%|█████▎    | 53/100 [00:36<00:30,  1.56epoch/s, loss=0.2699, recon=0.2699]Training:  54%|█████▍    | 54/100 [00:36<00:29,  1.58epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  54%|█████▍    | 54/100 [00:37<00:29,  1.58epoch/s, loss=0.2701, recon=0.2701]Training:  55%|█████▌    | 55/100 [00:37<00:30,  1.49epoch/s, loss=0.2701, recon=0.2701]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  55%|█████▌    | 55/100 [00:37<00:30,  1.49epoch/s, loss=0.2700, recon=0.2700]Training:  56%|█████▌    | 56/100 [00:37<00:29,  1.49epoch/s, loss=0.2700, recon=0.2700]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  56%|█████▌    | 56/100 [00:38<00:29,  1.49epoch/s, loss=0.2700, recon=0.2700]Training:  57%|█████▋    | 57/100 [00:38<00:28,  1.49epoch/s, loss=0.2700, recon=0.2700]
+     Val: loss=0.2714, recon=0.2714[A
+     Val: loss=0.2714, recon=0.2714[ATraining:  57%|█████▋    | 57/100 [00:39<00:28,  1.49epoch/s, loss=0.2699, recon=0.2699]Training:  58%|█████▊    | 58/100 [00:39<00:28,  1.49epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2714, recon=0.2714[A
+     Val: loss=0.2714, recon=0.2714[ATraining:  58%|█████▊    | 58/100 [00:39<00:28,  1.49epoch/s, loss=0.2700, recon=0.2700]Training:  59%|█████▉    | 59/100 [00:39<00:27,  1.49epoch/s, loss=0.2700, recon=0.2700]
+     Val: loss=0.2714, recon=0.2714[A
+     Val: loss=0.2714, recon=0.2714[ATraining:  59%|█████▉    | 59/100 [00:40<00:27,  1.49epoch/s, loss=0.2699, recon=0.2699]Training:  60%|██████    | 60/100 [00:40<00:26,  1.49epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  60%|██████    | 60/100 [00:41<00:26,  1.49epoch/s, loss=0.2699, recon=0.2699]Training:  61%|██████    | 61/100 [00:41<00:26,  1.49epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  61%|██████    | 61/100 [00:41<00:26,  1.49epoch/s, loss=0.2700, recon=0.2700]Training:  62%|██████▏   | 62/100 [00:41<00:25,  1.49epoch/s, loss=0.2700, recon=0.2700]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  62%|██████▏   | 62/100 [00:42<00:25,  1.49epoch/s, loss=0.2699, recon=0.2699]Training:  63%|██████▎   | 63/100 [00:42<00:25,  1.46epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  63%|██████▎   | 63/100 [00:43<00:25,  1.46epoch/s, loss=0.2699, recon=0.2699]Training:  64%|██████▍   | 64/100 [00:43<00:24,  1.47epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  64%|██████▍   | 64/100 [00:44<00:24,  1.47epoch/s, loss=0.2699, recon=0.2699]Training:  65%|██████▌   | 65/100 [00:44<00:24,  1.45epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  65%|██████▌   | 65/100 [00:44<00:24,  1.45epoch/s, loss=0.2698, recon=0.2698]Training:  66%|██████▌   | 66/100 [00:44<00:23,  1.46epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  66%|██████▌   | 66/100 [00:45<00:23,  1.46epoch/s, loss=0.2699, recon=0.2699]Training:  67%|██████▋   | 67/100 [00:45<00:22,  1.47epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  67%|██████▋   | 67/100 [00:46<00:22,  1.47epoch/s, loss=0.2698, recon=0.2698]Training:  68%|██████▊   | 68/100 [00:46<00:21,  1.47epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  68%|██████▊   | 68/100 [00:46<00:21,  1.47epoch/s, loss=0.2698, recon=0.2698]Training:  69%|██████▉   | 69/100 [00:46<00:20,  1.48epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  69%|██████▉   | 69/100 [00:47<00:20,  1.48epoch/s, loss=0.2700, recon=0.2700]Training:  70%|███████   | 70/100 [00:47<00:20,  1.44epoch/s, loss=0.2700, recon=0.2700]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  70%|███████   | 70/100 [00:48<00:20,  1.44epoch/s, loss=0.2698, recon=0.2698]Training:  71%|███████   | 71/100 [00:48<00:20,  1.43epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  71%|███████   | 71/100 [00:48<00:20,  1.43epoch/s, loss=0.2699, recon=0.2699]Training:  72%|███████▏  | 72/100 [00:48<00:19,  1.44epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  72%|███████▏  | 72/100 [00:49<00:19,  1.44epoch/s, loss=0.2698, recon=0.2698]Training:  73%|███████▎  | 73/100 [00:49<00:18,  1.46epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  73%|███████▎  | 73/100 [00:50<00:18,  1.46epoch/s, loss=0.2699, recon=0.2699]Training:  74%|███████▍  | 74/100 [00:50<00:18,  1.44epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  74%|███████▍  | 74/100 [00:50<00:18,  1.44epoch/s, loss=0.2699, recon=0.2699]Training:  75%|███████▌  | 75/100 [00:50<00:16,  1.50epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  75%|███████▌  | 75/100 [00:51<00:16,  1.50epoch/s, loss=0.2698, recon=0.2698]Training:  76%|███████▌  | 76/100 [00:51<00:15,  1.54epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  76%|███████▌  | 76/100 [00:52<00:15,  1.54epoch/s, loss=0.2698, recon=0.2698]Training:  77%|███████▋  | 77/100 [00:52<00:14,  1.58epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  77%|███████▋  | 77/100 [00:52<00:14,  1.58epoch/s, loss=0.2698, recon=0.2698]Training:  78%|███████▊  | 78/100 [00:52<00:13,  1.60epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  78%|███████▊  | 78/100 [00:53<00:13,  1.60epoch/s, loss=0.2699, recon=0.2699]Training:  79%|███████▉  | 79/100 [00:53<00:13,  1.61epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  79%|███████▉  | 79/100 [00:53<00:13,  1.61epoch/s, loss=0.2699, recon=0.2699]Training:  80%|████████  | 80/100 [00:53<00:12,  1.62epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2713, recon=0.2713[A
+     Val: loss=0.2713, recon=0.2713[ATraining:  80%|████████  | 80/100 [00:54<00:12,  1.62epoch/s, loss=0.2698, recon=0.2698]Training:  81%|████████  | 81/100 [00:54<00:11,  1.63epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  81%|████████  | 81/100 [00:55<00:11,  1.63epoch/s, loss=0.2698, recon=0.2698]Training:  82%|████████▏ | 82/100 [00:55<00:11,  1.60epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2711, recon=0.2711[A
+     Val: loss=0.2711, recon=0.2711[ATraining:  82%|████████▏ | 82/100 [00:55<00:11,  1.60epoch/s, loss=0.2699, recon=0.2699]Training:  83%|████████▎ | 83/100 [00:55<00:10,  1.58epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  83%|████████▎ | 83/100 [00:56<00:10,  1.58epoch/s, loss=0.2698, recon=0.2698]Training:  84%|████████▍ | 84/100 [00:56<00:10,  1.59epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  84%|████████▍ | 84/100 [00:57<00:10,  1.59epoch/s, loss=0.2698, recon=0.2698]Training:  85%|████████▌ | 85/100 [00:57<00:09,  1.61epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2711, recon=0.2711[A
+     Val: loss=0.2711, recon=0.2711[ATraining:  85%|████████▌ | 85/100 [00:57<00:09,  1.61epoch/s, loss=0.2698, recon=0.2698]Training:  86%|████████▌ | 86/100 [00:57<00:08,  1.59epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  86%|████████▌ | 86/100 [00:58<00:08,  1.59epoch/s, loss=0.2697, recon=0.2697]Training:  87%|████████▋ | 87/100 [00:58<00:08,  1.60epoch/s, loss=0.2697, recon=0.2697]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  87%|████████▋ | 87/100 [00:58<00:08,  1.60epoch/s, loss=0.2699, recon=0.2699]Training:  88%|████████▊ | 88/100 [00:58<00:07,  1.61epoch/s, loss=0.2699, recon=0.2699]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  88%|████████▊ | 88/100 [00:59<00:07,  1.61epoch/s, loss=0.2698, recon=0.2698]Training:  89%|████████▉ | 89/100 [00:59<00:06,  1.61epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  89%|████████▉ | 89/100 [01:00<00:06,  1.61epoch/s, loss=0.2697, recon=0.2697]Training:  90%|█████████ | 90/100 [01:00<00:06,  1.62epoch/s, loss=0.2697, recon=0.2697]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  90%|█████████ | 90/100 [01:00<00:06,  1.62epoch/s, loss=0.2698, recon=0.2698]Training:  91%|█████████ | 91/100 [01:00<00:05,  1.63epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  91%|█████████ | 91/100 [01:01<00:05,  1.63epoch/s, loss=0.2698, recon=0.2698]Training:  92%|█████████▏| 92/100 [01:01<00:04,  1.63epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  92%|█████████▏| 92/100 [01:01<00:04,  1.63epoch/s, loss=0.2697, recon=0.2697]Training:  93%|█████████▎| 93/100 [01:01<00:04,  1.62epoch/s, loss=0.2697, recon=0.2697]
+     Val: loss=0.2711, recon=0.2711[A
+     Val: loss=0.2711, recon=0.2711[ATraining:  93%|█████████▎| 93/100 [01:02<00:04,  1.62epoch/s, loss=0.2698, recon=0.2698]Training:  94%|█████████▍| 94/100 [01:02<00:03,  1.63epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  94%|█████████▍| 94/100 [01:03<00:03,  1.63epoch/s, loss=0.2698, recon=0.2698]Training:  95%|█████████▌| 95/100 [01:03<00:03,  1.66epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  95%|█████████▌| 95/100 [01:03<00:03,  1.66epoch/s, loss=0.2698, recon=0.2698]Training:  96%|█████████▌| 96/100 [01:03<00:02,  1.67epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2711, recon=0.2711[A
+     Val: loss=0.2711, recon=0.2711[ATraining:  96%|█████████▌| 96/100 [01:04<00:02,  1.67epoch/s, loss=0.2697, recon=0.2697]Training:  97%|█████████▋| 97/100 [01:04<00:01,  1.69epoch/s, loss=0.2697, recon=0.2697]
+     Val: loss=0.2711, recon=0.2711[A
+     Val: loss=0.2711, recon=0.2711[ATraining:  97%|█████████▋| 97/100 [01:04<00:01,  1.69epoch/s, loss=0.2698, recon=0.2698]Training:  98%|█████████▊| 98/100 [01:04<00:01,  1.69epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2711, recon=0.2711[A
+     Val: loss=0.2711, recon=0.2711[ATraining:  98%|█████████▊| 98/100 [01:05<00:01,  1.69epoch/s, loss=0.2698, recon=0.2698]Training:  99%|█████████▉| 99/100 [01:05<00:00,  1.71epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[ATraining:  99%|█████████▉| 99/100 [01:06<00:00,  1.71epoch/s, loss=0.2698, recon=0.2698]Training: 100%|██████████| 100/100 [01:06<00:00,  1.72epoch/s, loss=0.2698, recon=0.2698]
+     Val: loss=0.2712, recon=0.2712[A
+     Val: loss=0.2712, recon=0.2712[A`Trainer.fit` stopped: `max_epochs=100` reached.
+     Val: loss=0.2712, recon=0.2712
+Training: 100%|██████████| 100/100 [01:06<00:00,  1.51epoch/s, loss=0.2698, recon=0.2698]

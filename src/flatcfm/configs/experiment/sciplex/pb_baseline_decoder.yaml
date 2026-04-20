@@ -1,0 +1,18 @@
+# @package _global_
+# perturbench-style decoder baseline
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: perturbench_k562
+  - override /space: log1p_deg_4k
+  - override /condition: sciplex
+  - override /task: baseline_decoder
+  - override /model: baseline_decoder
+  - override /loss: baseline
+  - override /callbacks: default
+
+experiment_name: sciplex_pb_baseline_decoder
+
+data:
+  source: file
+  data_path: artifacts/data/sciplex3_max_dose.h5ad

@@ -1,0 +1,29 @@
+weights:
+  recon: 1.0
+  distance: 0.0
+  pullback: 0.0
+  ce_context: 0.0
+  ce_state: 0.0
+  orojar: 0.0
+  log1p_mse: 0.0
+distance_loss_type: mse
+distance_zeta: 0.0
+# when true the standard MSE recon loss divides each gene's squared error
+# by its training variance so every gene contributes equally to the gradient
+# prevents high variance housekeeping genes from dominating the loss and
+# starving medium variance perturbation responsive genes of gradient signal
+# only affects family=standard (NB loss has its own nb_gene_normalize flag)
+mse_gene_variance_normalize: false
+# floor for per-gene variance as a fraction of mean gene variance
+# prevents dead (zero-variance) training genes from getting pathological
+# weight (1/eps = 1e6) which would dominate val loss even though the model
+# has no training signal to learn them default 0.1 gives max weight 10x
+# the mean gene weight
+mse_variance_floor_frac: 0.1
+# when true the standard MSE recon loss upweights the top-N genes with
+# highest training perturbation responsiveness (std of mean expression
+# across training perturbation groups) by mse_pert_weight_multiplier
+# directly rewards reconstruction of perturbation-relevant structure
+mse_pert_weighted: false
+mse_pert_top_n: 500
+mse_pert_weight_multiplier: 10.0

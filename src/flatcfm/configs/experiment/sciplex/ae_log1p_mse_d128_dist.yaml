@@ -1,0 +1,35 @@
+# @package _global_
+# mse ae d128 with phate diffusion potential distance loss
+# same distance loss config as ae_log1p_hybrid_d1e3 but swaps the
+# negative_binomial recon for plain mse on log1p_deg targets
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: strict_k562
+  - override /space: log1p_deg
+  - override /condition: sciplex
+  - override /task: ae
+  - override /model: ae
+  - override /loss: ae
+  - override /ae_geometry: phate_potential
+  - override /ae_schedule: single_phase
+
+experiment_name: sciplex_ae_deg_log1p_mse_d128_dist
+
+model:
+  family: standard
+  latent_dim: 128
+
+task:
+  epochs: 100
+
+space:
+  ae_export_artifact_tag: sciplex_ae_deg_log1p_mse_d128_dist
+
+loss:
+  weights:
+    recon: 1.0
+    distance: 0.001
+    pullback: 0.0
+  distance_zeta: 0.007
+  distance_alpha_min: 0.1

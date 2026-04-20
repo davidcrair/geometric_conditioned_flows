@@ -1,0 +1,23 @@
+# @package _global_
+
+defaults:
+  - override /data: sciplex
+  - override /splitter: strict_k562
+  - override /space: log1p_deg
+  - override /condition: sciplex
+  - override /task: ae
+  - override /model: ae
+  - override /loss: ae
+  - override /ae_geometry: none
+  - override /ae_schedule: single_phase
+
+experiment_name: sciplex_ae_deg_log1p_nb_genenorm_d512
+
+model:
+  latent_dim: 512
+
+loss:
+  nb_gene_normalize: true
+
+space:
+  ae_export_artifact_tag: sciplex_ae_deg_log1p_recon
