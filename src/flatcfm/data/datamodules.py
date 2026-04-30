@@ -611,6 +611,9 @@ class SciplexDataModule(BasePerturbationDataModule):
                     "test_cell_type": str(self.splitter_cfg.get("test_cell_type", "K562")),
                     "holdout_fraction": float(self.splitter_cfg.get("holdout_fraction", 0.5)),
                     "split_policy": str(self.splitter_cfg.get("split_policy", "strict_no_leakage")),
+                    "disjoint_partition_cell_types": tuple(
+                        self.splitter_cfg.get("disjoint_partition_cell_types", []) or []
+                    ),
                 },
             )(),
         )

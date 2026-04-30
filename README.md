@@ -1,4 +1,5 @@
-# FlatCFM
+# GLFM: Geometry-Regularized Latent Flow Models for Single-Cell Perturbation Prediction
+fka flatcfm (still used in this repo name and some config names for historical reasons)
 
 Flow matching on flat latent spaces for single-cell perturbation modeling. Predicts heterogeneous single-cell transcriptional responses to drug perturbations in underrepresented contexts.
 

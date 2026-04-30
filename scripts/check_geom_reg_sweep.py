@@ -108,9 +108,7 @@ def _predict_command(run_dir: Path) -> str:
 
 @app.command()
 def check(
-    generate: Annotated[
-        bool, typer.Option("--generate", "-g", help="print commands for missing models")
-    ] = False,
+    generate: Annotated[bool, typer.Option("--generate", "-g", help="print commands for missing models")] = False,
     train: Annotated[
         bool, typer.Option("--train", "-t", help="train and predict all missing models sequentially")
     ] = False,

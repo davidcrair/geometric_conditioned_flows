@@ -1,0 +1,16 @@
+seed: 42
+test_cell_type: K562
+holdout_fraction: 0.3
+subsample_seed: 0
+subsample_n_cells: 100000
+split_policy: disjoint_partition
+ae_subsample_seed: 42
+ae_subsample_n_cells: 50000
+ae_subsample_group_cols:
+  - cell_type
+  - vehicle
+val_fraction: 0.1
+disjoint_partition_cell_types:
+  - K562
+  - A549
+  - MCF7

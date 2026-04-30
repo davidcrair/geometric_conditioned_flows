@@ -82,6 +82,7 @@ def resolve_sciplex_artifacts(splitter_cfg: dict, paths_cfg: dict) -> SciplexArt
         ae_subsample_n_cells=int(splitter_cfg.get("ae_subsample_n_cells", 50_000)),
         ae_subsample_group_cols=tuple(splitter_cfg.get("ae_subsample_group_cols", ["cell_type", "vehicle"])),
         include_all_controls=bool(splitter_cfg.get("include_all_controls", False)),
+        disjoint_partition_cell_types=tuple(splitter_cfg.get("disjoint_partition_cell_types", []) or []),
     )
     split_root = Path(paths_cfg.get("split_artifact_dir", "artifacts/splits"))
     data_root = Path(paths_cfg.get("data_dir", "artifacts/data"))

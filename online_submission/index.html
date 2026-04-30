@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
+      crossorigin="anonymous">
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+            integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+            crossorigin="anonymous"></script>
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+            integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+            crossorigin="anonymous"
+            onload="renderMathInElement(document.body, {
+              delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$',  right: '$',  display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+              ],
+              throwOnError: false,
+              macros: { '\\ourmodel': '\\textbf{GLFM}' }
+            });"></script>
+        <title>GLFM - David Crair</title>
+        <style>
+            body,h1,h2,h3 {font-family: "Raleway", Arial, sans-serif}
+            .title-main {
+              font-size: 56px;
+              font-weight: 700;
+              letter-spacing: 8px;
+              margin: 0 0 16px 0;
+              line-height: 1;
+            }
+            .title-sub {
+              font-size: 24px;
+              font-weight: 400;
+              letter-spacing: 1px;
+              max-width: 800px;
+              margin: 0 auto 24px auto;
+              line-height: 1.4;
+              color: #333;
+            }
+            .byline {
+              font-size: 16px;
+              font-weight: 400;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              margin: 4px 0;
+              color: #555;
+            }
+            .w3-row-padding img {margin-bottom: 12px}
+        </style>
+  </head>
+  <body>
+    <header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
+        <h1 class="title-main">GLFM</h1>
+        <p class="title-sub">Geometry-Regularized Latent Flow Models for Single-Cell Perturbation Prediction</p>
+        <p class="byline"><b>David Crair</b></p>
+        <p class="byline">Advised by Prof. Smita Krishnaswamy</p>
+        <h2>Abstract</h2>
+        <p style="max-width: 800px; margin: 0 auto; text-align: left;">Predicting heterogeneous responses to drug perturbations is valuable in drug discovery by reducing wet lab burden and enabling faster development of new therapeutics through in-silico experimentation. One key challenge is generalizing known perturbation effects to unseen cell populations, like new patients, complex tissues, or new types of cancer, where only a subset of drugs have been tested. In <b>GLFM</b>, we explore how generative flow models (flow matching and neural ODEs) can be used in the latent space of a geometrically-regularized autoencoder to perform single-cell drug perturbation modeling. We condition these models on sample and drug covariates like cell type and drug dose to enable flexible and generalizable modeling via a learned condition encoder. We primarily evaluate on the SciPlex3 dataset, containing 3 human cancer cell lines and around 200 drug treatments in each cell type. We found that the choice of autoencoder reconstruction loss and latent space largely dominates the effect of geometric regularization, although geometric regularization in the vanilla autoencoder latent space yields consistent improvements and stabilizes autoencoder training. We also derive upper bounds on Cosine LogFC, $\bar{W_1}$ and $W_2^2$ metrics as functions of cumulative variance explained under PCA, showing that MSE reconstruction accuracy is an upper bound on $W_2^2$ for autoencoder models. Counterintuitively, we find that flow matching models in lower dimensional PCA space ($d=16$) outperform similar models in higher dimensional PCA space ($d=256$) despite the higher latent-space reconstruction ceiling on performance in the higher dimensional space. Finally, we recommend metric-informed autoencoder design, such as using MSE loss when $W_2^2$ is a metric (because it directly upper-bounds $W_2^2$) and suggest computation of encode-then-decode reconstruction ceiling for perturbation prediction and single-cell trajectory-inference modeling before investing in flow model tuning, to avoid optimization in spaces with capped ceilings on metrics.</p>
+        <div class="w3-padding-32">
+          <img src="diagram.png" alt="GLFM model diagram" style="max-width: 500px; width: 100%; height: auto; display: block; margin: 0 auto;">
+        </div>
+        <div class="w3-padding-32">
+          <h2>Deliverables</h2>
+            <div class="w3-bar w3-border">
+              <a href="david_crair_final_report.pdf" class="w3-bar-item w3-button">Final Report</a>
+              <a href="david_crair_project_proposal.pdf" class="w3-bar-item w3-button">Project Proposal</a>
+              <a href="david_crair_poster.pdf" class="w3-bar-item w3-button">Final Poster</a>
+              <a href="https://github.com/davidcrair/geometric_conditioned_flows" class="w3-bar-item w3-button">Github Repo</a>
+            </div>
+          </div>
+      </header>
+     
+
+  </body>
+</html>

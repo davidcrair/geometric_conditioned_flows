@@ -1,0 +1,132 @@
+task_name: train
+train: true
+test: true
+ckpt_path: null
+seed: null
+data:
+  transform:
+    conf:
+      _target_: perturbench.data.transforms.pipelines.SingleCellPipeline
+      _partial_: true
+    dependencies:
+      perturbation_uniques: perturbation_uniques
+      covariate_uniques: covariate_uniques
+  splitter:
+    task: transfer
+    covariate_keys:
+    - cell_type
+    min_train_covariates: 1
+    max_heldout_covariates: 1
+    max_heldout_fraction_per_covariate: 0.3
+    max_heldout_perturbations_per_covariate: 200
+    train_control_fraction: 0.5
+    downsample_fraction: 1.0
+    splitter_seed: 42
+    save: true
+    output_path: ${paths.output_dir}/
+  evaluation:
+    split_value_to_evaluate: val
+    evaluation_pipelines:
+    - aggregation: average
+      metric: rmse
+      rank: true
+    - aggregation: pca_average
+      metric: cosine
+      rank: true
+    - aggregation: logfc
+      metric: cosine
+      rank: true
+    - aggregation: scores
+      metric: r2_score
+      rank: false
+    - aggregation: scores
+      metric: top_k_recall
+      rank: false
+    - aggregation: pca
+      metric: mmd
+      rank: true
+    max_control_cells_per_covariate: 1000
+    save_evaluation: true
+    save_dir: ${paths.output_dir}/evaluation/
+    chunk_size: 400
+    print_summary: true
+  _target_: perturbench.data.modules.AnnDataLitModule
+  datapath: ${paths.data_dir}/sciplex3_processed.h5ad
+  perturbation_key: condition
+  perturbation_combination_delimiter: +
+  perturbation_control_value: control
+  covariate_keys:
+  - cell_type
+  batch_size: 4000
+  num_workers: 8
+  batch_sample: true
+  add_controls: true
+  use_counts: false
+  embedding_key: null
+model:
+  _target_: perturbench.modelcore.models.CPA
+  n_genes: null
+  n_perts: null
+  n_latent: 128
+  hidden_dim: 256
+  n_layers_encoder: 3
+  n_layers_pert_emb: 2
+  n_layers_covar_emb: 1
+  variational: true
+  adv_classifier_n_layers: 2
+  adv_classifier_hidden_dim: 128
+  lr: 1.0e-05
+  wd: 1.0e-08
+  dropout: 0.1
+  kl_weight: 1.0
+  adv_weight: 1.0
+  penalty_weight: 10.0
+  adv_steps: 2
+  n_warmup_epochs: 5
+  softplus_output: false
+  elementwise_affine: false
+callbacks:
+  early_stopping:
+    _target_: lightning.pytorch.callbacks.EarlyStopping
+    monitor: val_loss
+    patience: 50
+  lr_monitor:
+    _target_: lightning.pytorch.callbacks.LearningRateMonitor
+    log_momentum: true
+    logging_interval: epoch
+  model_summary:
+    _target_: lightning.pytorch.callbacks.RichModelSummary
+    max_depth: -1
+  model_checkpoint:
+    _target_: lightning.pytorch.callbacks.ModelCheckpoint
+    monitor: val_loss
+    dirpath: ${hydra:runtime.output_dir}/checkpoints
+  rich_progress_bar:
+    _target_: lightning.pytorch.callbacks.RichProgressBar
+logger:
+  tensorboard:
+    _target_: lightning.pytorch.loggers.TensorBoardLogger
+    save_dir: ${paths.output_dir}
+    name: tensorboard/
+    prefix: ''
+  csv:
+    _target_: lightning.pytorch.loggers.CSVLogger
+    save_dir: ${paths.output_dir}
+    name: csv/
+    prefix: ''
+trainer:
+  _target_: lightning.pytorch.trainer.Trainer
+  default_root_dir: ${paths.output_dir}
+  min_epochs: 1
+  max_epochs: 100
+  accelerator: gpu
+  devices: 1
+  precision: 16
+  check_val_every_n_epoch: 1
+  deterministic: false
+  log_every_n_steps: 10
+paths:
+  data_dir: ./notebooks/neurips2025/perturbench_data/
+  log_dir: ./logs/
+  output_dir: ${hydra:runtime.output_dir}
+  work_dir: ${hydra:runtime.cwd}

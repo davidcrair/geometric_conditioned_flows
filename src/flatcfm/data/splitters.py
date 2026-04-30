@@ -28,6 +28,10 @@ class SplitConfig:
         ae_subsample_seed: seed used for ae training cell subsample
         ae_subsample_n_cells: number of ae training cells to sample
         ae_subsample_group_cols: columns used to stratify ae subsampling
+        disjoint_partition_cell_types: when non empty enables disjoint partition mode
+            in which the listed cell types share a single seed and each
+            perturbation is held out for at most one cell type the holdout for
+            test_cell_type is the bucket assigned to it under that partition
     """
 
     seed: int = 42
@@ -40,6 +44,7 @@ class SplitConfig:
     ae_subsample_n_cells: int = 50_000
     ae_subsample_group_cols: tuple[str, ...] = ("cell_type", "vehicle")
     include_all_controls: bool = False
+    disjoint_partition_cell_types: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -69,11 +74,25 @@ def make_split_tag(config: SplitConfig) -> str:
         deterministic split tag string
     """
 
-    policy_short = {"strict_no_leakage": "strict", "underrepresented_context": "underrep"}
+    policy_short = {
+        "strict_no_leakage": "strict",
+        "underrepresented_context": "underrep",
+        "disjoint_partition": "djpart",
+    }
     policy = policy_short.get(config.split_policy, config.split_policy)
-    cell_type = config.test_cell_type.lower().replace(" ", "-")
+    if config.split_policy == "disjoint_partition":
+        # single shared split across all partition cell types so test_cell_type
+        # is not used in the tag instead use the partition list as the slot
+        cell_type = "all"
+    else:
+        cell_type = config.test_cell_type.lower().replace(" ", "-")
     strat_cols = "-".join(config.ae_subsample_group_cols)
     suffix = "_allctrl" if config.include_all_controls else ""
+    if config.disjoint_partition_cell_types:
+        partition_cells = "-".join(
+            c.lower().replace(" ", "-") for c in config.disjoint_partition_cell_types
+        )
+        suffix += f"_dj-{partition_cells}"
     return (
         f"{policy}_{cell_type}_seed{config.seed}_subseed{config.subsample_seed}_"
         f"n{config.subsample_n_cells}_ae{config.ae_subsample_n_cells}_strat-{strat_cols}{suffix}"
@@ -106,6 +125,74 @@ def make_split_artifacts(
     )
 
 
+def _disjoint_partition_holdouts(
+    adata: ad.AnnData,
+    partition_cell_types: tuple[str, ...],
+    holdout_fraction: float,
+    seed: int,
+) -> tuple[dict[str, list[str]], dict[str, int], dict[str, list[str]]]:
+    """compute disjoint per cell type holdout product lists
+
+    walks a shuffled union of perturbed products and assigns each product to
+    one cell type bucket subject to per cell type quotas products that are
+    not present in any bucket with remaining capacity stay unassigned and
+    therefore appear as train in every cell type
+
+    Args:
+        adata: anndata with vehicle cell_type and product_name columns
+        partition_cell_types: ordered tuple of cell types sharing the partition
+        holdout_fraction: per cell type fraction of its own product universe
+        seed: seed shared across all cell types in the partition
+
+    Returns:
+        tuple of (holdouts per cell type sorted, quotas per cell type,
+        product universe per cell type sorted)
+    """
+
+    if not partition_cell_types:
+        raise ValueError("partition_cell_types must be non empty")
+
+    is_pert = (adata.obs["vehicle"] == 0).to_numpy(dtype=bool)
+    cell_type_arr = adata.obs["cell_type"].to_numpy()
+    product_arr = adata.obs["product_name"].to_numpy()
+
+    drugs_by_cell: dict[str, set[str]] = {}
+    universe_by_cell: dict[str, list[str]] = {}
+    for c in partition_cell_types:
+        mask = is_pert & (cell_type_arr == c)
+        drugs = sorted({str(p) for p in product_arr[mask]})
+        universe_by_cell[c] = drugs
+        drugs_by_cell[c] = set(drugs)
+
+    union_sorted = sorted(set().union(*drugs_by_cell.values()))
+    rng = np.random.default_rng(seed)
+    order = [str(d) for d in rng.permutation(union_sorted)]
+
+    quotas = {
+        c: int(math.floor(len(universe_by_cell[c]) * holdout_fraction))
+        for c in partition_cell_types
+    }
+    holdouts: dict[str, list[str]] = {c: [] for c in partition_cell_types}
+
+    for drug in order:
+        eligible = [
+            c for c in partition_cell_types
+            if len(holdouts[c]) < quotas[c] and drug in drugs_by_cell[c]
+        ]
+        if not eligible:
+            continue
+        # pick the cell type with the largest remaining need to balance fill order
+        # tie break preserves partition_cell_types ordering
+        chosen = max(eligible, key=lambda c: (quotas[c] - len(holdouts[c]), -partition_cell_types.index(c)))
+        holdouts[chosen].append(drug)
+
+    return (
+        {c: sorted(holdouts[c]) for c in partition_cell_types},
+        quotas,
+        universe_by_cell,
+    )
+
+
 def build_holdout_manifest(adata: ad.AnnData, config: SplitConfig) -> dict[str, Any]:
     """build a held-out product manifest
 
@@ -125,20 +212,52 @@ def build_holdout_manifest(adata: ad.AnnData, config: SplitConfig) -> dict[str, 
     if missing:
         raise ValueError(f"Missing required columns in adata.obs: {missing}")
 
-    is_pert = adata.obs["vehicle"] == 0
-    k562_mask = is_pert & (adata.obs["cell_type"] == config.test_cell_type)
-    unique_products = sorted(adata.obs.loc[k562_mask, "product_name"].unique().tolist())
-
-    n_holdout = int(math.floor(len(unique_products) * config.holdout_fraction))
-    rng = np.random.default_rng(config.seed)
-    if n_holdout == 0:
-        selected = []
+    partition = tuple(config.disjoint_partition_cell_types)
+    if partition:
+        if config.split_policy == "disjoint_partition" and config.test_cell_type not in partition:
+            # disjoint_partition policy holds out the union across the partition
+            # so test_cell_type is irrelevant for masking and is allowed to be
+            # any string we still pick a default selected list below
+            pass
+        elif config.split_policy != "disjoint_partition" and config.test_cell_type not in partition:
+            raise ValueError(
+                f"test_cell_type {config.test_cell_type!r} must be in "
+                f"disjoint_partition_cell_types {partition}"
+            )
+        holdouts_by_cell, quotas, universe_by_cell = _disjoint_partition_holdouts(
+            adata, partition, config.holdout_fraction, config.seed,
+        )
+        if config.split_policy == "disjoint_partition":
+            # union of all per cell type buckets used as the canonical selected
+            # list for backward compat callers reading selected_holdout_product_names
+            union_drugs: list[str] = sorted(
+                {d for drugs in holdouts_by_cell.values() for d in drugs}
+            )
+            selected = union_drugs
+        else:
+            selected = holdouts_by_cell[config.test_cell_type]
+        partition_meta: dict[str, Any] = {
+            "disjoint_partition_cell_types": list(partition),
+            "disjoint_partition_quotas": {c: int(quotas[c]) for c in partition},
+            "disjoint_partition_holdouts": {c: list(holdouts_by_cell[c]) for c in partition},
+            "disjoint_partition_universe_sizes": {c: len(universe_by_cell[c]) for c in partition},
+        }
     else:
-        selected = sorted(rng.choice(unique_products, size=n_holdout, replace=False).tolist())
+        is_pert = adata.obs["vehicle"] == 0
+        k562_mask = is_pert & (adata.obs["cell_type"] == config.test_cell_type)
+        unique_products = sorted(adata.obs.loc[k562_mask, "product_name"].unique().tolist())
+
+        n_holdout = int(math.floor(len(unique_products) * config.holdout_fraction))
+        rng = np.random.default_rng(config.seed)
+        if n_holdout == 0:
+            selected = []
+        else:
+            selected = sorted(rng.choice(unique_products, size=n_holdout, replace=False).tolist())
+        partition_meta = {}
 
     split_policy = config.split_policy
 
-    return {
+    manifest: dict[str, Any] = {
         "version": 1,
         "dataset_name": "sciplex",
         "split_policy": split_policy,
@@ -156,6 +275,8 @@ def build_holdout_manifest(adata: ad.AnnData, config: SplitConfig) -> dict[str, 
         "n_obs_total": int(adata.n_obs),
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
     }
+    manifest.update(partition_meta)
+    return manifest
 
 
 def apply_holdout_masks(adata: ad.AnnData, manifest: dict[str, Any]) -> dict[str, np.ndarray]:
@@ -193,6 +314,18 @@ def apply_holdout_masks(adata: ad.AnnData, manifest: dict[str, Any]) -> dict[str
         test_cell_type = manifest.get("test_cell_type")
         is_test_cell = (adata.obs[cell_type_col] == test_cell_type).to_numpy(dtype=bool)
         is_held_out = is_pert_any & is_test_cell & product_match
+    elif policy == "disjoint_partition":
+        cell_type_col = columns.get("cell_type", "cell_type")
+        cell_type_arr = adata.obs[cell_type_col].astype(str).to_numpy()
+        product_str_arr = adata.obs[product_col].astype(str).to_numpy()
+        partition_holdouts = manifest.get("disjoint_partition_holdouts", {})
+        is_held_out = np.zeros(adata.n_obs, dtype=bool)
+        for cell, drugs in partition_holdouts.items():
+            if not drugs:
+                continue
+            is_c = cell_type_arr == cell
+            in_drugs = np.isin(product_str_arr, list(drugs))
+            is_held_out |= is_pert_any & is_c & in_drugs
     else:
         raise ValueError(f"Unknown split_policy: {policy}")
 
@@ -397,7 +530,7 @@ def validate_no_leakage(
     if not np.array_equal(~is_held_out, is_train):
         raise ValueError("is_train must be the exact complement of is_held_out.")
 
-    if split_policy == "underrepresented_context":
+    if split_policy in {"underrepresented_context", "disjoint_partition"}:
         return
 
     held_products = set(adata.obs.loc[is_held_out, product_name_col].astype(str).unique().tolist())

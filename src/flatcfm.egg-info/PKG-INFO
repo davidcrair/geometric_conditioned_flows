@@ -35,7 +35,7 @@ Requires-Dist: protobuf>=6.33.5
 
 # FlatCFM
 
-Flow matching on flat latent spaces for single-cell perturbation modeling. Predicts heterogeneous single-cell transcriptional responses to drug/gene perturbations in underrepresented contexts.
+Flow matching on flat latent spaces for single-cell perturbation modeling. Predicts heterogeneous single-cell transcriptional responses to drug perturbations in underrepresented contexts.
 
 Senior thesis project. Repo structure inspired by [perturbench](https://github.com/altoslabs/perturbench).
 
@@ -65,6 +65,10 @@ PYTHONPATH=src .venv/bin/python scripts/run_eval.py sciplex_fm_hvg
 ```
 
 All outputs go to `artifacts/runs/{experiment_name}/{timestamp}/`.
+
+## Data
+
+Default sciplex splits (`strict_k562`, `strict_mcf7`, `strict_a549`) draw a canonical 100k-cell subsample from the full pertpy `sciplex3_raw()` dataset, with a separate 50k-cell subsample reserved for AE training. The K562 split holds out 50% of K562 perturbations as the test set. The `perturbench_k562` split uses 150k cells (100k for AE) to match the perturbench protocol. Subsample selection is seeded so the same cells are reused across runs.
 
 ## Space hierarchy
 
@@ -124,15 +128,26 @@ experiment=sciplex/fm_log1p
 # flow matching in PCA space
 experiment=sciplex/fm_log1p space=pca
 
+# flow matching in MSE AE latent (d=512)
+experiment=sciplex/fm_ae_latent_mse_d512
+
 # flow matching in AE latent space with PHATE geometry
 experiment=sciplex/fm_ae_latent_phate
 
-# ODE baseline
-experiment=sciplex/ode_log1p
+# flow matching on AE latent with geometric regularization
+# (built from the hybrid base experiment plus a loss override; see
+# scripts/train_geom_reg_sweep.sbatch)
+experiment=sciplex/fm_ae_latent_hybrid
 
-# analytical baselines (no_effect, additive, context_mean, perturb_mean)
+# ODE counterpart
+experiment=sciplex/ode_ae_latent_mse_d512
+
+# analytical baselines (no_effect, additive, context_mean, perturb_mean,
+# decoder, linear, latent_additive)
 experiment=sciplex/baseline_no_effect
 ```
+
+See `src/flatcfm/configs/experiment/sciplex/` for the full list.
 
 ### Overriding config values
 
@@ -291,6 +306,20 @@ Compare theoretical reconstruction limits of PCA vs autoencoders (MSE, FlatVI, P
 
 After training, open `view_theoretical_limits.ipynb` to plot cosine logfc and W2 vs variance explained / latent dim for all methods. The notebook skips missing models, so it can be run at any point during the sweep.
 
+### Sweep tooling
+
+Each major sweep ships with a checker script and an sbatch launcher:
+
+| Sweep | Checker | Launcher | Viewer |
+|---|---|---|---|
+| FM AE MSE latent dim | `scripts/check_fm_ae_mse_sweep.py` | `scripts/train_ae_sweep.sbatch` | `view_fm_ae_mse_sweep.ipynb` |
+| FM PCA dim | `scripts/check_fm_pca_sweep.py` | `scripts/train_fm_pca_allctrl.sbatch` | `view_gen_flows_pca_sweep.ipynb` |
+| ODE PCA dim | `scripts/check_ode_pca_sweep.py` | `scripts/train_ode_pca_sweep.sbatch` | (use `view_gen_flows_pca_sweep.ipynb`) |
+| Geometric reg weight | `scripts/check_geom_reg_sweep.py` | `scripts/train_geom_reg_sweep.sbatch` (and per-weight `_seeds.sbatch` variants) | `view_geom_reg_sweep.ipynb` |
+| Theoretical limits (PCA / AE) | `scripts/check_dim_sweep.py` | `scripts/train_phate_mse_ae_sweep.sbatch` | `view_theoretical_limits.ipynb` |
+
+Run a checker with `--generate` to print the training commands that are still missing.
+
 ### Available metrics
 
 | Metric | Direction | Description |
@@ -308,8 +337,15 @@ After training, open `view_theoretical_limits.ipynb` to plot cosine logfc and W2
 | Notebook | Purpose |
 |---|---|
 | `view_flow_results.ipynb` | Inspect a single flow matching or ODE run: loss curves, perturbation ranking by W1, five-way distribution overlays for selected genes |
-| `view_benchmark_results.ipynb` | Compare multiple models (flow + baselines) via the benchmark suite API: per-group metrics, summary tables, box plots, dose breakdowns |
+| `view_benchmark_results.ipynb` | Compare multiple models (flow + baselines) via the benchmark suite API: per-group metrics, summary tables, box plots, dose breakdowns, LaTeX results table |
+| `view_benchmark_results_cross_ct.ipynb` | Cross-cell-type benchmark comparison |
 | `view_autoencoder_results.ipynb` | Inspect trained autoencoder: reconstruction quality, latent space |
+| `view_dataset_embeddings.ipynb` | Visualize sciplex embeddings in raw and projected spaces |
+| `view_theoretical_limits.ipynb` | Compare PCA vs AE (MSE, PHATE, FlatVI) reconstruction limits across latent dims |
+| `view_pca_theoretical_limits.ipynb` | PCA-only reconstruction limit sweep |
+| `view_fm_ae_mse_sweep.ipynb` | Flow matching results across MSE AE latent dim sweep |
+| `view_gen_flows_pca_sweep.ipynb` | Generative flow results across PCA dim sweep |
+| `view_geom_reg_sweep.ipynb` | Geometric regularization weight sweep results |
 | `view_toy_results.ipynb` | Toy dataset experiments: compare projection methods and architectures |
 | `toy-orthogonal-lift-fm-vs-grae.ipynb` | Flow matching vs GRAE comparison on toy data with orthogonal lifts |
 
@@ -358,12 +394,18 @@ src/flatcfm/
     flow_results.py  # load and inspect flow runs
 scripts/
   run_eval.py        # CLI evaluation tool
+  model_card.py      # structured run summary
   view_perturbench.py # view perturbench results across runs
   run_perturbench.py # train models through perturbench pipeline
   run_status.py      # monitor training runs
+  gpu_status.py      # GPU utilization snapshot
   common.sh          # shared bash helpers (latest_run_dir, ensure_train, ensure_predict)
   train_sciplex_baselines.sh  # train all baselines
   train_toy_*.sh     # toy experiment grid sweeps
+  check_*_sweep.py   # report which sweep configs are trained vs missing
+  train_*_sweep.sbatch # SLURM array launchers for each sweep
+  build_drug_embeddings.py  # precompute molformer drug embeddings
+  materialize_allctrl_subsample.py  # materialize the all-controls subsample h5ad
 artifacts/
   runs/              # training outputs (gitignored)
   models/            # pretrained AE checkpoints

@@ -1,0 +1,60 @@
+[run_notebook] starting kernel python3
+
+[cell 2/9 #1 t=0s] from pathlib import Path import json  import anndata as ad import matplotlib.pyp...
+
+[cell 3/9 #2 t=6s] # load datamodule to get the same train/test split and feature set from hydra.ut...
+train: (87775, 6396), test: (12225, 6396)
+features: 6396
+
+[cell 4/9 #3 t=154s] from flatcfm._utils import dense_array  # build control means per cell type all_...
+control cells: 2196
+cell types: ['MCF7', 'K562', 'A549']
+
+[cell 5/9 #4 t=155s] # compute theoretical limits for each PCA dimension from flatcfm.analysis.benchm...
+perturbation groups: 375
+perturbed test cells: 12225
+valid groups (nonzero logfc): 375
+PCA n_components=10... var_explained=0.1268, mean cosine=0.3181
+PCA n_components=25... var_explained=0.1444, mean cosine=0.3559
+PCA n_components=50... var_explained=0.1605, mean cosine=0.3863
+PCA n_components=100... var_explained=0.1885, mean cosine=0.4235
+PCA n_components=200... var_explained=0.2389, mean cosine=0.4776
+PCA n_components=500... var_explained=0.3663, mean cosine=0.5878
+PCA n_components=1000... var_explained=0.5240, mean cosine=0.6997
+PCA n_components=2000... var_explained=0.7488, mean cosine=0.8381
+PCA n_components=5000... var_explained=0.9984, mean cosine=0.9986
+PCA n_components=all... var_explained=1.0000, mean cosine=1.0000
+
+total results: 3750
+
+[cell 6/9 #5 t=2658s] # summary table summary = (     results.groupby(["n_components", "label", "var_e...
+
+[cell 7/9 #6 t=2658s] # main plot: cosine_logfc and w2 vs variance explained from scipy.optimize impor...
+
+[cell 8/9 #7 t=2662s] # per-dose breakdown if dose_key in results.columns:     dose_summary = (       ...
+
+per-dose cosine_logfc:
+
+[cell 9/9 #8 t=2663s] # boxplot distributions per n_components comp_levels = sorted(results["n_compone...
+
+[run_notebook] all cells executed in 2664s
+Traceback (most recent call last):
+  File "/nfs/roberts/project/pi_sk2433/dac227/FlatCFM/scripts/run_notebook.py", line 107, in <module>
+    main()
+  File "/nfs/roberts/project/pi_sk2433/dac227/FlatCFM/scripts/run_notebook.py", line 103, in main
+    run(Path(args.notebook).resolve(), kernel_name=args.kernel, timeout=args.timeout)
+  File "/nfs/roberts/project/pi_sk2433/dac227/FlatCFM/scripts/run_notebook.py", line 91, in run
+    nbformat.write(nb, str(notebook_path))
+  File "/nfs/roberts/project/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/nbformat/__init__.py", line 199, in write
+    s = writes(nb, version, capture_validation_error, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/roberts/project/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/nbformat/__init__.py", line 137, in writes
+    return versions[version].writes_json(nb, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/roberts/project/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/nbformat/v4/nbjson.py", line 58, in writes
+    nb = split_lines(nb)
+         ^^^^^^^^^^^^^^^
+  File "/nfs/roberts/project/pi_sk2433/dac227/FlatCFM/.venv/lib/python3.12/site-packages/nbformat/v4/rwbase.py", line 88, in split_lines
+    if output.output_type in {"execute_result", "display_data"}:
+       ^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'output_type'
